@@ -7,6 +7,7 @@ type Phase = {
   title: string;
   focus: string;
   out: string;
+  outputs: string[];
   launch?: boolean;
 };
 
@@ -16,21 +17,41 @@ const phases: Phase[] = [
     tl: "2–3 weeks",
     title: "Discovery",
     focus: "Understand the strategy workflow, templates, algorithms, cases, and constraints.",
-    out: "Clear scope for Strategy Brain – Part 1.",
+    out: "Clear understanding of the workflow and a recommended direction for the Minimal Strategy Brain.",
+    outputs: [
+      "Strategy workflow map",
+      "AI opportunity map",
+      "Improve vs Reinvent analysis",
+      "Brand Brain readiness assessment",
+      "Recommended Phase 2 scope",
+    ],
   },
   {
     n: "Phase 2",
     tl: "2–3 weeks",
     title: "Strategy Brain — Part 1",
     focus: "Use limited cases, templates, and outputs to validate the first useful AI-assisted direction.",
-    out: "Proof of concept and confirmed direction for deeper build.",
+    out: "Confirmation of the kind of Strategy Brain Chlorophyll would trust, use, and build further.",
+    outputs: [
+      "Minimal proof of concept",
+      "Validated use case",
+      "Strategist feedback",
+      "Direction for Phase 3",
+    ],
   },
   {
     n: "Phase 3",
     tl: "3–4 weeks",
     title: "Strategy Brain — Part 2",
     focus: "Build the validated internal strategy model using Chlorophyll's cases, frameworks, and algorithms.",
-    out: "A usable internal Strategy Brain supporting live workflows.",
+    out: "A more mature internal Strategy Brain that reflects Chlorophyll's thinking and supports live work.",
+    outputs: [
+      "Expanded knowledge base",
+      "Strategy pattern library",
+      "Internal reasoning model",
+      "Review workflow",
+      "Readiness for external research",
+    ],
     launch: true,
   },
   {
@@ -38,14 +59,26 @@ const phases: Phase[] = [
     tl: "3–4 weeks",
     title: "External Research Augmentation",
     focus: "Add market, category, competitor, audience, and cultural intelligence.",
-    out: "External intelligence connected to the internal Strategy Brain.",
+    out: "The Strategy Brain can compare internal thinking with external market reality.",
+    outputs: [
+      "External research layer",
+      "Source framework",
+      "Competitor & category intelligence",
+      "Research-to-strategy mapping",
+    ],
   },
   {
     n: "Phase 5",
     tl: "2 weeks",
     title: "Integration",
     focus: "Combine internal strategy knowledge and external research into one workflow.",
-    out: "Integrated Strategy Intelligence System.",
+    out: "An integrated Strategy Intelligence System spanning internal knowledge and external context.",
+    outputs: [
+      "Integrated strategy workflow",
+      "Review & approval flow",
+      "Updated operating process",
+      "Future expansion recommendations",
+    ],
   },
 ];
 
@@ -93,6 +126,19 @@ export function Section2() {
                   Outcome
                 </div>
                 {p.out}
+              </div>
+              <div className="mt-3">
+                <div className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-neutral-400">
+                  Possible outputs
+                </div>
+                <ul className="space-y-1">
+                  {p.outputs.map((o) => (
+                    <li key={o} className="flex items-start gap-2 text-[12px] leading-[1.35] text-neutral-600">
+                      <span className="mt-[6px] h-1 w-1 flex-none rounded-full bg-neutral-300" />
+                      {o}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
