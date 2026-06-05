@@ -69,8 +69,8 @@ function NConn() {
 
 export function Section4() {
   return (
-    <Section id="s4" night>
-      <SectionHeader num="04" eyebrow="Technical Approach" title="From knowledge to strategy intelligence." night>
+    <Section id="s3" night>
+      <SectionHeader num="03" eyebrow="Technical Approach" title="From knowledge to strategy intelligence." night>
         A structured AI knowledge platform that <Hl night>supports the strategist</Hl> — it does not replace them.
       </SectionHeader>
 

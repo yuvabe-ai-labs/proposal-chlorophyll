@@ -33,8 +33,8 @@ const notes: { Icon: Icon; title: string; body: string }[] = [
 
 export function Section5() {
   return (
-    <Section id="s5">
-      <SectionHeader num="05" eyebrow="Scaling the Model" title="One model, repeated across buckets.">
+    <Section id="s4">
+      <SectionHeader num="04" eyebrow="Scaling the Model" title="One model, repeated across buckets.">
         Once Strategy is validated, the same phased approach extends — <Hl>independently</Hl> — to Marketing and Creative.
       </SectionHeader>
 

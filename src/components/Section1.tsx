@@ -39,32 +39,54 @@ export function Section1() {
         {buckets.map(({ name, area, Icon, selected, items }) => (
           <div
             key={name}
-            className={`reveal relative p-5 ${CARD} ${
-              selected ? "border-purple-tint-40 shadow-[0_8px_22px_rgba(88,41,199,0.10)]" : ""
+            className={`reveal relative ${CARD} ${
+              selected
+                ? "p-5 border-purple-tint-40 shadow-[0_8px_22px_rgba(88,41,199,0.10)]"
+                : "p-4"
             }`}
           >
-            {selected && (
+            {selected ? (
               <span className="absolute right-[18px] top-[18px] rounded-pill bg-purple-500 px-[9px] py-1 text-[9.5px] font-semibold uppercase tracking-[0.1em] text-white">
                 Starting
               </span>
+            ) : (
+              <span className="absolute right-[14px] top-[14px] rounded-pill bg-neutral-100 px-[9px] py-1 text-[9px] font-semibold uppercase tracking-[0.1em] text-neutral-500 ring-1 ring-inset ring-neutral-200/70">
+                After Strategy
+              </span>
             )}
             <div className="flex items-center gap-3">
-              <Chip className="h-10 w-10">
-                <Icon className={`h-[19px] w-[19px] ${selected ? "text-purple-500" : "text-neutral-700"}`} />
+              <Chip className={selected ? "h-10 w-10" : "h-9 w-9"}>
+                <Icon
+                  className={
+                    selected
+                      ? "h-[19px] w-[19px] text-purple-500"
+                      : "h-[17px] w-[17px] text-neutral-700"
+                  }
+                />
               </Chip>
               <div>
-                <h3 className="font-display text-[19px] font-semibold leading-[1.1] tracking-[-0.01em]">{name}</h3>
+                <h3
+                  className={`font-display font-semibold leading-[1.1] tracking-[-0.01em] ${
+                    selected ? "text-[19px]" : "text-[17px]"
+                  }`}
+                >
+                  {name}
+                </h3>
                 <div className="mt-0.5 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-neutral-500">{area}</div>
               </div>
             </div>
-            <ul className="mt-4 flex flex-wrap gap-[7px] border-t border-neutral-100 pt-3.5">
+            <ul
+              className={`flex flex-wrap gap-[7px] border-t border-neutral-100 ${
+                selected ? "mt-4 pt-3.5" : "mt-3 pt-3"
+              }`}
+            >
               {items.map((it) => (
                 <li
                   key={it}
-                  className={`rounded-pill px-2.5 py-1.5 text-[12.5px] leading-[1.2] ${
+                  className={`rounded-pill leading-[1.2] ${
                     selected
-                      ? "border border-lavender-tint-26 bg-lavender-tint-12 text-neutral-800"
-                      : "border border-neutral-100 bg-neutral-50 text-neutral-700"
+                      ? "px-2.5 py-1.5 text-[12.5px] border border-lavender-tint-26 bg-lavender-tint-12 text-neutral-800"
+                      : "px-2.5 py-1 text-[12px] border border-neutral-100 bg-neutral-50 text-neutral-700"
                   }`}
                 >
                   {it}

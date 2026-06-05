@@ -1,8 +1,6 @@
 import { Section, SectionHeader, Hl } from "./ui";
 import { CircleCheck, Rocket } from "./icons";
 
-const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
-
 type Phase = {
   n: string;
   tl: string;
@@ -68,8 +66,10 @@ export function Section2() {
               }`}
             />
             <div
-              className={`px-[18px] py-4 ${CARD} ${
-                p.launch ? "border-purple-tint-38 shadow-[0_8px_22px_rgba(88,41,199,0.11)]" : ""
+              className={`rounded-xl px-[18px] py-4 ${
+                p.launch
+                  ? "border border-purple-tint-38 bg-purple-tint-06 ring-1 ring-inset ring-purple-tint-22 shadow-[0_10px_26px_rgba(88,41,199,0.16)]"
+                  : "border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]"
               }`}
             >
               {p.launch && (

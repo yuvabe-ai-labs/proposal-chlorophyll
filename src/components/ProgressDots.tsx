@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 const SECTIONS = [
   { id: "s1", n: "1", label: "Framing" },
   { id: "s2", n: "2", label: "Roadmap" },
-  { id: "s3", n: "3", label: "Launch" },
-  { id: "s4", n: "4", label: "Tech" },
-  { id: "s5", n: "5", label: "Scale" },
+  { id: "s3", n: "3", label: "Tech" },
+  { id: "s4", n: "4", label: "Scale" },
 ] as const;
 
 /**
