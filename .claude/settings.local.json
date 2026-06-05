@@ -6,7 +6,10 @@
       "Bash(find \"/c/Users/cyril varghese\" /c/tmp /tmp -name \"s1-top.png\" 2>/dev/null | head; echo \"=== any .playwright-mcp dirs ===\"; find \"/c/Users/cyril varghese\" -type d -name \".playwright-mcp\" 2>/dev/null | head)",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_navigate",
-      "Bash(git -c core.safecrlf=false commit -q -m 'Make slide navigator a persistent floating bottom bar with mobile touch targets *)"
+      "Bash(git -c core.safecrlf=false commit -q -m 'Make slide navigator a persistent floating bottom bar with mobile touch targets *)",
+      "PowerShell(git -C \"C:\\\\Users\\\\cyril varghese\\\\code\\\\chlorophyll-proposal\" push origin main)",
+      "PowerShell(git -C \"C:\\\\Users\\\\cyril varghese\\\\code\\\\chlorophyll-proposal\" log --oneline -2)",
+      "PowerShell(\"--- log ---\")"
     ]
   }
 }

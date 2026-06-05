@@ -44,7 +44,7 @@ export function ProgressDots() {
       aria-label="Sections"
       className="fixed bottom-[calc(16px+env(safe-area-inset-bottom))] left-1/2 z-[60] -translate-x-1/2"
     >
-      <div className="flex items-center gap-1 rounded-pill border border-neutral-200/70 bg-[rgba(252,252,253,0.82)] p-1.5 shadow-[0_8px_30px_rgba(11,15,25,0.18)] backdrop-blur-[16px] backdrop-saturate-[1.8]">
+      <div className="flex items-center gap-1.5 rounded-pill border border-neutral-200/70 bg-[rgba(252,252,253,0.82)] p-1.5 shadow-[0_8px_30px_rgba(11,15,25,0.18)] backdrop-blur-[16px] backdrop-saturate-[1.8]">
         {SECTIONS.map((s) => {
           const on = active === s.id;
           return (
@@ -53,10 +53,10 @@ export function ProgressDots() {
               href={`#${s.id}`}
               aria-label={`${s.n}. ${s.label}`}
               aria-current={on ? "true" : undefined}
-              className={`grid h-10 select-none place-items-center rounded-pill text-[13px] font-semibold transition-all duration-300 ease-out ${
+              className={`grid h-11 select-none place-items-center rounded-pill text-[14px] font-semibold transition-all duration-300 ease-out ${
                 on
-                  ? "bg-purple-500 px-3.5 text-white shadow-[0_4px_12px_rgba(88,41,199,0.30)]"
-                  : "w-10 text-neutral-500 active:scale-95 active:bg-neutral-100 md:hover:bg-neutral-100"
+                  ? "bg-purple-500 px-4 text-white ring-1 ring-inset ring-white/20 shadow-[0_4px_12px_rgba(88,41,199,0.30)]"
+                  : "w-11 bg-neutral-100 text-neutral-600 ring-1 ring-inset ring-neutral-300/70 active:scale-90 active:bg-neutral-200 md:hover:bg-neutral-200"
               }`}
             >
               {on ? (
