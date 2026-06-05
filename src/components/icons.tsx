@@ -101,6 +101,16 @@ export const Bars = (p: IconProps) => (
   </Svg>
 );
 
+export const ListChecks = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="m3 17 2 2 4-4" />
+    <path d="m3 7 2 2 4-4" />
+    <path d="M13 6h8" />
+    <path d="M13 12h8" />
+    <path d="M13 18h8" />
+  </Svg>
+);
+
 export const Database = (p: IconProps) => (
   <Svg {...p}>
     <ellipse cx="12" cy="5" rx="9" ry="3" />

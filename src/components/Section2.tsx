@@ -1,5 +1,5 @@
 import { Section, SectionHeader, Hl } from "./ui";
-import { CircleCheck, Rocket } from "./icons";
+import { CircleCheck, Rocket, ListChecks } from "./icons";
 
 type Phase = {
   n: string;
@@ -23,7 +23,6 @@ const phases: Phase[] = [
       "AI opportunity map",
       "Improve vs Reinvent analysis",
       "Brand Brain readiness assessment",
-      "Recommended Phase 2 scope",
     ],
   },
   {
@@ -36,7 +35,6 @@ const phases: Phase[] = [
       "Minimal proof of concept",
       "Validated use case",
       "Strategist feedback",
-      "Direction for Phase 3",
     ],
   },
   {
@@ -46,11 +44,9 @@ const phases: Phase[] = [
     focus: "Build the validated internal strategy model using Chlorophyll's cases, frameworks, and algorithms.",
     out: "A more mature internal Strategy Brain that reflects Chlorophyll's thinking and supports live work.",
     outputs: [
-      "Expanded knowledge base",
       "Strategy pattern library",
       "Internal reasoning model",
-      "Review workflow",
-      "Readiness for external research",
+      "Strategist review workflow",
     ],
     launch: true,
   },
@@ -62,7 +58,7 @@ const phases: Phase[] = [
     out: "The Strategy Brain can compare internal thinking with external market reality.",
     outputs: [
       "External research layer",
-      "Source framework",
+      "Research source framework",
       "Competitor & category intelligence",
       "Research-to-strategy mapping",
     ],
@@ -73,12 +69,7 @@ const phases: Phase[] = [
     title: "Integration",
     focus: "Combine internal strategy knowledge and external research into one workflow.",
     out: "An integrated Strategy Intelligence System spanning internal knowledge and external context.",
-    outputs: [
-      "Integrated strategy workflow",
-      "Review & approval flow",
-      "Updated operating process",
-      "Future expansion recommendations",
-    ],
+    outputs: [],
   },
 ];
 
@@ -127,19 +118,24 @@ export function Section2() {
                 </div>
                 {p.out}
               </div>
-              <div className="mt-3">
-                <div className="mb-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-neutral-400">
-                  Possible outputs
+              {p.outputs.length > 0 && (
+                <div className="mt-2.5 rounded-md border border-neutral-200 bg-neutral-50 px-3 py-[11px]">
+                  <div className="mb-2 flex items-center gap-[5px] text-[9.5px] font-bold uppercase tracking-[0.1em] text-neutral-500">
+                    <ListChecks className="h-3 w-3 text-neutral-500" strokeWidth={2.2} />
+                    Possible outputs
+                  </div>
+                  <ul className="space-y-1.5">
+                    {p.outputs.map((o) => (
+                      <li key={o} className="flex items-start gap-2.5 text-[12.5px] font-medium leading-[1.4] text-neutral-800">
+                        <span className="flex h-[17px] flex-none items-center">
+                          <span className="h-[5px] w-[5px] rounded-full bg-neutral-400" />
+                        </span>
+                        {o}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-1">
-                  {p.outputs.map((o) => (
-                    <li key={o} className="flex items-start gap-2 text-[12px] leading-[1.35] text-neutral-600">
-                      <span className="mt-[6px] h-1 w-1 flex-none rounded-full bg-neutral-300" />
-                      {o}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              )}
             </div>
           </div>
         ))}
