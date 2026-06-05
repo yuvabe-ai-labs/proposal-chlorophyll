@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npx --yes create-next-app@latest chlorophyll-mobile --typescript --tailwind --app --eslint --src-dir --import-alias \"@/*\" --use-npm --turbopack --yes)",
       "Bash(node -e \"const p=require\\('./package.json'\\);console.log\\('next',p.dependencies.next\\);console.log\\('react',p.dependencies.react\\);console.log\\('tailwindcss',p.devDependencies.tailwindcss\\)\")",
-      "Bash(find \"/c/Users/cyril varghese\" /c/tmp /tmp -name \"s1-top.png\" 2>/dev/null | head; echo \"=== any .playwright-mcp dirs ===\"; find \"/c/Users/cyril varghese\" -type d -name \".playwright-mcp\" 2>/dev/null | head)"
+      "Bash(find \"/c/Users/cyril varghese\" /c/tmp /tmp -name \"s1-top.png\" 2>/dev/null | head; echo \"=== any .playwright-mcp dirs ===\"; find \"/c/Users/cyril varghese\" -type d -name \".playwright-mcp\" 2>/dev/null | head)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_navigate",
+      "Bash(git -c core.safecrlf=false commit -q -m 'Make slide navigator a persistent floating bottom bar with mobile touch targets *)"
     ]
   }
 }

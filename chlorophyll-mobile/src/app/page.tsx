@@ -11,7 +11,6 @@ export default function Page() {
     <main className="bg-neutral-100">
       <Doc>
         <TopBar />
-        <ProgressDots />
         <Section1 />
         <Section2 />
         <Section3 />
@@ -19,6 +18,7 @@ export default function Page() {
         <Section5 />
         <Footer />
       </Doc>
+      <ProgressDots />
     </main>
   );
 }

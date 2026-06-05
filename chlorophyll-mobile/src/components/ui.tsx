@@ -42,7 +42,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative scroll-mt-24 px-5 pt-[34px] pb-9 ${
+      className={`relative scroll-mt-[24px] px-5 pt-[34px] pb-9 ${
         first ? "" : "border-t border-neutral-100"
       } ${night ? "bg-night text-neutral-25" : ""}`}
     >
@@ -136,7 +136,7 @@ export function Chip({
 /* ── Footer ──────────────────────────────────────────────────────────── */
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-100 px-5 pt-[26px] pb-9 text-center">
+    <footer className="border-t border-neutral-100 px-5 pt-[26px] pb-[104px] text-center">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/assets/logo.png" alt="Yuvabe Studios" className="inline-block h-6 opacity-90" />
       <p className="mt-3 text-[11px] leading-[1.5] text-neutral-500">
