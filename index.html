@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Chlorophyll × Yuvabe — Direction Draft (Mobile)</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--neutral-100);
+    font-family: var(--font-body);
+    color: var(--neutral-900);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* phone column */
+  .doc {
+    max-width: 440px;
+    margin: 0 auto;
+    background: var(--neutral-25);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(11,15,25,.10);
+  }
+
+  /* ---------- sticky top bar ---------- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(252,252,253,0.86);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--neutral-200);
+    padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .topbar .mark { display: flex; align-items: center; gap: 10px; }
+  .topbar .mark img { height: 22px; width: auto; display: block; }
+  .topbar .mark .co {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.02em; color: var(--neutral-500);
+    padding-left: 10px; border-left: 1px solid var(--neutral-200);
+  }
+  .topbar .tag {
+    font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--purple-500); background: color-mix(in srgb, var(--purple-500) 9%, white);
+    border: 1px solid color-mix(in srgb, var(--purple-500) 22%, white);
+    padding: 5px 9px; border-radius: var(--radius-pill); white-space: nowrap;
+  }
+
+  /* ---------- progress dots ---------- */
+  .progress {
+    position: sticky; top: 51px; z-index: 49;
+    display: flex; gap: 6px; justify-content: center;
+    padding: 10px 0 9px; background: rgba(252,252,253,0.86);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--neutral-100);
+  }
+  .progress a { width: 22px; height: 4px; border-radius: 999px; background: var(--neutral-200); transition: background .3s; }
+  .progress a.on { background: var(--purple-500); }
+
+  /* ---------- section scaffold ---------- */
+  section { padding: 34px 20px 36px; scroll-margin-top: 96px; position: relative; }
+  section + section { border-top: 1px solid var(--neutral-100); }
+  section.night {
+    background-color: var(--bg-brand-deep);
+    background-image:
+      radial-gradient(60% 30% at 80% 4%, rgb(150 136 192 / 0.22) 0%, rgb(150 136 192 / 0) 100%),
+      radial-gradient(50% 26% at 12% 16%, rgb(88 41 199 / 0.24) 0%, rgb(88 41 199 / 0) 100%),
+      linear-gradient(180deg, #1a1237 0%, #140f2b 60%, #0f0c22 100%);
+    color: var(--neutral-25);
+  }
+
+  .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--neutral-500); }
+  .night .eyebrow { color: var(--lavender-200); }
+  .snum { font-family: var(--font-display); font-weight: 600; font-size: 11px; letter-spacing: 0.12em; color: var(--purple-500); }
+  .night .snum { color: var(--lavender-200); }
+  .shead { display: flex; align-items: center; gap: 10px; }
+  h2.stitle {
+    font-family: var(--font-display); font-weight: 600; font-size: 27px; line-height: 1.08;
+    letter-spacing: -0.025em; margin: 12px 0 0; color: var(--neutral-900);
+  }
+  .night h2.stitle { color: var(--neutral-25); }
+  .support { font-size: 15px; line-height: 1.45; color: var(--neutral-700); margin: 12px 0 0; }
+  .night .support { color: rgba(255,255,255,0.74); }
+  .support .hl { color: var(--purple-500); font-weight: 500; }
+  .night .support .hl { color: var(--lavender-200); }
+
+  .card { background: #fff; border: 1px solid var(--neutral-200); border-radius: var(--radius-xl); box-shadow: 0 4px 14px rgba(11,15,25,.05); }
+  .stack { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+
+  .chip { width: 40px; height: 40px; border-radius: var(--radius-pill); display: grid; place-items: center; border: 1px solid var(--neutral-200); background: #fff; flex: none; }
+  .chip svg { width: 19px; height: 19px; stroke-width: 1.75; stroke: var(--neutral-700); fill: none; }
+
+  /* ---------- S1: buckets ---------- */
+  .bucket { padding: 20px; position: relative; }
+  .bucket.sel { border-color: color-mix(in srgb, var(--purple-500) 40%, white); box-shadow: 0 8px 22px rgba(88,41,199,.10); }
+  .bucket .top { display: flex; align-items: center; gap: 12px; }
+  .bucket.sel .chip svg { stroke: var(--purple-500); }
+  .bucket h3 { font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 0; line-height: 1.1; }
+  .bucket .role { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--neutral-500); margin-top: 2px; }
+  .bucket ul { list-style: none; margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--neutral-100); display: flex; flex-wrap: wrap; gap: 7px; }
+  .bucket li { font-size: 12.5px; line-height: 1.2; color: var(--neutral-700); background: var(--neutral-50); border: 1px solid var(--neutral-100); padding: 6px 10px; border-radius: var(--radius-pill); }
+  .bucket.sel li { background: color-mix(in srgb, var(--lavender-500) 12%, white); border-color: color-mix(in srgb, var(--lavender-500) 26%, white); color: var(--neutral-800); }
+  .sel-badge { position: absolute; top: 18px; right: 18px; font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; background: var(--purple-500); padding: 4px 9px; border-radius: var(--radius-pill); }
+
+  .lenshead { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--neutral-500); margin: 28px 0 0; }
+  .lens { padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; }
+  .lens .chip { width: 38px; height: 38px; }
+  .lens .lname { font-family: var(--font-display); font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+  .lens .ldesc { font-size: 13px; color: var(--neutral-700); line-height: 1.34; margin-top: 3px; }
+
+  .note { margin-top: 14px; padding: 16px 18px; display: flex; gap: 13px; align-items: flex-start; background: var(--neutral-50); border: 1px solid var(--neutral-200); border-radius: var(--radius-xl); }
+  .note .chip { width: 34px; height: 34px; background: var(--purple-500); border-color: transparent; }
+  .note .chip svg { stroke: #fff; width: 16px; height: 16px; }
+  .note p { margin: 0; font-size: 12.5px; line-height: 1.42; color: var(--neutral-700); }
+  .note b { color: var(--neutral-900); font-weight: 600; }
+
+  /* ---------- S2: roadmap (vertical timeline) ---------- */
+  .timeline { margin-top: 24px; position: relative; padding-left: 30px; }
+  .timeline::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; background: var(--neutral-200); }
+  .tphase { position: relative; padding-bottom: 18px; }
+  .tphase:last-child { padding-bottom: 0; }
+  .tphase .dot { position: absolute; left: -30px; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 2px solid var(--neutral-300); display: grid; place-items: center; }
+  .tphase .dot::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--neutral-400); }
+  .tphase.launch .dot { border-color: var(--purple-500); }
+  .tphase.launch .dot::after { background: var(--purple-500); }
+  .tphase .pcard { padding: 16px 18px; }
+  .tphase.launch .pcard { border-color: color-mix(in srgb, var(--purple-500) 38%, white); box-shadow: 0 8px 22px rgba(88,41,199,.11); }
+  .tphase .prow { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .tphase .pnum { font-family: var(--font-display); font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple-500); }
+  .tphase .tl { font-size: 11px; font-weight: 600; color: var(--neutral-700); background: var(--neutral-100); padding: 3px 9px; border-radius: var(--radius-pill); white-space: nowrap; }
+  .tphase h3 { font-family: var(--font-display); font-weight: 600; font-size: 17px; line-height: 1.12; letter-spacing: -0.01em; margin: 7px 0 0; }
+  .tphase .focus { font-size: 12.5px; line-height: 1.36; color: var(--neutral-700); margin-top: 8px; }
+  .tphase .out { font-size: 12.5px; line-height: 1.34; color: var(--neutral-900); font-weight: 600; margin-top: 10px; padding: 11px 12px; background: color-mix(in srgb, var(--purple-500) 6%, white); border: 1px solid color-mix(in srgb, var(--purple-500) 16%, white); border-radius: var(--radius-md); }
+  .tphase.launch .out { background: color-mix(in srgb, var(--purple-500) 11%, white); border-color: color-mix(in srgb, var(--purple-500) 28%, white); }
+  .tphase .out .olbl { display: flex; align-items: center; gap: 5px; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple-500); margin-bottom: 4px; }
+  .tphase .out .olbl svg { width: 12px; height: 12px; stroke: var(--purple-500); stroke-width: 2.2; fill: none; }
+  .launch-flag { display: inline-flex; align-items: center; gap: 5px; font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; background: var(--purple-500); padding: 4px 9px; border-radius: var(--radius-pill); margin-bottom: 8px; }
+  .launch-flag svg { width: 11px; height: 11px; stroke: #fff; stroke-width: 2.3; fill: none; }
+  .total-pill { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--bg-brand-deep); color: #fff; padding: 16px 20px; border-radius: var(--radius-xl); margin-top: 22px; }
+  .total-pill .k { font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lavender-200); font-weight: 600; }
+  .total-pill .v { font-family: var(--font-display); font-weight: 600; font-size: 21px; letter-spacing: -0.01em; }
+
+  /* ---------- S3: launch flow (vertical) ---------- */
+  .vflow { margin-top: 24px; display: flex; flex-direction: column; align-items: stretch; }
+  .vnode { padding: 14px 18px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--neutral-200); display: flex; align-items: center; gap: 12px; }
+  .vnode .vp { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--neutral-500); }
+  .vnode .vt { font-family: var(--font-display); font-weight: 600; font-size: 15px; line-height: 1.1; letter-spacing: -0.01em; margin-top: 1px; }
+  .vnode.pre, .vnode.post { background: var(--neutral-50); }
+  .vnode.now { background: var(--purple-500); border-color: var(--purple-500); box-shadow: 0 10px 26px rgba(88,41,199,.24); }
+  .vnode.now .vp { color: rgba(255,255,255,0.8); }
+  .vnode.now .vt { color: #fff; font-size: 17px; }
+  .vnode.now .vwk { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.82); margin-top: 2px; letter-spacing: 0.02em; }
+  .vnode.now .star { width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.18); display: grid; place-items: center; flex: none; }
+  .vnode.now .star svg { width: 17px; height: 17px; stroke: #fff; stroke-width: 2.1; fill: none; }
+  .vconn { height: 16px; width: 2px; background: var(--neutral-200); margin: 0 auto; }
+  .vconn.hot { background: var(--purple-500); }
+
+  .stage { padding: 16px 18px; display: flex; gap: 13px; align-items: flex-start; }
+  .stage .sdot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; flex: none; }
+  .stage.b1 .sdot { background: var(--neutral-400); }
+  .stage.b2 .sdot { background: var(--purple-500); }
+  .stage.b3 .sdot { background: var(--lavender-500); }
+  .stage h4 { font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; margin: 0; }
+  .stage p { font-size: 13px; line-height: 1.42; color: var(--neutral-700); margin: 5px 0 0; }
+  .stage.b2 { border-color: color-mix(in srgb, var(--purple-500) 30%, white); }
+  .keymsg { display: flex; gap: 13px; align-items: flex-start; margin-top: 14px; background: var(--neutral-50); border: 1px solid var(--neutral-200); border-left: 3px solid var(--purple-500); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .keymsg svg { width: 20px; height: 20px; stroke: var(--purple-500); flex: none; stroke-width: 1.9; fill: none; margin-top: 1px; }
+  .keymsg p { margin: 0; font-size: 13.5px; line-height: 1.44; color: var(--neutral-900); }
+  .keymsg b { font-weight: 600; }
+
+  /* ---------- S4: architecture (night, vertical) ---------- */
+  .arch { margin-top: 22px; display: flex; flex-direction: column; align-items: stretch; }
+  .ncard { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.13); border-radius: 13px; padding: 14px 16px; }
+  .ncard .nh { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+  .ncard .nico { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: rgba(150,136,192,0.16); border: 1px solid rgba(150,136,192,0.3); flex: none; }
+  .ncard .nico svg { width: 16px; height: 16px; stroke: var(--lavender-200); stroke-width: 1.8; fill: none; }
+  .ncard .nt { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: #fff; letter-spacing: -0.01em; line-height: 1.1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tags span { font-size: 11px; color: rgba(255,255,255,0.76); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 6px; line-height: 1.15; }
+  .grp-label { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--lavender-200); margin: 18px 0 9px; }
+  .grp-label:first-child { margin-top: 0; }
+  .ncol2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .nconn { height: 15px; width: 2px; background: rgba(150,136,192,0.5); margin: 7px auto; }
+  .platform { background: linear-gradient(100deg, rgba(88,41,199,0.42), rgba(88,41,199,0.24)); border: 1px solid rgba(150,136,192,0.42); border-radius: 13px; padding: 14px 16px; display: flex; align-items: center; gap: 13px; }
+  .platform .pico { width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,0.15); display: grid; place-items: center; flex: none; }
+  .platform .pico svg { width: 19px; height: 19px; stroke: #fff; stroke-width: 1.8; fill: none; }
+  .platform .ptxt { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: #fff; letter-spacing: -0.01em; }
+  .platform .psub { font-size: 11.5px; color: rgba(255,255,255,0.66); margin-top: 2px; line-height: 1.3; }
+  .ncard.cog { background: rgba(88,41,199,0.18); border-color: rgba(150,136,192,0.36); }
+  .ncard.cog .nico { background: rgba(255,202,45,0.16); border-color: rgba(255,202,45,0.32); }
+  .ncard.cog .nico svg { stroke: var(--yellow-500); }
+  .ncard.out { background: linear-gradient(100deg, rgba(255,202,45,0.14), rgba(150,136,192,0.12)); border-color: rgba(255,202,45,0.28); }
+  .ncard.out .nico { background: rgba(255,202,45,0.18); border-color: rgba(255,202,45,0.34); }
+  .ncard.out .nico svg { stroke: var(--yellow-500); }
+  .ncard.human .nico { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.22); }
+  .ncard.human .nico svg { stroke: #fff; }
+  .core-idea { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; }
+  .core-idea .cq { font-family: var(--font-display); font-size: 34px; line-height: 0.8; color: var(--lavender-200); font-weight: 600; flex: none; }
+  .core-idea p { margin: 0; font-size: 12.5px; line-height: 1.42; color: rgba(255,255,255,0.82); }
+  .core-idea b { color: #fff; font-weight: 600; }
+
+  /* ---------- S5: tracks ---------- */
+  .track { padding: 18px; margin-top: 14px; }
+  .track.primary { border-color: color-mix(in srgb, var(--purple-500) 30%, white); box-shadow: 0 6px 18px rgba(11,15,25,.06); }
+  .track.ghost { background: var(--neutral-50); }
+  .track .tn { display: flex; align-items: center; gap: 11px; }
+  .track .tn .chip { width: 36px; height: 36px; }
+  .track.primary .tn .chip { background: var(--purple-500); border-color: transparent; }
+  .track.primary .tn .chip svg { stroke: #fff; }
+  .track .tn h3 { font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: -0.01em; margin: 0; line-height: 1.05; }
+  .track .tn .ts { font-size: 10.5px; font-weight: 600; letter-spacing: 0.03em; margin-top: 3px; }
+  .track.primary .tn .ts { color: var(--purple-500); }
+  .track.ghost .tn .ts { color: var(--neutral-500); }
+  .psteps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .pstep { font-size: 11.5px; font-weight: 500; color: var(--neutral-800); background: color-mix(in srgb, var(--purple-500) 6%, white); border: 1px solid color-mix(in srgb, var(--purple-500) 16%, white); padding: 6px 10px; border-radius: var(--radius-pill); display: flex; align-items: center; gap: 6px; }
+  .pstep .sn { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; color: var(--purple-500); }
+  .ghost-inherit { display: flex; align-items: center; gap: 9px; margin-top: 12px; font-size: 12px; font-weight: 500; color: var(--neutral-700); }
+  .ghost-inherit svg { width: 15px; height: 15px; stroke: var(--lavender-500); fill: none; stroke-width: 1.9; flex: none; }
+  .mn { display: flex; gap: 13px; align-items: flex-start; padding: 16px 18px; margin-top: 14px; }
+  .mn .chip { width: 36px; height: 36px; }
+  .mn .chip svg { stroke: var(--purple-500); width: 17px; height: 17px; }
+  .mn h5 { font-family: var(--font-display); font-weight: 600; font-size: 15px; margin: 1px 0 4px; letter-spacing: -0.01em; }
+  .mn p { margin: 0; font-size: 12.5px; line-height: 1.42; color: var(--neutral-700); }
+
+  /* ---------- footer ---------- */
+  .docfoot { padding: 26px 20px 36px; text-align: center; border-top: 1px solid var(--neutral-100); }
+  .docfoot img { height: 24px; opacity: 0.9; }
+  .docfoot p { font-size: 11px; color: var(--neutral-500); margin: 12px 0 0; line-height: 1.5; }
+
+  /* reveal — content is ALWAYS fully opaque. The entrance animates transform only,
+     never opacity, so even if the animation is paused/stuck at its first frame the
+     element is still fully visible (at most shifted 16px). Blank content is impossible. */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { animation: riseIn 0.55s var(--ease-out); }
+    .reveal:nth-of-type(2) { animation-delay: 0.05s; }
+    .reveal:nth-of-type(n+3) { animation-delay: 0.1s; }
+  }
+  @keyframes riseIn { from { transform: translateY(14px); } to { transform: none; } }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="topbar">
+    <div class="mark"><img src="assets/logo.png" alt="Yuvabe" /><span class="co">for Chlorophyll</span></div>
+    <span class="tag">Draft · review</span>
+  </div>
+  <nav class="progress" aria-label="sections">
+    <a href="#s1" data-dot="s1" class="on"></a>
+    <a href="#s2" data-dot="s2"></a>
+    <a href="#s3" data-dot="s3"></a>
+    <a href="#s4" data-dot="s4"></a>
+    <a href="#s5" data-dot="s5"></a>
+  </nav>
+
+  <!-- ===== S1 ===== -->
+  <section id="s1">
+    <div class="shead"><span class="snum">01</span><span class="eyebrow">AI Transformation · Framing</span></div>
+    <h2 class="stitle">Three areas, two lenses.</h2>
+    <p class="support">Chlorophyll's workflows can be explored across three independent areas — each evaluated through the <span class="hl">same two lenses</span>.</p>
+
+    <div class="stack">
+      <div class="card bucket sel reveal">
+        <span class="sel-badge">Starting</span>
+        <div class="top">
+          <div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+          <div><h3>Strategy</h3><div class="role">Area 01</div></div>
+        </div>
+        <ul><li>Workshops &amp; templates</li><li>Brand core</li><li>Brand territory</li><li>Internal algorithms</li><li>Past cases</li></ul>
+      </div>
+      <div class="card bucket reveal">
+        <div class="top">
+          <div class="chip"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+          <div><h3>Marketing</h3><div class="role">Area 02</div></div>
+        </div>
+        <ul><li>Campaign planning</li><li>Messaging themes</li><li>Content calendars</li><li>Channel narratives</li><li>Reporting</li></ul>
+      </div>
+      <div class="card bucket reveal">
+        <div class="top">
+          <div class="chip"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+          <div><h3>Creative / Asset Creation</h3><div class="role">Area 03</div></div>
+        </div>
+        <ul><li>On-brand routes</li><li>Campaign narratives</li><li>Copy families</li><li>Visual territories</li><li>Deck-ready concepts</li></ul>
+      </div>
+    </div>
+
+    <div class="lenshead">Each evaluated through two lenses</div>
+    <div class="stack" style="margin-top:14px;">
+      <div class="card lens reveal">
+        <div class="chip"><svg viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></div>
+        <div><div class="lname">Improve</div><div class="ldesc">Make existing workflows faster, clearer, and more efficient.</div></div>
+      </div>
+      <div class="card lens reveal">
+        <div class="chip"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div>
+        <div><div class="lname">Reinvent</div><div class="ldesc">Create new ways of working using Chlorophyll's knowledge, cases, and AI.</div></div>
+      </div>
+    </div>
+    <div class="note reveal">
+      <div class="chip"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg></div>
+      <p>For the first engagement, <b>Strategy is the selected starting bucket.</b> Marketing and Creative can follow the same phased model later.</p>
+    </div>
+  </section>
+
+  <!-- ===== S2 ===== -->
+  <section id="s2">
+    <div class="shead"><span class="snum">02</span><span class="eyebrow">First Track · Strategy</span></div>
+    <h2 class="stitle">The Strategy track, phase by phase.</h2>
+    <p class="support">Five phases from discovery to an <span class="hl">integrated strategy intelligence system</span>.</p>
+
+    <div class="timeline">
+      <div class="tphase reveal">
+        <div class="dot"></div>
+        <div class="card pcard">
+          <div class="prow"><span class="pnum">Phase 1</span><span class="tl">2–3 weeks</span></div>
+          <h3>Discovery</h3>
+          <div class="focus">Understand the strategy workflow, templates, algorithms, cases, and constraints.</div>
+          <div class="out"><div class="olbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Outcome</div>Clear scope for Strategy Brain – Part 1.</div>
+        </div>
+      </div>
+      <div class="tphase reveal">
+        <div class="dot"></div>
+        <div class="card pcard">
+          <div class="prow"><span class="pnum">Phase 2</span><span class="tl">2–3 weeks</span></div>
+          <h3>Strategy Brain — Part 1</h3>
+          <div class="focus">Use limited cases, templates, and outputs to validate the first useful AI-assisted direction.</div>
+          <div class="out"><div class="olbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Outcome</div>Proof of concept and confirmed direction for deeper build.</div>
+        </div>
+      </div>
+      <div class="tphase launch reveal">
+        <div class="dot"></div>
+        <div class="card pcard">
+          <span class="launch-flag"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> First launch · Week 7–10</span>
+          <div class="prow"><span class="pnum">Phase 3</span><span class="tl">3–4 weeks</span></div>
+          <h3>Strategy Brain — Part 2</h3>
+          <div class="focus">Build the validated internal strategy model using Chlorophyll's cases, frameworks, and algorithms.</div>
+          <div class="out"><div class="olbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Outcome</div>A usable internal Strategy Brain supporting live workflows.</div>
+        </div>
+      </div>
+      <div class="tphase reveal">
+        <div class="dot"></div>
+        <div class="card pcard">
+          <div class="prow"><span class="pnum">Phase 4</span><span class="tl">3–4 weeks</span></div>
+          <h3>External Research Augmentation</h3>
+          <div class="focus">Add market, category, competitor, audience, and cultural intelligence.</div>
+          <div class="out"><div class="olbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Outcome</div>External intelligence connected to the internal Strategy Brain.</div>
+        </div>
+      </div>
+      <div class="tphase reveal">
+        <div class="dot"></div>
+        <div class="card pcard">
+          <div class="prow"><span class="pnum">Phase 5</span><span class="tl">2 weeks</span></div>
+          <h3>Integration</h3>
+          <div class="focus">Combine internal strategy knowledge and external research into one workflow.</div>
+          <div class="out"><div class="olbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>Outcome</div>Integrated Strategy Intelligence System.</div>
+        </div>
+      </div>
+    </div>
+    <div class="total-pill reveal"><span class="k">Total estimated timeline</span><span class="v">12–16 weeks</span></div>
+  </section>
+
+  <!-- ===== S3 ===== -->
+  <section id="s3">
+    <div class="shead"><span class="snum">03</span><span class="eyebrow">Launch Sequencing</span></div>
+    <h2 class="stitle">Phase 3 is the first live launch.</h2>
+    <p class="support">First production use lands around <span class="hl">week 7–10</span>, after Strategy Brain – Part 2.</p>
+
+    <div class="vflow">
+      <div class="vnode pre reveal"><div><span class="vp">Phase 1</span><div class="vt">Discovery</div></div></div>
+      <div class="vconn"></div>
+      <div class="vnode pre reveal"><div><span class="vp">Phase 2</span><div class="vt">Validate direction</div></div></div>
+      <div class="vconn"></div>
+      <div class="vnode pre reveal"><div><span class="vp">Phase 3</span><div class="vt">Internal Strategy Brain</div></div></div>
+      <div class="vconn hot"></div>
+      <div class="vnode now reveal"><div class="star"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div><span class="vp">Milestone</span><div class="vt">First launch</div><div class="vwk">≈ Week 7–10</div></div></div>
+      <div class="vconn"></div>
+      <div class="vnode post reveal"><div><span class="vp">Phase 4</span><div class="vt">External research</div></div></div>
+      <div class="vconn"></div>
+      <div class="vnode post reveal"><div><span class="vp">Phase 5</span><div class="vt">Integration</div></div></div>
+    </div>
+
+    <div class="stack" style="margin-top:24px;">
+      <div class="card stage b1 reveal"><span class="sdot"></span><div><h4>Before launch</h4><p>Understand the workflow, validate the direction, and build the internal Strategy Brain.</p></div></div>
+      <div class="card stage b2 reveal"><span class="sdot"></span><div><h4>First launch</h4><p>The internal Strategy Brain is used inside live strategy workflows for the first time.</p></div></div>
+      <div class="card stage b3 reveal"><span class="sdot"></span><div><h4>After launch</h4><p>Add external research and integrate it into a single, connected workflow.</p></div></div>
+    </div>
+    <div class="keymsg reveal">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <p>The first launch is <b>not the final system.</b> It is the first production use of Chlorophyll's internal Strategy Brain inside real strategy work.</p>
+    </div>
+  </section>
+
+  <!-- ===== S4 ===== -->
+  <section id="s4" class="night">
+    <div class="shead"><span class="snum">04</span><span class="eyebrow">Technical Approach</span></div>
+    <h2 class="stitle">From knowledge to strategy intelligence.</h2>
+    <p class="support">A structured AI knowledge platform that <span class="hl">supports the strategist</span> — it does not replace them.</p>
+
+    <div class="arch">
+      <div class="grp-label">Inputs</div>
+      <div class="ncard reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg></span><span class="nt">Chlorophyll IP</span></div>
+        <div class="tags"><span>Brand Core</span><span>Brand Territory</span><span>Strategy Algorithms</span><span>Founder Knowledge</span><span>Workshop Templates</span></div>
+      </div>
+      <div class="nconn"></div>
+      <div class="ncard reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span><span class="nt">Knowledge Assets</span></div>
+        <div class="tags"><span>Historical Cases</span><span>Recommendations</span><span>Research</span><span>Workshop Decks</span></div>
+      </div>
+      <div class="nconn"></div>
+      <div class="ncard reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span class="nt">External Intelligence</span></div>
+        <div class="tags"><span>Market Signals</span><span>Competitors</span><span>Culture</span><span>Audience Insights</span></div>
+      </div>
+
+      <div class="grp-label">Platform</div>
+      <div class="platform reveal">
+        <span class="pico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></span>
+        <div><div class="ptxt">AI Knowledge Platform</div><div class="psub">Organizes IP, cases, frameworks, algorithms &amp; external intelligence into one structured system.</div></div>
+      </div>
+
+      <div class="grp-label">Three layers</div>
+      <div class="ncol2 reveal" style="grid-template-columns:1fr;">
+        <div class="ncard">
+          <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></span><span class="nt">Knowledge Layer</span></div>
+          <div class="tags"><span>Representation</span><span>Semantic Understanding</span><span>Retrieval</span><span>Ranking</span></div>
+        </div>
+        <div class="ncol2">
+          <div class="ncard">
+            <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span><span class="nt">Reasoning</span></div>
+            <div class="tags"><span>Agentic Reasoning</span><span>Pattern Discovery</span></div>
+          </div>
+          <div class="ncard">
+            <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span><span class="nt">Orchestration</span></div>
+            <div class="tags"><span>Context Assembly</span><span>Workflow Intelligence</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grp-label">Memory &amp; cognition</div>
+      <div class="ncard reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></span><span class="nt">Strategic Memory — what Chlorophyll knows</span></div>
+        <div class="tags"><span>Cases</span><span>Research</span><span>Frameworks</span><span>Algorithms</span><span>Institutional Knowledge</span></div>
+      </div>
+      <div class="nconn"></div>
+      <div class="ncard cog reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></svg></span><span class="nt">Strategic Cognition — how Chlorophyll thinks</span></div>
+        <div class="tags"><span>Pattern Recognition</span><span>Territory Exploration</span><span>Tension Analysis</span><span>Opportunity Discovery</span></div>
+      </div>
+
+      <div class="grp-label">Strategist &amp; outcomes</div>
+      <div class="ncard human reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span><span class="nt">Human Strategist</span></div>
+        <div class="tags"><span>Judgment</span><span>Creativity</span><span>Context</span></div>
+      </div>
+      <div class="nconn"></div>
+      <div class="ncard out reveal">
+        <div class="nh"><span class="nico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span class="nt">Client Outcomes</span></div>
+        <div class="tags"><span>Better Decisions</span><span>Institutionalized Expertise</span><span>Faster Development</span><span>Competitive Advantage</span></div>
+      </div>
+    </div>
+
+    <div class="core-idea reveal">
+      <span class="cq">“</span>
+      <p>The system does not replace the strategist. It <b>organizes Chlorophyll's IP, cases, frameworks, algorithms, and external intelligence</b> into a structured AI knowledge platform that supports strategic thinking.</p>
+    </div>
+  </section>
+
+  <!-- ===== S5 ===== -->
+  <section id="s5">
+    <div class="shead"><span class="snum">05</span><span class="eyebrow">Scaling the Model</span></div>
+    <h2 class="stitle">One model, repeated across buckets.</h2>
+    <p class="support">Once Strategy is validated, the same phased approach extends — <span class="hl">independently</span> — to Marketing and Creative.</p>
+
+    <div class="card track primary reveal">
+      <div class="tn"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div><h3>Strategy</h3><div class="ts">First implementation track</div></div></div>
+      <div class="psteps">
+        <span class="pstep"><span class="sn">P1</span>Discovery</span>
+        <span class="pstep"><span class="sn">P2</span>Direction validation</span>
+        <span class="pstep"><span class="sn">P3</span>Internal build</span>
+        <span class="pstep"><span class="sn">P4</span>External augmentation</span>
+        <span class="pstep"><span class="sn">P5</span>Integration</span>
+      </div>
+    </div>
+    <div class="card track ghost reveal">
+      <div class="tn"><div class="chip"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div><div><h3>Marketing</h3><div class="ts">Follows once validated</div></div></div>
+      <div class="ghost-inherit"><svg viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Same phased model — its own discovery → integration path.</div>
+    </div>
+    <div class="card track ghost reveal">
+      <div class="tn"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div><div><h3>Creative / Asset Creation</h3><div class="ts">Follows once validated</div></div></div>
+      <div class="ghost-inherit"><svg viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Same phased model — its own discovery → integration path.</div>
+    </div>
+
+    <div class="card mn reveal">
+      <div class="chip"><svg viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></div>
+      <div><h5>The transformation stays modular.</h5><p>Each bucket gets its own discovery, validation, build, external augmentation, and integration path — instead of forcing one large AI system across the organization.</p></div>
+    </div>
+    <div class="card mn reveal">
+      <div class="chip"><svg viewBox="0 0 24 24"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg></div>
+      <div><h5>Strategy proves the approach first.</h5><p>Marketing and Creative follow the same phased model once the approach is validated on Strategy.</p></div>
+    </div>
+  </section>
+
+  <div class="docfoot">
+    <img src="assets/logo.png" alt="Yuvabe Studios" />
+    <p>Yuvabe Studios × Chlorophyll<br/>AI transformation direction — draft for review</p>
+  </div>
+
+</div>
+
+<script>
+  // Progress dots only — purely decorative, never gates content visibility.
+  // (Reveal animation is 100% CSS; the page renders fully even if this never runs.)
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var dots = [].slice.call(document.querySelectorAll('.progress a'));
+    var secs = [].slice.call(document.querySelectorAll('section'));
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var id = e.target.id;
+          dots.forEach(function (d) { d.classList.toggle('on', d.getAttribute('data-dot') === id); });
+        }
+      });
+    }, { threshold: 0.5 });
+    secs.forEach(function (s) { sio.observe(s); });
+  })();
+</script>
+</body>
+</html>

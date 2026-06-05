@@ -1,0 +1,330 @@
+/* ============================================================================
+   Yuvabe Studios — Colors & Typography
+   Source of truth: yuvae-new-light/design-system-spec.md + app/globals.css
+   ========================================================================= */
+
+/* ─── Clash Display (display / headings) ─────────────────────────────── */
+@font-face {
+  font-family: "Clash Display";
+  src: url("fonts/clash-display/ClashDisplayExtralight.woff2") format("woff2");
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("fonts/clash-display/ClashDisplayLight.woff2") format("woff2");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("fonts/clash-display/ClashDisplayRegular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("fonts/clash-display/ClashDisplayMedium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("fonts/clash-display/ClashDisplaySemibold.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("fonts/clash-display/ClashDisplayBold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* ─── Gilroy (body / UI) ─────────────────────────────────────────────── */
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/gilroy/Gilroy-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/gilroy/Gilroy-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/gilroy/Gilroy-SemiBold.ttf") format("truetype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/gilroy/Gilroy-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ─── Brand primitives ──────────────────────────────────────────── */
+  --purple-500: #5829c7;     /* Core brand — CTAs, highlighted words, brand icon */
+  --yellow-500: #ffca2d;     /* Warm accent — background warm, hero glow */
+  --orange-500: #f9a91f;
+  --orange-200: #fadf90;
+  --green-500: #90c645;
+  --green-200: #c8e3a2;
+  --lavender-500: #9688c0;   /* Secondary brand tint */
+  --lavender-200: #cbc3df;
+  --cyan-500: #2bb7c7;
+  --cyan-200: #94dbe4;
+  --red-orange-500: #f04e28;
+  --peach-200: #f7a793;
+
+  /* ─── Neutrals ──────────────────────────────────────────────────── */
+  --neutral-0:   #ffffff;
+  --neutral-25:  #fcfcfd;
+  --neutral-50:  #f8f8fa;
+  --neutral-100: #f1f2f4;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+  --neutral-950: #0b0f19;
+
+  /* ─── Semantic text & icon ─────────────────────────────────────── */
+  --fg-primary:   var(--neutral-900);   /* default text, headings */
+  --fg-secondary: var(--neutral-700);   /* secondary paragraphs */
+  --fg-tertiary:  var(--neutral-500);   /* eyebrows, metadata, captions */
+  --fg-inverse:   var(--neutral-0);
+  --fg-brand:     var(--purple-500);    /* emphasized highlight phrases */
+
+  --icon-primary:   var(--neutral-800);
+  --icon-secondary: var(--neutral-600);
+  --icon-inverse:   var(--neutral-0);
+  --icon-brand:     var(--purple-500);
+
+  /* ─── Backgrounds & borders ────────────────────────────────────── */
+  --bg-canvas:         var(--neutral-25);   /* default page bg (effectively white) */
+  --bg-surface:        var(--neutral-0);    /* cards, overlays */
+  --bg-surface-subtle: var(--neutral-50);
+  --bg-brand:          var(--purple-500);
+  --bg-brand-subtle:   var(--lavender-200);
+  --bg-warm:           var(--yellow-500);
+  --bg-brand-deep:     #140f2b;             /* dark brand section */
+  --bg-brand-elevated: #24174a;
+
+  --border-default: var(--neutral-200);
+  --border-strong:  var(--neutral-300);
+  --border-brand:   var(--purple-500);
+  --border-focus:   var(--purple-500);
+
+  /* ─── Actions ──────────────────────────────────────────────────── */
+  --action-primary-bg:     var(--purple-500);
+  --action-primary-text:   var(--neutral-0);
+  --action-primary-hover:  #4c24ab;
+
+  --action-secondary-bg:     var(--neutral-0);
+  --action-secondary-text:   var(--neutral-900);
+  --action-secondary-border: var(--neutral-300);
+  --action-secondary-hover:  var(--neutral-50);
+
+  --action-ghost-text:  var(--neutral-800);
+  --action-ghost-hover: var(--neutral-100);
+
+  /* ─── Feedback ─────────────────────────────────────────────────── */
+  --feedback-success-bg:  #eaf6d8;
+  --feedback-success-fg:  #335c12;
+  --feedback-warning-bg:  #fff3cc;
+  --feedback-warning-fg:  #7a5900;
+  --feedback-error-bg:    #fde3dc;
+  --feedback-error-fg:    #8a2e18;
+  --feedback-info-bg:     #ddf3f6;
+  --feedback-info-fg:     #0e5d66;
+
+  /* ─── Spacing (8px scale) ──────────────────────────────────────── */
+  --space-025: 2px;
+  --space-050: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-600: 48px;
+  --space-800: 64px;
+  --space-1000: 80px;
+  --space-1200: 96px;
+
+  /* ─── Radius ───────────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;   /* premium card / hero rails */
+  --radius-pill: 999px;
+
+  /* ─── Shadow (3-step elevation) ────────────────────────────────── */
+  --shadow-none: none;
+  --shadow-sm:   0 1px 2px rgba(11,15,25,.06);
+  --shadow-md:   0 6px 16px rgba(11,15,25,.08);
+  --shadow-lg:   0 16px 32px rgba(11,15,25,.12);
+
+  /* ─── Typography — font families ───────────────────────────────── */
+  --font-display: "Clash Display", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body:    "Gilroy", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:    ui-monospace, "SFMono-Regular", Consolas, Menlo, monospace;
+
+  /* ─── Motion ───────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 320ms;
+  --duration-slow: 500ms;
+}
+
+/* ============================================================================
+   Base element styles
+   ========================================================================= */
+html, body {
+  background: var(--bg-canvas);
+  color: var(--fg-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); }
+
+::selection {
+  background: color-mix(in srgb, var(--purple-500) 18%, white);
+  color: var(--fg-primary);
+}
+
+/* ============================================================================
+   Typography scale — exact values from design-system-spec.md §8.3
+   Class names mirror Yuvabe's Tailwind utilities so code and HTML match.
+   ========================================================================= */
+
+/* DISPLAY — Clash Display, generous negative tracking */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: 64px; font-weight: 600; line-height: 72px; letter-spacing: -0.02em;
+}
+.text-display-lg {
+  font-family: var(--font-display);
+  font-size: 48px; font-weight: 600; line-height: 56px; letter-spacing: -0.02em;
+}
+
+/* HERO — responsive editorial headline used on homepage hero (clamp-based) */
+.text-hero-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400; line-height: 0.96; letter-spacing: -0.055em;
+}
+.text-hero-support {
+  font-family: var(--font-body);
+  font-size: clamp(1.45rem, 2.4vw, 2.7rem);
+  font-weight: 400; line-height: 1.08; letter-spacing: -0.045em;
+}
+
+/* SECTION — for Work, Services, Testimonials headings */
+.text-section-display {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.3vw, 3.1rem);
+  font-weight: 600; line-height: 1.02; letter-spacing: -0.045em;
+}
+.text-display-muted-editorial {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.4vw, 2.7rem);
+  font-weight: 400; line-height: 1.06; letter-spacing: -0.038em;
+  color: var(--fg-secondary);
+}
+
+/* HEADINGS — Clash Display except SM which drops to Gilroy */
+.text-heading-xl {
+  font-family: var(--font-display);
+  font-size: 40px; font-weight: 600; line-height: 48px; letter-spacing: -0.02em;
+}
+.text-heading-lg {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 600; line-height: 40px; letter-spacing: -0.015em;
+}
+.text-heading-md {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 500; line-height: 32px; letter-spacing: -0.01em;
+}
+.text-heading-sm {
+  font-family: var(--font-body);
+  font-size: 20px; font-weight: 600; line-height: 28px; letter-spacing: -0.01em;
+}
+
+/* BODY — Gilroy */
+.text-body-lg { font-family: var(--font-body); font-size: 18px; font-weight: 400; line-height: 28px; }
+.text-body-md { font-family: var(--font-body); font-size: 16px; font-weight: 400; line-height: 24px; }
+.text-body-sm { font-family: var(--font-body); font-size: 14px; font-weight: 400; line-height: 20px; }
+
+/* LABELS — medium weight Gilroy for buttons, nav, metadata */
+.text-label-lg { font-family: var(--font-body); font-size: 16px; font-weight: 500; line-height: 24px; }
+.text-label-md { font-family: var(--font-body); font-size: 14px; font-weight: 500; line-height: 20px; }
+.text-label-sm { font-family: var(--font-body); font-size: 12px; font-weight: 500; line-height: 16px; letter-spacing: 0.01em; }
+
+/* CAPTION — small supporting text */
+.text-caption  { font-family: var(--font-body); font-size: 12px; font-weight: 400; line-height: 16px; letter-spacing: 0.01em; }
+
+/* EYEBROW — widely tracked small caps used above section headlines */
+.text-eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px; font-weight: 500; line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--fg-tertiary);
+}
+
+/* ============================================================================
+   Semantic HTML element defaults (serve as h1/h2/p without any classes)
+   ========================================================================= */
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 400; line-height: 0.96; letter-spacing: -0.055em; }
+h2 { font-size: clamp(1.9rem, 3.3vw, 3.1rem); font-weight: 600; line-height: 1.02; letter-spacing: -0.045em; }
+h3 { font-size: 32px; font-weight: 600; line-height: 40px; letter-spacing: -0.015em; }
+h4 { font-size: 24px; font-weight: 500; line-height: 32px; letter-spacing: -0.01em; }
+h5 { font-size: 20px; font-weight: 600; line-height: 28px; letter-spacing: -0.01em; font-family: var(--font-body); }
+h6 { font-size: 16px; font-weight: 600; line-height: 24px; font-family: var(--font-body); }
+p  { font-size: 16px; font-weight: 400; line-height: 24px; }
+
+/* ============================================================================
+   Key signature gradients (from production globals.css — canonical)
+   ========================================================================= */
+.bg-brand-night {
+  background-color: var(--bg-brand-deep);
+  background-image:
+    radial-gradient(54% 42% at 88% 10%, rgb(150 136 192 / 0.24) 0%, rgb(150 136 192 / 0) 100%),
+    radial-gradient(40% 28% at 52% 100%, rgb(255 202 45 / 0.08) 0%, rgb(255 202 45 / 0) 100%),
+    radial-gradient(48% 42% at 18% 26%, rgb(88 41 199 / 0.18) 0%, rgb(88 41 199 / 0) 100%),
+    linear-gradient(180deg, #1a1237 0%, #140f2b 46%, #0f0c22 100%);
+}
+
+.bg-hero-signal {
+  background-image:
+    radial-gradient(74% 66% at 14% 18%, color-mix(in srgb, var(--yellow-500) 34%, white) 0%, rgba(255,255,255,0) 62%),
+    radial-gradient(78% 66% at 86% 16%, color-mix(in srgb, var(--cyan-200) 70%, white) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(92% 72% at 72% 92%, color-mix(in srgb, var(--lavender-500) 42%, white) 0%, rgba(255,255,255,0) 66%),
+    linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(248,248,250,0.82) 100%);
+}
+
+.pattern-signal-grid {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* Hand-drawn purple underline — used on hero highlighted words */
+.hand-drawn-underline {
+  display: inline-block;
+  background-image: linear-gradient(var(--purple-500), var(--purple-500));
+  background-repeat: no-repeat;
+  background-size: 100% 0.12em;
+  background-position: 0 88%;
+  padding-bottom: 0.04em;
+}

@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   Yuvabe Studios — design tokens mapped into Tailwind v4's @theme.
+   Every token below becomes a real utility (bg-purple-500, rounded-pill, …).
+   Source of truth: colors_and_type.css from the design bundle.
+   ========================================================================= */
+@theme {
+  /* ─── Brand + neutrals ─────────────────────────────────────────────── */
+  --color-purple-500: #5829c7;
+  --color-purple-600: #4c24ab;
+  --color-yellow-500: #ffca2d;
+  --color-lavender-500: #9688c0;
+  --color-lavender-200: #cbc3df;
+
+  --color-neutral-0: #ffffff;
+  --color-neutral-25: #fcfcfd;
+  --color-neutral-50: #f8f8fa;
+  --color-neutral-100: #f1f2f4;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+
+  --color-brand-deep: #140f2b;
+
+  /* ─── Pre-mixed brand tints (color-mix → clean named utilities) ──────── */
+  --color-purple-tint-06: color-mix(in srgb, #5829c7 6%, white);
+  --color-purple-tint-09: color-mix(in srgb, #5829c7 9%, white);
+  --color-purple-tint-11: color-mix(in srgb, #5829c7 11%, white);
+  --color-purple-tint-16: color-mix(in srgb, #5829c7 16%, white);
+  --color-purple-tint-22: color-mix(in srgb, #5829c7 22%, white);
+  --color-purple-tint-28: color-mix(in srgb, #5829c7 28%, white);
+  --color-purple-tint-30: color-mix(in srgb, #5829c7 30%, white);
+  --color-purple-tint-38: color-mix(in srgb, #5829c7 38%, white);
+  --color-purple-tint-40: color-mix(in srgb, #5829c7 40%, white);
+  --color-lavender-tint-12: color-mix(in srgb, #9688c0 12%, white);
+  --color-lavender-tint-26: color-mix(in srgb, #9688c0 26%, white);
+
+  /* ─── Radius ───────────────────────────────────────────────────────── */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* ─── Typography families (wired to next/font variables) ─────────────── */
+  --font-display: var(--font-clash), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-gilroy), ui-sans-serif, system-ui, sans-serif;
+
+  /* ─── Motion ───────────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================================
+   Base
+   ========================================================================= */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-neutral-100);
+  font-family: var(--font-body);
+  color: var(--color-neutral-900);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-purple-500) 18%, white);
+  color: var(--color-neutral-900);
+}
+
+/* ============================================================================
+   Signature backgrounds — radial-gradient stacks Tailwind can't express well.
+   ========================================================================= */
+.bg-night {
+  background-color: var(--color-brand-deep);
+  background-image:
+    radial-gradient(60% 30% at 80% 4%, rgb(150 136 192 / 0.22) 0%, rgb(150 136 192 / 0) 100%),
+    radial-gradient(50% 26% at 12% 16%, rgb(88 41 199 / 0.24) 0%, rgb(88 41 199 / 0) 100%),
+    linear-gradient(180deg, #1a1237 0%, #140f2b 60%, #0f0c22 100%);
+}
+.bg-platform {
+  background: linear-gradient(100deg, rgba(88, 41, 199, 0.42), rgba(88, 41, 199, 0.24));
+}
+.bg-cog {
+  background: rgba(88, 41, 199, 0.18);
+}
+.bg-out {
+  background: linear-gradient(100deg, rgba(255, 202, 45, 0.14), rgba(150, 136, 192, 0.12));
+}
+
+/* ============================================================================
+   Reveal entrance — animates transform ONLY, never opacity. Even if the
+   animation is paused/stuck at frame 0 the element is fully visible (at most
+   shifted 14px). A blank page is impossible. (Preserved from the prototype.)
+   ========================================================================= */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: riseIn 0.55s var(--ease-out);
+  }
+  .reveal:nth-of-type(2) {
+    animation-delay: 0.05s;
+  }
+  .reveal:nth-of-type(n + 3) {
+    animation-delay: 0.1s;
+  }
+}
+@keyframes riseIn {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: none;
+  }
+}

@@ -1,0 +1,15 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Tooling logs
+.playwright-mcp/
+
+# Dependencies / build output (also covered by nested .gitignore in chlorophyll-mobile)
+node_modules/
+.next/
+out/
+build/
+
+# Env files
+.env*
