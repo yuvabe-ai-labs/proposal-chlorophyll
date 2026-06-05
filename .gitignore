@@ -1,15 +1,39 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
 # OS / editor junk
 .DS_Store
 Thumbs.db
+*.pem
 
-# Tooling logs
-.playwright-mcp/
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# Dependencies / build output (also covered by nested .gitignore in chlorophyll-mobile)
-node_modules/
-.next/
-out/
-build/
-
-# Env files
+# env files
 .env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# tooling logs
+.playwright-mcp/
