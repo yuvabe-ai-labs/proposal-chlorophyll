@@ -48,8 +48,9 @@ export function Engagement() {
           <Grid className="h-4 w-4 text-purple-500" strokeWidth={1.9} />
         </Chip>
         <p className="text-[12.5px] leading-[1.42] text-neutral-700">
-          The model is modular — Marketing and Creative can follow the same path later,{" "}
-          <b className="font-semibold text-neutral-900">only if you choose</b>. No lock-in.
+          The model is modular — once Strategy is validated, the same phased approach can be applied to{" "}
+          <b className="font-semibold text-neutral-900">Marketing and Creative</b>, one workflow at a time rather than all
+          at once.
         </p>
       </div>
 
