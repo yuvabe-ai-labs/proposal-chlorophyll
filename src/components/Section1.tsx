@@ -29,13 +29,13 @@ const buckets = [
 
 export function Section1() {
   return (
-    <Section id="s1" first>
-      <SectionHeader num="01" eyebrow="AI Transformation · Framing" title="Three areas, two lenses.">
+    <Section id="s2">
+      <SectionHeader num="02" eyebrow="Framing" title="Three areas, two lenses.">
         Chlorophyll&apos;s workflows can be explored across three independent areas — each evaluated through the{" "}
         <Hl>same two lenses</Hl>.
       </SectionHeader>
 
-      <div className="mt-5 flex flex-col gap-3">
+      <div className="mt-5 flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4">
         {buckets.map(({ name, area, Icon, selected, items }) => (
           <div
             key={name}
@@ -100,7 +100,7 @@ export function Section1() {
       <div className="mt-7 text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
         Each evaluated through two lenses
       </div>
-      <div className="mt-3.5 flex flex-col gap-3">
+      <div className="mt-3.5 flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-3">
         <div className={`reveal flex items-start gap-3.5 px-[18px] py-4 ${CARD}`}>
           <Chip className="h-[38px] w-[38px]">
             <Improve className="h-[19px] w-[19px] text-neutral-700" />
