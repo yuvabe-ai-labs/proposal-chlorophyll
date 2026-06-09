@@ -69,12 +69,12 @@ function NConn() {
 
 export function Section4() {
   return (
-    <Section id="s3" night>
-      <SectionHeader num="03" eyebrow="Technical Approach" title="From knowledge to strategy intelligence." night>
+    <Section id="s5" night>
+      <SectionHeader num="05" eyebrow="How it works" title="From knowledge to strategy intelligence." night>
         A structured AI knowledge platform that <Hl night>supports the strategist</Hl> — it does not replace them.
       </SectionHeader>
 
-      <div className="mt-[22px] flex flex-col items-stretch">
+      <div className="mt-[22px] flex flex-col items-stretch lg:mx-auto lg:max-w-xl">
         <GrpLabel first>Inputs</GrpLabel>
         <NCard Icon={Bars} title="Chlorophyll IP" tags={["Brand Core", "Brand Territory", "Strategy Algorithms", "Founder Knowledge", "Workshop Templates"]} />
         <NConn />
@@ -115,7 +115,7 @@ export function Section4() {
         <NCard Icon={Target} title="Client Outcomes" tags={["Better Decisions", "Institutionalized Expertise", "Faster Development", "Competitive Advantage"]} variant="out" />
       </div>
 
-      <div className="reveal mt-[18px] flex items-start gap-3">
+      <div className="reveal mt-[18px] flex items-start gap-3 lg:mx-auto lg:max-w-xl">
         <span className="flex-none font-display text-[34px] font-semibold leading-[0.8] text-lavender-200">&ldquo;</span>
         <p className="text-[12.5px] leading-[1.42] text-white/[0.82]">
           The system does not replace the strategist. It{" "}
