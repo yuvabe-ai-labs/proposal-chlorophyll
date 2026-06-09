@@ -1,6 +1,6 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
 import { DeepDive } from "./DeepDive";
-import { CircleCheck, Grid, Lock } from "./icons";
+import { CircleCheck, Grid } from "./icons";
 import { commercials } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
@@ -57,16 +57,8 @@ export function Engagement() {
         <DeepDive
           label="Commercials"
           title="How we'd structure it"
-          trigger={(open) => (
-            <button
-              type="button"
-              onClick={open}
-              className="inline-flex items-center gap-2 rounded-pill border border-neutral-200 bg-white px-3.5 py-2 text-[12.5px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
-            >
-              <Lock className="h-3.5 w-3.5 text-neutral-400" strokeWidth={1.9} />
-              Commercials
-            </button>
-          )}
+          locked
+          triggerClassName="inline-flex items-center gap-2 rounded-pill border border-neutral-200 bg-white px-3.5 py-2 text-[12.5px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
         >
           <div className="space-y-6">
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">

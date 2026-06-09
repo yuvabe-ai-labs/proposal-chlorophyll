@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { X } from "./icons";
+import { X, Lock } from "./icons";
 
 /**
  * On-demand detail overlay. Built on the native <dialog> element so we get
@@ -13,18 +13,21 @@ import { X } from "./icons";
  *
  * Usage:
  *   <DeepDive label="Go deeper" title="Phase 1 · Discovery">…body…</DeepDive>
- * Optionally pass a custom `trigger` render-prop for a non-default control.
+ * Pass `triggerClassName` to style the trigger as a button instead of the default
+ * text link, and `locked` to prefix it with a lock icon (for gated content).
  */
 export function DeepDive({
   label,
   title,
   children,
-  trigger,
+  triggerClassName,
+  locked = false,
 }: {
   label: string;
   title: string;
   children: ReactNode;
-  trigger?: (open: () => void) => ReactNode;
+  triggerClassName?: string;
+  locked?: boolean;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
@@ -46,18 +49,18 @@ export function DeepDive({
 
   return (
     <>
-      {trigger ? (
-        trigger(show)
-      ) : (
-        <button
-          type="button"
-          onClick={show}
-          className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-purple-500 transition-colors hover:text-purple-600"
-        >
-          {label}
-          <span aria-hidden>→</span>
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={show}
+        className={
+          triggerClassName ??
+          "inline-flex items-center gap-1.5 text-[13px] font-semibold text-purple-500 transition-colors hover:text-purple-600"
+        }
+      >
+        {locked && <Lock className="h-3.5 w-3.5 text-neutral-400" strokeWidth={1.9} />}
+        {label}
+        {!triggerClassName && <span aria-hidden>→</span>}
+      </button>
 
       <dialog
         ref={ref}
