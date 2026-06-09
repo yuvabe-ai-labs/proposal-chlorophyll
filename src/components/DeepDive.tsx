@@ -69,23 +69,23 @@ export function DeepDive({
         onClick={(e) => {
           if (e.target === ref.current) close();
         }}
-        className="m-0 w-full max-w-none bg-transparent p-0 backdrop:bg-black/45 backdrop:backdrop-blur-sm fixed inset-x-0 bottom-0 top-auto md:inset-0 md:m-auto md:h-fit md:w-[min(40rem,92vw)]"
+        className="deepdive-dialog m-0 w-full max-w-none bg-transparent p-0 backdrop:bg-black/50 backdrop:backdrop-blur-md fixed inset-x-0 bottom-0 top-auto md:inset-0 md:m-auto md:h-fit md:w-[min(48rem,92vw)]"
       >
-        <div className="max-h-[88vh] overflow-y-auto rounded-t-3xl bg-white p-5 text-neutral-900 shadow-[0_-10px_40px_rgba(11,15,25,0.25)] md:max-h-[85vh] md:rounded-3xl md:p-8 md:shadow-2xl">
-          <div className="mb-5 flex items-start justify-between gap-4">
-            <h3 className="font-display text-[20px] font-semibold leading-[1.12] tracking-[-0.01em] text-neutral-900 md:text-[24px]">
+        <div className="deepdive-panel max-h-[90vh] overflow-y-auto rounded-t-[28px] bg-white px-6 pb-10 pt-7 text-neutral-900 shadow-[0_-10px_50px_rgba(11,15,25,0.28)] md:max-h-[86vh] md:rounded-[28px] md:px-14 md:py-12 md:shadow-[0_30px_80px_rgba(11,15,25,0.30)]">
+          <div className="mb-7 flex items-start justify-between gap-6 border-b border-neutral-100 pb-6 md:mb-9 md:pb-7">
+            <h3 className="font-display text-[26px] font-semibold leading-[1.04] tracking-[-0.025em] text-neutral-900 md:text-[38px]">
               {title}
             </h3>
             <button
               type="button"
               onClick={close}
               aria-label="Close"
-              className="grid h-9 w-9 flex-none place-items-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:bg-neutral-100"
+              className="grid h-10 w-10 flex-none place-items-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:bg-neutral-100 md:h-11 md:w-11"
             >
-              <X className="h-4 w-4" />
+              <X className="h-[18px] w-[18px]" />
             </button>
           </div>
-          {children}
+          <div className="text-[14px] leading-relaxed md:text-[15px]">{children}</div>
         </div>
       </dialog>
     </>
