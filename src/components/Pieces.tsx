@@ -64,25 +64,33 @@ export function Pieces() {
 
       <div className="reveal mt-4">
         <DeepDive label="See the parallels" title="What we've built">
-          <div className="space-y-7">
+          <div className="space-y-8">
+            <p className="text-neutral-700">{parallels.intro}</p>
+
             <div>
               <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
                 {quilt.label} · {quilt.name}
               </div>
-              <p className="mt-2 text-[13.5px] leading-[1.45] text-neutral-700">It combines:</p>
+              <p className="mt-3 text-neutral-700">{quilt.built}</p>
+              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500">It combines</p>
               <TagRow tags={quilt.combines} />
-              <p className="mt-3 text-[13px] leading-[1.45] text-neutral-700">
-                The same principles apply to {quilt.appliedTo}
-              </p>
+              <p className="mt-4 text-neutral-700">{quilt.applied}</p>
             </div>
-            <div>
+
+            <div className="border-t border-neutral-100 pt-8">
               <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
                 {kittykat.label} · {kittykat.name}
               </div>
-              <p className="mt-2 text-[13.5px] leading-[1.45] text-neutral-700">It included:</p>
+              <p className="mt-3 text-neutral-700">{kittykat.built}</p>
+              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500">It included</p>
               <TagRow tags={kittykat.included} />
-              <p className="mt-3 text-[13.5px] leading-[1.45] text-neutral-700">Extended into the strategy domain as:</p>
+              <p className="mt-4 text-neutral-700">{kittykat.extends}</p>
               <TagRow tags={kittykat.extendedTo} />
+            </div>
+
+            <div className="border-t border-neutral-100 pt-8">
+              <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">Our philosophy</div>
+              <p className="mt-3 text-neutral-700">{parallels.philosophy}</p>
             </div>
           </div>
         </DeepDive>

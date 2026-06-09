@@ -188,20 +188,29 @@ export const sovereignty: { principle: string; meaning: string }[] = [
 ];
 
 export const parallels = {
+  intro:
+    "The challenge here isn't fundamentally a software challenge — it's a knowledge challenge: turning years of accumulated strategic expertise, frameworks, methodologies, research, and client engagements into an organizational intelligence system that can support future strategy work. That's closely aligned with the kinds of intelligence platforms Yuvabe has already designed and built.",
   quilt: {
     label: "Research intelligence",
     name: "Quilt",
     summary: "Turning fragmented, multi-source information into structured, retrievable intelligence.",
+    built:
+      "Yuvabe's Quilt platform was built to help organizations transform large volumes of fragmented market information into structured intelligence.",
     combines: ["Multi-source research", "Knowledge organization", "Pattern discovery", "Semantic retrieval", "Insight generation"],
-    appliedTo: "Chlorophyll's frameworks, methodologies, historical engagements, and strategic thinking processes.",
+    applied:
+      "The proposed Strategy Intelligence Platform applies the same principles to strategic consulting workflows — where the primary knowledge sources are Chlorophyll's frameworks, methodologies, historical engagements, and strategic thinking processes.",
   },
   kittykat: {
     label: "Brand / asset knowledge",
     name: "KittyKat",
     summary: "Capturing and operationalizing brand & asset knowledge with context-aware recall and reuse.",
+    built: "Yuvabe's KittyKat platform was designed to capture and operationalize brand knowledge.",
     included: ["Brand memory systems", "Asset intelligence", "Knowledge retrieval", "Context-aware recommendations", "Organizational knowledge reuse"],
+    extends: "The proposed Chlorophyll platform extends these same concepts into the strategy domain by creating:",
     extendedTo: ["Strategic memory", "Strategic cognition", "Institutional knowledge preservation", "Pattern recognition across engagements", "Strategy decision support"],
   },
+  philosophy:
+    "We don't view AI as a replacement for strategic expertise. We view it as a way to preserve, organize, and amplify institutional knowledge — making Chlorophyll's collective intelligence more accessible, scalable, and reusable across future engagements.",
 } as const;
 
 export const commercials = {
