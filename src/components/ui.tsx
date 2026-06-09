@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-/* ── Phone-width document shell ──────────────────────────────────────── */
+/* ── Document shell — phone column on mobile, wide canvas on desktop ──── */
 export function Doc({ children }: { children: ReactNode }) {
   return (
-    <div className="relative mx-auto min-h-screen max-w-[440px] overflow-hidden bg-neutral-25 shadow-[0_0_60px_rgba(11,15,25,0.10)]">
+    <div className="relative mx-auto min-h-screen w-full max-w-[460px] overflow-hidden bg-neutral-25 shadow-[0_0_60px_rgba(11,15,25,0.10)] md:max-w-3xl lg:max-w-5xl lg:shadow-[0_0_120px_rgba(11,15,25,0.08)]">
       {children}
     </div>
   );
@@ -42,7 +42,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative scroll-mt-[24px] px-5 pt-[34px] pb-9 ${
+      className={`relative scroll-mt-[24px] px-5 pt-[34px] pb-9 md:px-10 md:pt-14 md:pb-16 lg:px-16 lg:pt-20 lg:pb-24 ${
         first ? "" : "border-t border-neutral-100"
       } ${night ? "bg-night text-neutral-25" : ""}`}
     >
