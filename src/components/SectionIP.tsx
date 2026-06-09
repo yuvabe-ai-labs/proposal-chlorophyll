@@ -1,4 +1,4 @@
-import { Section, SectionHeader, Hl, Chip } from "./ui";
+import { Section, SectionHeader, Hl } from "./ui";
 import { DeepDive } from "./DeepDive";
 import { Shield, BookOpen } from "./icons";
 import { ipFrameworks, sovereignty } from "./content";
@@ -31,9 +31,9 @@ export function SectionIP() {
       </div>
 
       <div className="reveal mt-3.5 flex items-start gap-[13px] rounded-xl border border-neutral-200 bg-neutral-50 px-[18px] py-4">
-        <Chip className="h-[34px] w-[34px] border-transparent bg-purple-500">
+        <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-pill bg-purple-500">
           <Shield className="h-[17px] w-[17px] text-white" strokeWidth={1.8} />
-        </Chip>
+        </span>
         <p className="text-[12.5px] leading-[1.42] text-neutral-700">
           Chlorophyll owns all source material, derived structures, and outputs. Data is{" "}
           <b className="font-semibold text-neutral-900">never used to train external models</b>, access is controlled, and

@@ -216,6 +216,13 @@ export const Grid = (p: IconProps) => (
   </Svg>
 );
 
+export const Search = (p: IconProps) => (
+  <Svg {...p}>
+    <circle cx="11" cy="11" r="8" />
+    <path d="m21 21-4.3-4.3" />
+  </Svg>
+);
+
 export const X = (p: IconProps) => (
   <Svg {...p}>
     <path d="M18 6 6 18" />

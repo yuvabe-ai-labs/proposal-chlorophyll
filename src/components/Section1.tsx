@@ -126,9 +126,9 @@ export function Section1() {
       </div>
 
       <div className="reveal mt-3.5 flex items-start gap-[13px] rounded-xl border border-neutral-200 bg-neutral-50 px-[18px] py-4">
-        <Chip className="h-[34px] w-[34px] border-transparent bg-purple-500">
+        <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-pill bg-purple-500">
           <Flag className="h-4 w-4 text-white" strokeWidth={1.75} />
-        </Chip>
+        </span>
         <p className="text-[12.5px] leading-[1.42] text-neutral-700">
           For the first engagement, <b className="font-semibold text-neutral-900">Strategy is the selected starting bucket.</b> Marketing and Creative can follow the same phased model later.
         </p>

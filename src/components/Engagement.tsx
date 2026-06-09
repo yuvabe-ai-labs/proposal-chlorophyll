@@ -1,13 +1,13 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
 import { DeepDive } from "./DeepDive";
-import { CircleCheck, Grid } from "./icons";
+import { Grid, Rocket, Search } from "./icons";
 import { commercials } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
 
 const firstSteps = [
-  { n: "Phase 1", title: "Discovery & audit", tl: "2–3 weeks" },
-  { n: "Phase 2", title: "Focused prototype", tl: "2–3 weeks" },
+  { n: "Phase 1", title: "Discovery & audit", tl: "2–3 weeks", Icon: Search },
+  { n: "Phase 2", title: "Focused prototype", tl: "2–3 weeks", Icon: Rocket },
 ];
 
 export function Engagement() {
@@ -30,9 +30,9 @@ export function Engagement() {
         <div className="mt-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {firstSteps.map((s) => (
             <div key={s.n} className="flex items-start gap-3 rounded-lg border border-purple-tint-16 bg-purple-tint-06 px-3.5 py-3">
-              <Chip className="h-8 w-8 border-transparent bg-purple-500">
-                <CircleCheck className="h-[15px] w-[15px] text-white" strokeWidth={2.2} />
-              </Chip>
+              <span className="grid h-8 w-8 flex-none place-items-center rounded-pill bg-purple-500">
+                <s.Icon className="h-[15px] w-[15px] text-white" strokeWidth={2.2} />
+              </span>
               <div>
                 <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-purple-500">{s.n}</div>
                 <div className="font-display text-[15px] font-semibold leading-[1.1] tracking-[-0.01em]">{s.title}</div>
