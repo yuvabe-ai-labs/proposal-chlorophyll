@@ -1,5 +1,5 @@
 import { Doc, TopBar, Footer } from "@/components/ui";
-import { ProgressDots } from "@/components/ProgressDots";
+import { NavRail } from "@/components/NavRail";
 import { Section1 } from "@/components/Section1";
 import { Section2 } from "@/components/Section2";
 import { Section4 } from "@/components/Section4";
@@ -16,7 +16,7 @@ export default function Page() {
         <Section5 />
         <Footer />
       </Doc>
-      <ProgressDots />
+      <NavRail />
     </main>
   );
 }
