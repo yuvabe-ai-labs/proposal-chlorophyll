@@ -1,70 +1,61 @@
 import { Section, SectionHeader, Hl } from "./ui";
 import { DeepDive } from "./DeepDive";
 import { CircleCheck, ListChecks } from "./icons";
+import { Lede, Group, Label, List, Defs } from "./modal-ui";
 import { phases, type Phase } from "./content";
 
 /* ── Deep-dive body: full per-phase detail ───────────────────────────── */
 function PhaseDetail({ detail }: { detail: Phase["detail"] }) {
   return (
-    <div className="space-y-6">
-      <p className="text-[14px] leading-[1.5] text-neutral-700">{detail.purpose}</p>
+    <div className="space-y-8 md:space-y-10">
+      <Lede>{detail.purpose}</Lede>
 
       {detail.activities && (
-        <div>
-          <h4 className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">Discovery process</h4>
-          <ul className="mt-2.5 divide-y divide-neutral-100 border-y border-neutral-100">
+        <Group label="Discovery process" divided>
+          <ul className="divide-y divide-neutral-100 border-y border-neutral-100">
             {detail.activities.map((a) => (
-              <li key={a.activity} className="py-3">
-                <div className="text-[13.5px] font-semibold text-neutral-900">{a.activity}</div>
-                <div className="mt-0.5 text-[12.5px] leading-[1.4] text-neutral-700">{a.what}</div>
-                <div className="mt-1 text-[11.5px] leading-[1.35] text-neutral-500">{a.who}</div>
+              <li key={a.activity} className="py-4">
+                <div className="text-[14px] font-semibold text-neutral-900">{a.activity}</div>
+                <div className="mt-1 text-[13.5px] leading-[1.5] text-neutral-600">{a.what}</div>
+                <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.06em] text-neutral-400">{a.who}</div>
               </li>
             ))}
           </ul>
-        </div>
+        </Group>
       )}
 
       {detail.audit && (
-        <div>
-          <h4 className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">Audit methodology</h4>
-          <ul className="mt-2.5 divide-y divide-neutral-100 border-y border-neutral-100">
-            {detail.audit.map((a) => (
-              <li key={a.area} className="grid gap-1 py-3 sm:grid-cols-[130px_1fr] sm:gap-4">
-                <span className="text-[13px] font-semibold text-neutral-900">{a.area}</span>
-                <span className="text-[12.5px] leading-[1.4] text-neutral-700">
+        <Group label="Audit methodology" divided>
+          <Defs
+            rows={detail.audit.map((a) => ({
+              term: a.area,
+              desc: (
+                <>
                   {a.inspect}
-                  <span className="mt-0.5 block text-[11.5px] text-neutral-500">{a.why}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+                  <span className="mt-1 block text-[12.5px] text-neutral-400">{a.why}</span>
+                </>
+              ),
+            }))}
+          />
+        </Group>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <h4 className="text-[10px] font-bold uppercase tracking-[0.12em] text-neutral-500">Outputs</h4>
-          <ul className="mt-2 space-y-1.5">
-            {detail.outputs.map((o) => (
-              <li key={o} className="flex items-start gap-2 text-[12.5px] leading-[1.4] text-neutral-800">
-                <span className="mt-[7px] h-[5px] w-[5px] flex-none rounded-full bg-neutral-400" />
-                {o}
-              </li>
-            ))}
-          </ul>
+      <Group divided>
+        <div className="grid gap-8 sm:grid-cols-2">
+          <div>
+            <Label>Outputs</Label>
+            <div className="mt-4">
+              <List items={detail.outputs} />
+            </div>
+          </div>
+          <div>
+            <Label>How it helps Chlorophyll</Label>
+            <div className="mt-4">
+              <List items={detail.business} variant="check" />
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">How it helps Chlorophyll</h4>
-          <ul className="mt-2 space-y-1.5">
-            {detail.business.map((b) => (
-              <li key={b} className="flex items-start gap-2 text-[12.5px] leading-[1.4] text-neutral-800">
-                <CircleCheck className="mt-[2px] h-3.5 w-3.5 flex-none text-purple-500" strokeWidth={2} />
-                {b}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      </Group>
     </div>
   );
 }

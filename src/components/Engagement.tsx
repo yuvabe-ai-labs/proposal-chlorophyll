@@ -1,6 +1,7 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
 import { DeepDive } from "./DeepDive";
 import { Grid, Rocket, Search } from "./icons";
+import { Lede, Group, Defs } from "./modal-ui";
 import { commercials } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
@@ -61,42 +62,45 @@ export function Engagement() {
           locked
           triggerClassName="inline-flex items-center gap-2 rounded-pill border border-neutral-200 bg-white px-3.5 py-2 text-[12.5px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
         >
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-              <div className="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3.5">
-                <div className="text-[11px] font-medium text-neutral-500">Monthly engagement fee</div>
-                <div className="mt-1 font-display text-[22px] font-semibold tracking-[-0.01em] text-neutral-900">
+          <div className="space-y-8">
+            <Lede>
+              A phased, senior-led engagement — priced per month, with an early-commitment discount.
+            </Lede>
+
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-5">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-neutral-500">
+                  Monthly engagement
+                </div>
+                <div className="mt-2 font-display text-[30px] font-semibold leading-none tracking-[-0.02em] text-neutral-900 md:text-[34px]">
                   {commercials.monthly}
                 </div>
               </div>
-              <div className="rounded-lg border border-purple-tint-22 bg-purple-tint-06 px-4 py-3.5">
-                <div className="text-[11px] font-medium text-purple-500">With {commercials.discountNote}</div>
-                <div className="mt-1 font-display text-[22px] font-semibold tracking-[-0.01em] text-neutral-900">
+              <div className="rounded-2xl border border-purple-tint-22 bg-purple-tint-06 px-5 py-5">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-purple-500">
+                  With early commitment
+                </div>
+                <div className="mt-2 font-display text-[30px] font-semibold leading-none tracking-[-0.02em] text-neutral-900 md:text-[34px]">
                   {commercials.discountedMonthly}
                 </div>
+                <div className="mt-2 text-[12px] text-neutral-500">{commercials.discountNote}</div>
               </div>
             </div>
 
-            <div>
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.12em] text-neutral-500">Team</h4>
-              <ul className="mt-2.5 divide-y divide-neutral-100 border-y border-neutral-100">
-                {commercials.team.map((t, i) => (
-                  <li key={`${t.role}-${i}`} className="grid gap-1 py-3 sm:grid-cols-[200px_1fr] sm:gap-4">
-                    <span className="text-[13px] font-semibold text-neutral-900">{t.role}</span>
-                    <span className="text-[12.5px] leading-[1.4] text-neutral-700">{t.resp}</span>
+            <Group label="Team" divided>
+              <Defs rows={commercials.team.map((t) => ({ term: t.role, desc: t.resp }))} />
+            </Group>
+
+            <Group divided>
+              <ul className="space-y-2">
+                {commercials.notes.map((n) => (
+                  <li key={n} className="flex items-start gap-2.5 text-[12.5px] leading-[1.5] text-neutral-500">
+                    <span className="mt-[8px] h-[4px] w-[4px] flex-none rounded-full bg-neutral-300" />
+                    {n}
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <ul className="space-y-1.5">
-              {commercials.notes.map((n) => (
-                <li key={n} className="flex items-start gap-2 text-[12px] leading-[1.45] text-neutral-600">
-                  <span className="mt-[7px] h-[4px] w-[4px] flex-none rounded-full bg-neutral-400" />
-                  {n}
-                </li>
-              ))}
-            </ul>
+            </Group>
           </div>
         </DeepDive>
       </div>

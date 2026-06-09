@@ -1,24 +1,10 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
 import { DeepDive } from "./DeepDive";
 import { Database, Archive } from "./icons";
+import { Lede, Prose, Group, MicroLabel, Chips } from "./modal-ui";
 import { parallels } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
-
-function TagRow({ tags }: { tags: readonly string[] }) {
-  return (
-    <div className="mt-3 flex flex-wrap gap-[6px]">
-      {tags.map((t) => (
-        <span
-          key={t}
-          className="rounded-pill border border-neutral-100 bg-neutral-50 px-2.5 py-1 text-[11.5px] leading-[1.2] text-neutral-700"
-        >
-          {t}
-        </span>
-      ))}
-    </div>
-  );
-}
 
 export function Pieces() {
   const { quilt, kittykat } = parallels;
@@ -65,33 +51,40 @@ export function Pieces() {
       <div className="reveal mt-4">
         <DeepDive label="See the parallels" title="What we've built">
           <div className="space-y-8">
-            <p className="text-neutral-700">{parallels.intro}</p>
+            <Lede>{parallels.intro}</Lede>
 
-            <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
-                {quilt.label} · {quilt.name}
+            <Group label={`${quilt.label} · ${quilt.name}`} divided>
+              <Prose>{quilt.built}</Prose>
+              <div className="mt-5">
+                <MicroLabel>It combines</MicroLabel>
               </div>
-              <p className="mt-3 text-neutral-700">{quilt.built}</p>
-              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500">It combines</p>
-              <TagRow tags={quilt.combines} />
-              <p className="mt-4 text-neutral-700">{quilt.applied}</p>
-            </div>
-
-            <div className="border-t border-neutral-100 pt-8">
-              <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
-                {kittykat.label} · {kittykat.name}
+              <div className="mt-3">
+                <Chips items={quilt.combines} />
               </div>
-              <p className="mt-3 text-neutral-700">{kittykat.built}</p>
-              <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500">It included</p>
-              <TagRow tags={kittykat.included} />
-              <p className="mt-4 text-neutral-700">{kittykat.extends}</p>
-              <TagRow tags={kittykat.extendedTo} />
-            </div>
+              <div className="mt-4">
+                <Prose>{quilt.applied}</Prose>
+              </div>
+            </Group>
 
-            <div className="border-t border-neutral-100 pt-8">
-              <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">Our philosophy</div>
-              <p className="mt-3 text-neutral-700">{parallels.philosophy}</p>
-            </div>
+            <Group label={`${kittykat.label} · ${kittykat.name}`} divided>
+              <Prose>{kittykat.built}</Prose>
+              <div className="mt-5">
+                <MicroLabel>It included</MicroLabel>
+              </div>
+              <div className="mt-3">
+                <Chips items={kittykat.included} />
+              </div>
+              <div className="mt-4">
+                <Prose>{kittykat.extends}</Prose>
+              </div>
+              <div className="mt-3">
+                <Chips items={kittykat.extendedTo} />
+              </div>
+            </Group>
+
+            <Group label="Our philosophy" divided>
+              <Prose>{parallels.philosophy}</Prose>
+            </Group>
           </div>
         </DeepDive>
       </div>

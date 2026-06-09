@@ -1,6 +1,7 @@
 import { Section, SectionHeader, Hl } from "./ui";
 import { DeepDive } from "./DeepDive";
-import { Shield, BookOpen } from "./icons";
+import { Shield } from "./icons";
+import { Lede, Group, Defs } from "./modal-ui";
 import { ipFrameworks, sovereignty } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
@@ -43,31 +44,18 @@ export function SectionIP() {
 
       <div className="reveal mt-4">
         <DeepDive label="What discovery clarifies" title="Your IP — studied & protected">
-          <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
-            <BookOpen className="h-3.5 w-3.5" strokeWidth={2} />
-            What discovery clarifies
+          <div className="space-y-8">
+            <Lede>
+              Discovery won&apos;t assume how anthrop™, wholon™, ideantity™, and litmosi™ work — it studies how each is
+              actually used, and keeps everything <strong>owned and protected</strong> throughout.
+            </Lede>
+            <Group label="What discovery clarifies">
+              <Defs rows={ipFrameworks.map((f) => ({ term: f.name, desc: f.clarifies }))} />
+            </Group>
+            <Group label="How your IP stays protected" divided>
+              <Defs rows={sovereignty.map((s) => ({ term: s.principle, desc: s.meaning }))} />
+            </Group>
           </div>
-          <dl className="mt-3 divide-y divide-neutral-100 border-y border-neutral-100">
-            {ipFrameworks.map(({ name, clarifies }) => (
-              <div key={name} className="grid gap-1 py-3 sm:grid-cols-[140px_1fr] sm:gap-4">
-                <dt className="font-display text-[15px] font-semibold tracking-[-0.01em] text-neutral-900">{name}</dt>
-                <dd className="text-[13px] leading-[1.45] text-neutral-700">{clarifies}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <div className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
-            <Shield className="h-3.5 w-3.5" strokeWidth={2} />
-            How your IP stays protected
-          </div>
-          <dl className="mt-3 divide-y divide-neutral-100 border-y border-neutral-100">
-            {sovereignty.map(({ principle, meaning }) => (
-              <div key={principle} className="grid gap-1 py-3 sm:grid-cols-[160px_1fr] sm:gap-4">
-                <dt className="text-[13px] font-semibold text-neutral-900">{principle}</dt>
-                <dd className="text-[13px] leading-[1.45] text-neutral-700">{meaning}</dd>
-              </div>
-            ))}
-          </dl>
         </DeepDive>
       </div>
     </Section>
