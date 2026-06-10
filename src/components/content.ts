@@ -223,7 +223,7 @@ export const parallels = {
       "Yuvabe's Quilt platform was built to help organizations transform large volumes of fragmented market information into structured intelligence.",
     combines: ["Multi-source research", "Knowledge organization", "Pattern discovery", "Semantic retrieval", "Insight generation"],
     applied:
-      "The proposed Strategy Intelligence Platform applies the same principles to strategic consulting workflows — where the primary knowledge sources are Chlorophyll's frameworks, methodologies, historical engagements, and strategic thinking processes.",
+      "The proposed Strategy Intelligence Platform applies similar principles to strategic consulting workflows, where the primary knowledge sources are Chlorophyll's frameworks, methodologies, historical engagements, and strategic thinking processes.",
   },
   kittykat: {
     label: "Brand / asset knowledge",

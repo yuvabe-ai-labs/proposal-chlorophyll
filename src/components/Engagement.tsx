@@ -16,8 +16,8 @@ const programme: [string, string][] = [
 
 export function Engagement() {
   return (
-    <Section id="s8">
-      <SectionHeader num="08" eyebrow="The engagement" title="How we'd work together.">
+    <Section id="s10">
+      <SectionHeader num="10" eyebrow="The engagement" title="How we'd work together.">
         A senior-led engagement across <Hl>all five phases</Hl> — roughly 12–16 weeks — delivered on a simple monthly
         model.
       </SectionHeader>
