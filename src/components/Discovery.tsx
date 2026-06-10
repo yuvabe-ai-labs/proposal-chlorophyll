@@ -13,7 +13,7 @@ const MOVE_ICONS = [User, BrainCog, Archive, Lock];
 export function DiscoveryProcess() {
   return (
     <Section id="s6">
-      <SectionHeader num="06" eyebrow="Phase 1 · Discovery" title="We learn how you work before we build.">
+      <SectionHeader num="06" eyebrow="Phase 1 · Discovery" title="Mapping how strategy works today.">
         {discovery.intro}
       </SectionHeader>
 
