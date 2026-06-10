@@ -24,7 +24,7 @@ const KK_CAPS: Capability[] = [
   { label: "Brand memory", Icon: Archive },
   { label: "Asset intelligence", Icon: Palette },
   { label: "Knowledge retrieval", Icon: Search },
-  { label: "Context-aware recs", Icon: Target },
+  { label: "Context-aware recommendation", Icon: Target },
   { label: "Knowledge reuse", Icon: Copy },
 ];
 
