@@ -69,24 +69,25 @@ export function DeepDive({
         onClick={(e) => {
           if (e.target === ref.current) close();
         }}
-        className="deepdive-dialog m-0 w-full max-w-none bg-transparent p-0 text-left font-body normal-case tracking-normal backdrop:bg-black/50 backdrop:backdrop-blur-md fixed inset-x-0 bottom-0 top-auto md:inset-0 md:m-auto md:h-fit md:w-[min(48rem,92vw)]"
+        className="deepdive-dialog fixed inset-y-0 left-auto right-0 m-0 h-[100dvh] max-h-none w-[min(720px,100vw)] max-w-none bg-transparent p-0 text-left font-body normal-case tracking-normal backdrop:bg-black/50 backdrop:backdrop-blur-md"
       >
-        <div className="deepdive-panel w-full rounded-t-[28px] bg-white shadow-[0_-10px_50px_rgba(11,15,25,0.28)] md:rounded-[28px] md:shadow-[0_40px_100px_-12px_rgba(11,15,25,0.45)]">
-          <div className="max-h-[90vh] overflow-y-auto overscroll-contain rounded-t-[28px] px-6 pb-10 pt-7 text-neutral-900 md:max-h-[86vh] md:rounded-[28px] md:px-14 md:py-12">
-            <div className="mb-7 flex items-start justify-between gap-6 border-b border-neutral-100 pb-6 md:mb-9 md:pb-7">
-              <h3 className="font-display text-[26px] font-semibold leading-[1.04] tracking-[-0.025em] text-neutral-900 md:text-[38px]">
-                {title}
-              </h3>
-              <button
-                type="button"
-                onClick={close}
-                aria-label="Close"
-                className="grid h-10 w-10 flex-none place-items-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:bg-neutral-100 md:h-11 md:w-11"
-              >
-                <X className="h-[18px] w-[18px]" />
-              </button>
-            </div>
-            <div className="text-[14px] leading-relaxed md:text-[15px]">{children}</div>
+        <div className="deepdive-panel flex h-full flex-col bg-white shadow-[-24px_0_70px_-10px_rgba(11,15,25,0.35)] md:rounded-l-[28px]">
+          {/* Sticky header — close is always reachable while the body scrolls */}
+          <div className="flex flex-none items-start justify-between gap-6 border-b border-neutral-100 px-7 pb-6 pt-7 md:px-12 md:pb-7 md:pt-10">
+            <h3 className="font-display text-[26px] font-semibold leading-[1.04] tracking-[-0.025em] text-neutral-900 md:text-[36px]">
+              {title}
+            </h3>
+            <button
+              type="button"
+              onClick={close}
+              aria-label="Close"
+              className="grid h-10 w-10 flex-none place-items-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:bg-neutral-100 md:h-11 md:w-11"
+            >
+              <X className="h-[18px] w-[18px]" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto overscroll-contain px-7 pb-14 pt-8 text-[14px] leading-relaxed text-neutral-900 md:px-12 md:pb-16 md:pt-10 md:text-[15px]">
+            {children}
           </div>
         </div>
       </dialog>

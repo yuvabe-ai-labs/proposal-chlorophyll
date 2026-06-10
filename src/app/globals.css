@@ -130,20 +130,14 @@ body {
 }
 
 /* ============================================================================
-   DeepDive entrance — the panel rises gradually from the bottom; mobile is a
-   full sheet, desktop an editorial modal that lifts in and fades. Backdrop
-   fades in underneath.
+   DeepDive entrance — a large side drawer that slides in from the right, with
+   the backdrop fading in underneath.
    ========================================================================= */
 .deepdive-panel {
-  animation: deepdiveSheet 0.46s var(--ease-out);
+  animation: deepdiveDrawer 0.44s var(--ease-out);
 }
 .deepdive-dialog::backdrop {
   animation: deepdiveBackdrop 0.4s ease;
-}
-@media (min-width: 768px) {
-  .deepdive-panel {
-    animation: deepdiveModal 0.5s var(--ease-out);
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .deepdive-panel,
@@ -151,22 +145,12 @@ body {
     animation: none;
   }
 }
-@keyframes deepdiveSheet {
+@keyframes deepdiveDrawer {
   from {
-    transform: translateY(100%);
+    transform: translateX(100%);
   }
   to {
-    transform: translateY(0);
-  }
-}
-@keyframes deepdiveModal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
+    transform: translateX(0);
   }
 }
 @keyframes deepdiveBackdrop {
