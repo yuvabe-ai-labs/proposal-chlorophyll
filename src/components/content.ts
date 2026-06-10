@@ -359,7 +359,7 @@ export const discovery = {
   // Full activity table (revealed on demand).
   process: [
     { activity: "Leadership conversations", what: "Philosophy, ambition, IP priorities & expectations", who: "Founder & senior strategists" },
-    { activity: "Strategist & workshop sessions", what: "How work moves from client input — through workshop flow and decision points — to brand core, territory & options", who: "3–5 team sessions, templates & notes" },
+    { activity: "Strategist & workshop sessions", what: "How work moves from client input — through workshop flow and decision points — to brand core, territory & options", who: "team sessions, templates & notes" },
     { activity: "Proprietary IP mapping", what: "Where anthrop™, wholon™, ideantity™ & litmosi™ enter the process", who: "IP owners, internal docs" },
     { activity: "Artifact & case-library review", what: "Structure, language, strategic patterns, reuse potential & sensitivity", who: "Brand / territory / strategy decks & past cases" },
     { activity: "Data & confidentiality review", what: "What's usable, what needs permissioning, what stays protected", who: "Client data & constraints" },
@@ -401,7 +401,7 @@ export const discovery = {
   businessOutcomes: [
     "Clearer investment direction before building",
     "Visibility into where your knowledge sits today",
-    "A shared view of what to automate, assist, or protect",
+    "A shared view of what to reinvent, automate, assist, or protect",
   ],
 } as const;
 
