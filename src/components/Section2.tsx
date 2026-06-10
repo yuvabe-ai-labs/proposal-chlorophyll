@@ -116,6 +116,13 @@ export function RoadmapPath() {
         <Hl>first targeted launch</Hl>. Tap any phase to see how it works.
       </SectionHeader>
       <Timeline items={phases.slice(0, 3)} gridClass="lg:grid-cols-3" />
+
+      <div className="reveal mt-8 flex items-center justify-between gap-3 rounded-xl border border-purple-tint-30 bg-purple-tint-06 px-5 py-4 md:mt-10">
+        <span className="text-[10.5px] font-semibold uppercase tracking-[0.08em] text-purple-500">
+          Time to first launch (P1–P3)
+        </span>
+        <span className="font-display text-[21px] font-semibold tracking-[-0.01em] text-neutral-900">7–10 weeks</span>
+      </div>
     </Section>
   );
 }
@@ -131,21 +138,9 @@ export function RoadmapFull() {
 
       <Timeline items={phases.slice(3)} gridClass="lg:grid-cols-2" />
 
-      <div className="reveal mt-8 rounded-xl border border-purple-tint-30 bg-purple-tint-06 px-5 py-5 md:mt-10">
-        <div className="flex items-center gap-[6px] text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
-          <CircleCheck className="h-3.5 w-3.5" strokeWidth={2.2} />
-          Our recommendation
-        </div>
-        <p className="mt-2 text-[13.5px] leading-[1.5] text-neutral-800 md:text-[14.5px]">
-          We recommend the <b className="font-semibold text-neutral-900">complete engagement — all five phases</b>.
-          Discovery and the prototype validate the direction, but the working Strategy Intelligence System — the internal
-          model, external research, and integration — is only delivered across the full programme.
-        </p>
-      </div>
-
-      <div className="reveal mt-3.5 flex items-center justify-between gap-3 rounded-xl bg-brand-deep px-5 py-4 text-white">
+      <div className="reveal mt-8 flex items-center justify-between gap-3 rounded-xl bg-brand-deep px-5 py-4 text-white md:mt-10">
         <span className="text-[10.5px] font-semibold uppercase tracking-[0.08em] text-lavender-200">
-          Total estimated timeline
+          Total · all five phases (P1–P5)
         </span>
         <span className="font-display text-[21px] font-semibold tracking-[-0.01em]">12–16 weeks</span>
       </div>

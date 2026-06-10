@@ -86,13 +86,66 @@ body {
 
 /* ============================================================================
    Signature backgrounds — radial-gradient stacks Tailwind can't express well.
+
+   The "canvas" system, mirrored from the CreativeOS deck: a faint blueprint
+   grid + ambient corner glows over a base wash. One grid cell = --grid-cell,
+   so the light grid (on Doc) and the night grid line up across section seams.
    ========================================================================= */
+:root {
+  --grid-cell: 48px;
+}
+@media (min-width: 1024px) {
+  :root {
+    --grid-cell: 64px;
+  }
+}
+
+/* Light document grid — lives on Doc so it runs continuously down the scroll.
+   Sections sit transparent on top, so the grid shows through everywhere except
+   the night sections, which paint a solid base over it. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(20 15 43 / 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(20 15 43 / 0.022) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+}
+
+/* Light-section corner glows — warm top-right, cool lavender bottom corners.
+   Semi-transparent so the Doc grid reads through them (PDF light pages).
+   Base = one of three placements; :nth-of-type variants below rotate position,
+   size, and hue per section so adjacent slides never repeat (organic feel). */
+.bg-glow {
+  background-image:
+    radial-gradient(42% 34% at 100% 0%, rgb(255 202 45 / 0.15) 0%, rgb(255 202 45 / 0) 72%),
+    radial-gradient(46% 36% at 4% 100%, rgb(150 136 192 / 0.20) 0%, rgb(150 136 192 / 0) 70%),
+    radial-gradient(40% 32% at 100% 100%, rgb(150 136 192 / 0.14) 0%, rgb(150 136 192 / 0) 72%);
+}
+section.bg-glow:nth-of-type(3n + 1) {
+  background-image:
+    radial-gradient(50% 40% at 90% -4%, rgb(255 202 45 / 0.17) 0%, rgb(255 202 45 / 0) 70%),
+    radial-gradient(52% 42% at -2% 98%, rgb(150 136 192 / 0.21) 0%, rgb(150 136 192 / 0) 72%),
+    radial-gradient(36% 30% at 106% 86%, rgb(88 41 199 / 0.11) 0%, rgb(88 41 199 / 0) 74%);
+}
+section.bg-glow:nth-of-type(3n + 2) {
+  background-image:
+    radial-gradient(38% 30% at 104% 4%, rgb(255 202 45 / 0.13) 0%, rgb(255 202 45 / 0) 74%),
+    radial-gradient(44% 34% at 10% 104%, rgb(150 136 192 / 0.22) 0%, rgb(150 136 192 / 0) 68%),
+    radial-gradient(48% 38% at 94% 100%, rgb(150 136 192 / 0.15) 0%, rgb(150 136 192 / 0) 70%);
+}
+
 .bg-night {
   background-color: var(--color-brand-deep);
+  /* grid first (on top, faint), then the original glows + base wash */
   background-image:
+    linear-gradient(to right, rgb(150 136 192 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(150 136 192 / 0.03) 1px, transparent 1px),
     radial-gradient(60% 30% at 80% 4%, rgb(150 136 192 / 0.22) 0%, rgb(150 136 192 / 0) 100%),
     radial-gradient(50% 26% at 12% 16%, rgb(88 41 199 / 0.24) 0%, rgb(88 41 199 / 0) 100%),
     linear-gradient(180deg, #1a1237 0%, #140f2b 60%, #0f0c22 100%);
+  background-size:
+    var(--grid-cell) var(--grid-cell),
+    var(--grid-cell) var(--grid-cell),
+    100% 100%, 100% 100%, 100% 100%;
 }
 .bg-platform {
   background: linear-gradient(100deg, rgba(88, 41, 199, 0.42), rgba(88, 41, 199, 0.24));
