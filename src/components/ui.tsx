@@ -20,9 +20,9 @@ export function TopBar() {
           for Chlorophyll
         </span>
       </div>
-      <span className="whitespace-nowrap rounded-pill border border-purple-tint-22 bg-purple-tint-09 px-[9px] py-[5px] text-[9.5px] font-semibold uppercase tracking-[0.12em] text-purple-500">
+      {/* <span className="whitespace-nowrap rounded-pill border border-purple-tint-22 bg-purple-tint-09 px-[9px] py-[5px] text-[9.5px] font-semibold uppercase tracking-[0.12em] text-purple-500">
         Draft · review
-      </span>
+      </span> */}
     </header>
   );
 }
