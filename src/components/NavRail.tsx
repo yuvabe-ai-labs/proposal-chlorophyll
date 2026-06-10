@@ -41,6 +41,31 @@ export function NavRail() {
     return () => obs.disconnect();
   }, []);
 
+  // Keyboard slide navigation: Right/Down → next, Left/Up → previous.
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const forward = e.key === "ArrowDown" || e.key === "ArrowRight";
+      const back = e.key === "ArrowUp" || e.key === "ArrowLeft";
+      if (!forward && !back) return;
+
+      // Don't hijack arrows while a deep-dive drawer is open or focus is in a field.
+      if (document.querySelector("dialog[open]")) return;
+      const el = document.activeElement as HTMLElement | null;
+      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.isContentEditable)) return;
+
+      const idx = SECTIONS.findIndex((s) => s.id === active);
+      const nextIdx = forward
+        ? Math.min(idx + 1, SECTIONS.length - 1)
+        : Math.max(idx - 1, 0);
+      if (nextIdx === idx) return;
+
+      e.preventDefault();
+      document.getElementById(SECTIONS[nextIdx].id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [active]);
+
   return (
     <>
       {/* Desktop: vertical right rail */}
