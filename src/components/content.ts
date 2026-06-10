@@ -171,29 +171,33 @@ export const phases: Phase[] = [
   },
 ];
 
-// Descriptions verified against Chlorophyll's own public framework pages.
-export const ipFrameworks: { name: string; label: string; clarifies: string }[] = [
+// Descriptions verified against Chlorophyll's own public framework pages (href).
+export const ipFrameworks: { name: string; label: string; clarifies: string; href: string }[] = [
   {
     name: "anthrop™",
     label: "Brand definition",
+    href: "https://www.chlorophyll.in/anthrop/",
     clarifies:
       "Defines a brand around human opportunities — establishing an unchanging brand core, a distinctive territory, and how the brand operates across stakeholder touchpoints.",
   },
   {
     name: "wholon™",
     label: "Communication & behaviour",
+    href: "https://www.chlorophyll.in/wholon/",
     clarifies:
       "Keeps a brand true to its strategy across both what the brand says (communication) and what the brand does (behaviour), pairing an unchanging core with changing expression.",
   },
   {
     name: "ideantity™",
     label: "Brand identity",
+    href: "https://www.chlorophyll.in/ideantity/",
     clarifies:
       "Captures a brand's essence as a two-second idea — combining brand name, visual idea, and brand line — that lands emotionally before rational thinking.",
   },
   {
     name: "litmosi™",
     label: "Culture alignment",
+    href: "https://www.chlorophyll.in/litmosi/",
     clarifies:
       "A corporate brand-alignment tool that surfaces gaps between an organisation's stated values and actual behaviour — and between leadership and teams — then guides realignment.",
   },

@@ -15,11 +15,22 @@ export function SectionIP() {
       </SectionHeader>
 
       <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {ipFrameworks.map(({ name, label }) => (
-          <div key={name} className={`reveal flex flex-col px-4 py-4 ${CARD}`}>
-            <span className="font-display text-[17px] font-semibold tracking-[-0.01em] text-neutral-900">{name}</span>
+        {ipFrameworks.map(({ name, label, href }) => (
+          <a
+            key={name}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`reveal group flex flex-col px-4 py-4 transition-colors hover:border-purple-tint-40 ${CARD}`}
+          >
+            <span className="flex items-center justify-between gap-2">
+              <span className="font-display text-[17px] font-semibold tracking-[-0.01em] text-neutral-900">{name}</span>
+              <span aria-hidden className="text-[12px] text-neutral-300 transition-colors group-hover:text-purple-500">
+                ↗
+              </span>
+            </span>
             <span className="mt-1.5 text-[12px] leading-[1.35] text-neutral-600">{label}</span>
-          </div>
+          </a>
         ))}
       </div>
 
