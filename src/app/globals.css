@@ -129,35 +129,3 @@ body {
   }
 }
 
-/* ============================================================================
-   DeepDive entrance — a large side drawer that slides in from the right, with
-   the backdrop fading in underneath.
-   ========================================================================= */
-.deepdive-panel {
-  animation: deepdiveDrawer 0.44s var(--ease-out);
-}
-.deepdive-dialog::backdrop {
-  animation: deepdiveBackdrop 0.4s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .deepdive-panel,
-  .deepdive-dialog::backdrop {
-    animation: none;
-  }
-}
-@keyframes deepdiveDrawer {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes deepdiveBackdrop {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}

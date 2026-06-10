@@ -1,64 +1,7 @@
 import { Section, SectionHeader, Hl } from "./ui";
-import { DeepDive } from "./DeepDive";
-import { CircleCheck, ListChecks } from "./icons";
-import { Lede, Group, Label, List, Defs } from "./modal-ui";
+import { CircleCheck } from "./icons";
+import { Reveal } from "./Reveal";
 import { phases, type Phase } from "./content";
-
-/* ── Deep-dive body: full per-phase detail ───────────────────────────── */
-function PhaseDetail({ detail }: { detail: Phase["detail"] }) {
-  return (
-    <div className="space-y-8 md:space-y-10">
-      <Lede>{detail.purpose}</Lede>
-
-      {detail.activities && (
-        <Group label="Discovery process" divided>
-          <ul className="divide-y divide-neutral-100 border-y border-neutral-100">
-            {detail.activities.map((a) => (
-              <li key={a.activity} className="py-4">
-                <div className="text-[14px] font-semibold text-neutral-900">{a.activity}</div>
-                <div className="mt-1 text-[13.5px] leading-[1.5] text-neutral-600">{a.what}</div>
-                <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.06em] text-neutral-400">{a.who}</div>
-              </li>
-            ))}
-          </ul>
-        </Group>
-      )}
-
-      {detail.audit && (
-        <Group label="Audit methodology" divided>
-          <Defs
-            rows={detail.audit.map((a) => ({
-              term: a.area,
-              desc: (
-                <>
-                  {a.inspect}
-                  <span className="mt-1 block text-[12.5px] text-neutral-400">{a.why}</span>
-                </>
-              ),
-            }))}
-          />
-        </Group>
-      )}
-
-      <Group divided>
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div>
-            <Label>Outputs</Label>
-            <div className="mt-4">
-              <List items={detail.outputs} />
-            </div>
-          </div>
-          <div>
-            <Label>How it helps Chlorophyll</Label>
-            <div className="mt-4">
-              <List items={detail.business} variant="check" />
-            </div>
-          </div>
-        </div>
-      </Group>
-    </div>
-  );
-}
 
 /* ── Shared phase card body (used in both layouts) ───────────────────── */
 function PhaseCard({ p }: { p: Phase }) {
@@ -94,11 +37,33 @@ function PhaseCard({ p }: { p: Phase }) {
         </div>
         {p.outcome}
       </div>
-      <div className="mt-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-neutral-400">
-        <ListChecks className="h-3.5 w-3.5" strokeWidth={2} />
-        <DeepDive label="Go deeper" title={`${p.n} · ${p.title}`}>
-          <PhaseDetail detail={p.detail} />
-        </DeepDive>
+      <div className="mt-3">
+        <Reveal label="Go deeper">
+          <div className="space-y-3 border-t border-neutral-100 pt-3">
+            <div>
+              <div className="text-[9.5px] font-bold uppercase tracking-[0.1em] text-neutral-400">Outputs</div>
+              <ul className="mt-1.5 space-y-1">
+                {p.detail.outputs.map((o) => (
+                  <li key={o} className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-neutral-700">
+                    <span className="mt-[6px] h-[4px] w-[4px] flex-none rounded-full bg-neutral-300" />
+                    {o}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="text-[9.5px] font-bold uppercase tracking-[0.1em] text-purple-500">How it helps</div>
+              <ul className="mt-1.5 space-y-1">
+                {p.detail.business.map((b) => (
+                  <li key={b} className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-neutral-700">
+                    <CircleCheck className="mt-[1px] h-3 w-3 flex-none text-purple-500" strokeWidth={2.2} />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </div>
   );

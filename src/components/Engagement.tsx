@@ -1,5 +1,5 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
-import { DeepDive } from "./DeepDive";
+import { Reveal } from "./Reveal";
 import { Grid } from "./icons";
 import { Lede, Group, Defs } from "./modal-ui";
 import { commercials } from "./content";
@@ -60,9 +60,9 @@ export function Engagement() {
       </div>
 
       <div className="reveal mt-4">
-        <DeepDive
+        <Reveal
           label="Commercials"
-          title="How we'd structure it"
+          labelOpen="Commercials"
           locked
           triggerClassName="inline-flex items-center gap-2 rounded-pill border border-neutral-200 bg-white px-3.5 py-2 text-[12.5px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
         >
@@ -106,7 +106,7 @@ export function Engagement() {
               </ul>
             </Group>
           </div>
-        </DeepDive>
+        </Reveal>
       </div>
     </Section>
   );

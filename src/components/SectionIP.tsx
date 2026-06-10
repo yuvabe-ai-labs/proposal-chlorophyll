@@ -1,7 +1,7 @@
 import { Section, SectionHeader, Hl } from "./ui";
-import { DeepDive } from "./DeepDive";
+import { Reveal } from "./Reveal";
 import { Shield } from "./icons";
-import { Lede, Group, Defs } from "./modal-ui";
+import { Group, Defs } from "./modal-ui";
 import { ipFrameworks, sovereignty } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
@@ -43,12 +43,8 @@ export function SectionIP() {
       </div>
 
       <div className="reveal mt-4">
-        <DeepDive label="What discovery clarifies" title="Your IP — studied & protected">
+        <Reveal label="What discovery clarifies">
           <div className="space-y-8">
-            <Lede>
-              Discovery won&apos;t assume how anthrop™, wholon™, ideantity™, and litmosi™ work — it studies how each is
-              actually used, and keeps everything <strong>owned and protected</strong> throughout.
-            </Lede>
             <Group label="What discovery clarifies">
               <Defs rows={ipFrameworks.map((f) => ({ term: f.name, desc: f.clarifies }))} />
             </Group>
@@ -56,7 +52,7 @@ export function SectionIP() {
               <Defs rows={sovereignty.map((s) => ({ term: s.principle, desc: s.meaning }))} />
             </Group>
           </div>
-        </DeepDive>
+        </Reveal>
       </div>
     </Section>
   );

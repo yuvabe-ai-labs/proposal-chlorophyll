@@ -1,5 +1,5 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
-import { DeepDive } from "./DeepDive";
+import { Reveal } from "./Reveal";
 import { Database, Archive } from "./icons";
 import { Lede, Prose, Group, MicroLabel, Chips } from "./modal-ui";
 import { parallels } from "./content";
@@ -49,7 +49,7 @@ export function Pieces() {
       </p>
 
       <div className="reveal mt-4">
-        <DeepDive label="See the parallels" title="What we've built">
+        <Reveal label="See the parallels">
           <div className="space-y-8">
             <Lede>{parallels.intro}</Lede>
 
@@ -86,7 +86,7 @@ export function Pieces() {
               <Prose>{parallels.philosophy}</Prose>
             </Group>
           </div>
-        </DeepDive>
+        </Reveal>
       </div>
     </Section>
   );
