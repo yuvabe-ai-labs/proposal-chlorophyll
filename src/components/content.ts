@@ -414,6 +414,7 @@ export const commercials = {
     { role: "Product & Delivery Lead", resp: "Product design, workflow design, delivery oversight, stakeholder alignment" },
     { role: "AI / Full-Stack Engineer", resp: "AI implementation, backend services, integrations, knowledge-platform development" },
     { role: "AI / Full-Stack Engineer", resp: "Frontend development, workflow implementation, platform features" },
+    { role: "QA Engineer", resp: "Test-case creation, test automation, and QC-lifecycle management" },
   ],
   notes: [
     "Senior-led engagement.",

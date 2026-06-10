@@ -30,7 +30,7 @@ export function WhyNow() {
               <div className="mt-2 text-body leading-[1.4] text-neutral-600">{note}</div>
               {href && (
                 <span className="mt-3 inline-flex items-center gap-1 text-[10.5px] font-bold uppercase tracking-[0.1em] text-purple-500">
-                  See your IP
+                More
                   <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
                     →
                   </span>
