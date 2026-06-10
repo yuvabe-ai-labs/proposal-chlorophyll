@@ -17,7 +17,7 @@ const SECTIONS = [
   { id: "s4", n: "4", label: "To first launch" },
   { id: "s5", n: "5", label: "All five phases" },
   { id: "s6", n: "6", label: "Discovery" },
-  { id: "s7", n: "7", label: "What you get" },
+  { id: "s7", n: "7", label: "What discovery reveals" },
   { id: "s8", n: "8", label: "How it works" },
   { id: "s9", n: "9", label: "Our pieces" },
   { id: "s10", n: "10", label: "Why Yuvabe" },

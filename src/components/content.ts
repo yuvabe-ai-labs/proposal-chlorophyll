@@ -268,7 +268,7 @@ export const parallels = {
    strategy work. Chlorophyll is the `target` column — the one still to build. */
 export const comparison = {
   intro:
-    "Two of the three columns below are already live — Quilt and KittyKat. The third is what we'd build for Chlorophyll: the same layers, applied to your frameworks, cases, and methods.",
+    "Two of the three columns below are already live — Quilt and KittyKat. The third shows how the same approach could extend to Chlorophyll's strategy work — a direction to explore in Discovery, not a fixed plan.",
   columns: [
     { name: "Quilt", domain: "Market intelligence", state: "Built" },
     { name: "KittyKat", domain: "Brand intelligence", state: "Built" },
@@ -400,7 +400,6 @@ export const discovery = {
   ],
   businessOutcomes: [
     "Clearer investment direction before building",
-    "Reduced risk of a generic AI tool",
     "Visibility into where your knowledge sits today",
     "A shared view of what to automate, assist, or protect",
   ],
