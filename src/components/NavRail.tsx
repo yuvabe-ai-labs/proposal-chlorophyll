@@ -19,7 +19,7 @@ const SECTIONS = [
   { id: "s6", n: "6", label: "Discovery" },
   { id: "s7", n: "7", label: "What Discovery delivers" },
   { id: "s8", n: "8", label: "How it works" },
-  { id: "s9", n: "9", label: "Our pieces" },
+  { id: "s9", n: "9", label: "What we bring" },
   { id: "s10", n: "10", label: "Why Yuvabe" },
   { id: "s11", n: "11", label: "Working together" },
   { id: "s12", n: "A1", label: "Appendix · Quilt" },
