@@ -14,10 +14,11 @@ const SECTIONS = [
   { id: "s1", n: "1", label: "Today" },
   { id: "s2", n: "2", label: "Framing" },
   { id: "s3", n: "3", label: "Your IP" },
-  { id: "s4", n: "4", label: "Roadmap" },
-  { id: "s5", n: "5", label: "How it works" },
-  { id: "s6", n: "6", label: "Our pieces" },
-  { id: "s7", n: "7", label: "How we'd start" },
+  { id: "s4", n: "4", label: "To first launch" },
+  { id: "s5", n: "5", label: "All five phases" },
+  { id: "s6", n: "6", label: "How it works" },
+  { id: "s7", n: "7", label: "Our pieces" },
+  { id: "s8", n: "8", label: "Working together" },
 ] as const;
 
 export function NavRail() {

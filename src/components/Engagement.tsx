@@ -1,47 +1,51 @@
 import { Section, SectionHeader, Hl, Chip } from "./ui";
 import { DeepDive } from "./DeepDive";
-import { Grid, Rocket, Search } from "./icons";
+import { Grid } from "./icons";
 import { Lede, Group, Defs } from "./modal-ui";
 import { commercials } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
 
-const firstSteps = [
-  { n: "Phase 1", title: "Discovery & audit", tl: "2–3 weeks", Icon: Search },
-  { n: "Phase 2", title: "Focused prototype", tl: "2–3 weeks", Icon: Rocket },
+const programme: [string, string][] = [
+  ["P1", "Discovery"],
+  ["P2", "Prototype"],
+  ["P3", "Internal build"],
+  ["P4", "External research"],
+  ["P5", "Integration"],
 ];
 
 export function Engagement() {
   return (
-    <Section id="s7">
-      <SectionHeader num="07" eyebrow="How we'd start" title="A simple way to begin.">
-        We&apos;d suggest starting with <Hl>Phase 1 and Phase 2</Hl> — discovery and a focused prototype — with a clearly
-        bounded scope. Later phases can be scoped once there&apos;s validated value.
+    <Section id="s8">
+      <SectionHeader num="08" eyebrow="The engagement" title="How we'd work together.">
+        A senior-led engagement across <Hl>all five phases</Hl> — roughly 12–16 weeks — delivered on a simple monthly
+        model.
       </SectionHeader>
 
       <div className={`reveal mt-5 p-[18px] ${CARD} border-purple-tint-30`}>
         <div className="flex items-center justify-between gap-3">
           <span className="text-[10.5px] font-semibold uppercase tracking-[0.1em] text-purple-500">
-            Suggested first engagement
+            Recommended engagement
           </span>
           <span className="whitespace-nowrap rounded-pill bg-neutral-100 px-[9px] py-[3px] text-[11px] font-semibold text-neutral-700">
-            ≈ 4–6 weeks
+            5 phases · 12–16 weeks
           </span>
         </div>
-        <div className="mt-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {firstSteps.map((s) => (
-            <div key={s.n} className="flex items-start gap-3 rounded-lg border border-purple-tint-16 bg-purple-tint-06 px-3.5 py-3">
-              <span className="grid h-8 w-8 flex-none place-items-center rounded-pill bg-purple-500">
-                <s.Icon className="h-[15px] w-[15px] text-white" strokeWidth={2.2} />
-              </span>
-              <div>
-                <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-purple-500">{s.n}</div>
-                <div className="font-display text-[15px] font-semibold leading-[1.1] tracking-[-0.01em]">{s.title}</div>
-                <div className="mt-0.5 text-[11.5px] text-neutral-500">{s.tl}</div>
-              </div>
-            </div>
+        <div className="mt-3.5 flex flex-wrap gap-[6px]">
+          {programme.map(([n, label]) => (
+            <span
+              key={n}
+              className="flex items-center gap-[6px] rounded-pill border border-purple-tint-16 bg-purple-tint-06 px-2.5 py-1.5 text-[11.5px] font-medium text-neutral-800"
+            >
+              <span className="text-[9px] font-bold tracking-[0.06em] text-purple-500">{n}</span>
+              {label}
+            </span>
           ))}
         </div>
+        <p className="mt-3.5 text-[12.5px] leading-[1.45] text-neutral-600">
+          The first launch lands around Phase 3; the complete Strategy Intelligence System is delivered by Phase 5.
+          Senior-led, billed monthly.
+        </p>
       </div>
 
       <div className="reveal mt-3.5 flex items-start gap-[13px] rounded-xl border border-neutral-200 bg-neutral-50 px-[18px] py-4">

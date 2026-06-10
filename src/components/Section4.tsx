@@ -8,8 +8,8 @@ import { Section, SectionHeader, Hl } from "./ui";
  */
 export function Section4() {
   return (
-    <Section id="s5" night>
-      <SectionHeader num="05" eyebrow="How it works" title="From knowledge to strategy intelligence." night>
+    <Section id="s6" night>
+      <SectionHeader num="06" eyebrow="How it works" title="From knowledge to strategy intelligence." night>
         A structured AI knowledge platform that <Hl night>supports the strategist</Hl> — it does not replace them.
       </SectionHeader>
 

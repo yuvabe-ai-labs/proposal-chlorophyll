@@ -104,18 +104,14 @@ function PhaseCard({ p }: { p: Phase }) {
   );
 }
 
-export function Section2() {
+/* ── A timeline of a phase subset: vertical on mobile, horizontal on desktop ─ */
+function Timeline({ items, gridClass }: { items: Phase[]; gridClass: string }) {
   return (
-    <Section id="s4">
-      <SectionHeader num="04" eyebrow="The Strategy track" title="The strategy track, phase by phase.">
-        Five phases from discovery to an <Hl>integrated strategy intelligence system</Hl>. Tap any phase to see how it
-        works.
-      </SectionHeader>
-
-      {/* Mobile: vertical timeline */}
+    <>
+      {/* Mobile: vertical */}
       <div className="relative mt-6 pl-[30px] before:absolute before:left-[9px] before:top-2 before:bottom-2 before:w-0.5 before:bg-neutral-200 before:content-[''] lg:hidden">
-        {phases.map((p, i) => (
-          <div key={p.id} className={`reveal relative ${i === phases.length - 1 ? "pb-0" : "pb-[18px]"}`}>
+        {items.map((p, i) => (
+          <div key={p.id} className={`reveal relative ${i === items.length - 1 ? "pb-0" : "pb-[18px]"}`}>
             <div
               className={`absolute left-[-30px] top-1 grid h-5 w-5 place-items-center rounded-full border-2 bg-white after:h-[7px] after:w-[7px] after:rounded-full after:content-[''] ${
                 p.launch ? "border-purple-500 after:bg-purple-500" : "border-neutral-300 after:bg-neutral-400"
@@ -126,11 +122,11 @@ export function Section2() {
         ))}
       </div>
 
-      {/* Desktop: horizontal timeline */}
+      {/* Desktop: horizontal */}
       <div className="relative mt-10 hidden lg:block">
         <div className="absolute left-0 right-0 top-[6px] h-0.5 bg-neutral-200" />
-        <div className="grid grid-cols-5 gap-4">
-          {phases.map((p) => (
+        <div className={`grid gap-4 ${gridClass}`}>
+          {items.map((p) => (
             <div key={p.id} className="reveal relative pt-7">
               <span
                 className={`absolute left-0 top-0 grid h-[13px] w-[13px] place-items-center rounded-full border-2 bg-white after:h-[5px] after:w-[5px] after:rounded-full after:content-[''] ${
@@ -142,8 +138,47 @@ export function Section2() {
           ))}
         </div>
       </div>
+    </>
+  );
+}
 
-      <div className="reveal mt-[22px] flex items-center justify-between gap-3 rounded-xl bg-brand-deep px-5 py-4 text-white md:mt-10">
+/* ── s4: the path to the first launch (Phases 1–3) ───────────────────── */
+export function RoadmapPath() {
+  return (
+    <Section id="s4">
+      <SectionHeader num="04" eyebrow="The Strategy track" title="The path to the first launch.">
+        Three phases take us from discovery to a working internal Strategy Brain — Chlorophyll&apos;s{" "}
+        <Hl>first targeted launch</Hl>. Tap any phase to see how it works.
+      </SectionHeader>
+      <Timeline items={phases.slice(0, 3)} gridClass="lg:grid-cols-3" />
+    </Section>
+  );
+}
+
+/* ── s5: the full recommended engagement (Phases 4–5 + the "all five" case) ─ */
+export function RoadmapFull() {
+  return (
+    <Section id="s5">
+      <SectionHeader num="05" eyebrow="What we recommend" title="The complete engagement — all five phases.">
+        The first launch is a milestone, not the finish line. The Strategy Brain becomes far more useful once it draws on{" "}
+        <Hl>external market reality</Hl> and is <Hl>integrated into one workflow</Hl>.
+      </SectionHeader>
+
+      <Timeline items={phases.slice(3)} gridClass="lg:grid-cols-2" />
+
+      <div className="reveal mt-8 rounded-xl border border-purple-tint-30 bg-purple-tint-06 px-5 py-5 md:mt-10">
+        <div className="flex items-center gap-[6px] text-[10px] font-bold uppercase tracking-[0.12em] text-purple-500">
+          <CircleCheck className="h-3.5 w-3.5" strokeWidth={2.2} />
+          Our recommendation
+        </div>
+        <p className="mt-2 text-[13.5px] leading-[1.5] text-neutral-800 md:text-[14.5px]">
+          We recommend the <b className="font-semibold text-neutral-900">complete engagement — all five phases</b>.
+          Discovery and the prototype validate the direction, but the working Strategy Intelligence System — the internal
+          model, external research, and integration — is only delivered across the full programme.
+        </p>
+      </div>
+
+      <div className="reveal mt-3.5 flex items-center justify-between gap-3 rounded-xl bg-brand-deep px-5 py-4 text-white">
         <span className="text-[10.5px] font-semibold uppercase tracking-[0.08em] text-lavender-200">
           Total estimated timeline
         </span>

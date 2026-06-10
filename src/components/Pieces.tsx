@@ -9,8 +9,8 @@ const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_r
 export function Pieces() {
   const { quilt, kittykat } = parallels;
   return (
-    <Section id="s6">
-      <SectionHeader num="06" eyebrow="How we work" title="A Strategy Brain is two things we've already built.">
+    <Section id="s7">
+      <SectionHeader num="07" eyebrow="How we work" title="A Strategy Brain is two things we've already built.">
         This isn&apos;t unfamiliar territory for us. A strategy intelligence layer brings together two capabilities
         we&apos;ve built before — <Hl>research intelligence</Hl> and <Hl>brand &amp; asset knowledge</Hl>.
       </SectionHeader>
