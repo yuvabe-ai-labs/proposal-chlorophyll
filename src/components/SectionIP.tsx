@@ -1,8 +1,8 @@
 import { Section, SectionHeader, Hl } from "./ui";
 import { Reveal } from "./Reveal";
 import { Shield } from "./icons";
-import { Group, Defs } from "./modal-ui";
-import { ipFrameworks, sovereignty } from "./content";
+import { Group, Defs, Prose } from "./modal-ui";
+import { ipFrameworks, ipFlow, sovereignty } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
 
@@ -46,11 +46,35 @@ export function SectionIP() {
       </div>
 
       <div className="reveal mt-4">
-        <Reveal label="What discovery clarifies">
+        <Reveal label="What we'd look to learn — a hypothesis">
           <div className={`${CARD} space-y-8 px-5 py-5 md:px-6 md:py-6`}>
-            <Group label="What discovery clarifies">
+            <div className="rounded-lg border border-purple-tint-22 bg-purple-tint-06 px-4 py-3">
+              <Prose>
+                We haven&apos;t run discovery yet, so this is a <strong>hypothesis</strong> — one possible way of looking
+                at how your IP could feed the system. Discovery is what confirms or reshapes it.
+              </Prose>
+            </div>
+
+            <Group label="What we'd map, method by method">
               <Defs rows={ipFrameworks.map((f) => ({ term: f.name, desc: f.clarifies }))} />
             </Group>
+
+            <Group label="Where it could go" divided>
+              <ol className="space-y-5">
+                {ipFlow.map((s) => (
+                  <li key={s.step} className="flex gap-3.5">
+                    <span className="grid h-7 w-7 flex-none place-items-center rounded-pill bg-purple-tint-11 font-display text-[12px] font-semibold text-purple-500">
+                      {s.step}
+                    </span>
+                    <div>
+                      <div className="text-[14px] font-semibold text-neutral-900">{s.title}</div>
+                      <p className="mt-1 text-[13.5px] leading-[1.55] text-neutral-600">{s.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </Group>
+
             <Group label="How your IP stays protected" divided>
               <Defs rows={sovereignty.map((s) => ({ term: s.principle, desc: s.meaning }))} />
             </Group>

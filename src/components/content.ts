@@ -171,35 +171,58 @@ export const phases: Phase[] = [
   },
 ];
 
-// Descriptions verified against Chlorophyll's own public framework pages (href).
+// label + href verified against Chlorophyll's public framework pages.
+// `clarifies` = what discovery wants to LEARN about how each method is used
+// (not a definition — the linked pages define them), so it can be modelled.
 export const ipFrameworks: { name: string; label: string; clarifies: string; href: string }[] = [
   {
     name: "anthrop™",
     label: "Brand definition",
     href: "https://www.chlorophyll.in/anthrop/",
     clarifies:
-      "Defines a brand around human opportunities — establishing an unchanging brand core, a distinctive territory, and how the brand operates across stakeholder touchpoints.",
+      "How your team arrives at a brand core and territory — the inputs, signals, and judgement calls that turn a human opportunity into a defined brand.",
   },
   {
     name: "wholon™",
     label: "Communication & behaviour",
     href: "https://www.chlorophyll.in/wholon/",
     clarifies:
-      "Keeps a brand true to its strategy across both what the brand says (communication) and what the brand does (behaviour), pairing an unchanging core with changing expression.",
+      "How an unchanging core gets translated into what a brand says and does across touchpoints — the rules strategists follow, and the exceptions they make.",
   },
   {
     name: "ideantity™",
     label: "Brand identity",
     href: "https://www.chlorophyll.in/ideantity/",
     clarifies:
-      "Captures a brand's essence as a two-second idea — combining brand name, visual idea, and brand line — that lands emotionally before rational thinking.",
+      "How a brand idea is distilled into a two-second name, visual, and line — and what makes one land where another doesn't.",
   },
   {
     name: "litmosi™",
     label: "Culture alignment",
     href: "https://www.chlorophyll.in/litmosi/",
     clarifies:
-      "A corporate brand-alignment tool that surfaces gaps between an organisation's stated values and actual behaviour — and between leadership and teams — then guides realignment.",
+      "How gaps between stated values and real behaviour are surfaced and read — and what a credible realignment looks like.",
+  },
+];
+
+// A hypothesis (pre-discovery) of where the mapped IP could lead: a model of
+// Chlorophyll's thinking, which grounds the AI audit, which improves the
+// day-to-day strategy workflow. Discovery is what confirms or reshapes this.
+export const ipFlow: { step: string; title: string; body: string }[] = [
+  {
+    step: "01",
+    title: "A model of your thinking",
+    body: "That mapping could become a structured model of how Chlorophyll works — frameworks, cases, and judgement, represented so the platform can retrieve and reuse them.",
+  },
+  {
+    step: "02",
+    title: "It grounds the AI",
+    body: "Outputs would be checked against that model, so the system reflects your methods rather than a generic one — which is what the Phase 1 audit is there to establish.",
+  },
+  {
+    step: "03",
+    title: "It improves the workflow",
+    body: "The aim is faster briefing, case recall, and onboarding across the strategy team — with strategists always owning the final call.",
   },
 ];
 
