@@ -1,7 +1,9 @@
 import { Section, SectionHeader } from "./ui";
-import { Database, Archive } from "./icons";
 import { MicroLabel, Chips } from "./modal-ui";
 import { parallels } from "./content";
+
+const QUILT_LOGO = "/assets/quilt-logo.png";
+const KK_LOGO = "/assets/kk-logo.png";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
 const PROSE = "text-[14px] leading-[1.6] text-neutral-700 md:text-[15px]";
@@ -24,19 +26,13 @@ export function PiecesIntro() {
 
       <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
         {[
-          { name: quilt.name, label: quilt.label, summary: quilt.summary, Icon: Database },
-          { name: kittykat.name, label: kittykat.label, summary: kittykat.summary, Icon: Archive },
-        ].map(({ name, label, summary, Icon }) => (
+          { name: quilt.name, label: quilt.label, summary: quilt.summary, logo: QUILT_LOGO, logoH: "h-[26px]" },
+          { name: kittykat.name, label: kittykat.label, summary: kittykat.summary, logo: KK_LOGO, logoH: "h-[22px]" },
+        ].map(({ name, label, summary, logo, logoH }) => (
           <div key={name} className={`reveal flex flex-col px-[18px] py-[18px] ${CARD}`}>
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 flex-none place-items-center rounded-pill border border-neutral-200 bg-white">
-                <Icon className="h-[18px] w-[18px] text-purple-500" strokeWidth={1.8} />
-              </span>
-              <div>
-                <div className="text-[10.5px] font-semibold uppercase tracking-[0.1em] text-neutral-500">{label}</div>
-                <h3 className="font-display text-[18px] font-semibold leading-[1.1] tracking-[-0.01em]">{name}</h3>
-              </div>
-            </div>
+            <div className="text-[10.5px] font-semibold uppercase tracking-[0.1em] text-neutral-500">{label}</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logo} alt={name} className={`mt-2.5 w-auto self-start ${logoH}`} />
             <p className="mt-3 text-[13px] leading-[1.42] text-neutral-700">{summary}</p>
           </div>
         ))}
@@ -66,6 +62,8 @@ export function PieceQuilt() {
   const { quilt } = parallels;
   return (
     <Section id="s8">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={QUILT_LOGO} alt="Quilt" className="reveal mb-4 h-7 w-auto self-start" />
       <SectionHeader num="08" eyebrow="How we work" title="Quilt — research intelligence.">
         {quilt.built}
       </SectionHeader>
@@ -87,6 +85,8 @@ export function PieceKittyKat() {
   const { kittykat } = parallels;
   return (
     <Section id="s9">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={KK_LOGO} alt="KittyKat" className="reveal mb-4 h-6 w-auto self-start" />
       <SectionHeader num="09" eyebrow="How we work" title="KittyKat — brand & asset knowledge.">
         {kittykat.built}
       </SectionHeader>

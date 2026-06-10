@@ -47,7 +47,7 @@ export function SectionIP() {
 
       <div className="reveal mt-4">
         <Reveal label="What discovery clarifies">
-          <div className="space-y-8">
+          <div className={`${CARD} space-y-8 px-5 py-5 md:px-6 md:py-6`}>
             <Group label="What discovery clarifies">
               <Defs rows={ipFrameworks.map((f) => ({ term: f.name, desc: f.clarifies }))} />
             </Group>

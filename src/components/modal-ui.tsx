@@ -67,14 +67,19 @@ export function List({ items, variant = "dot" }: { items: readonly string[]; var
   );
 }
 
-/* Definition rows: bold term + muted description, hairline-separated. */
+/* Definition rows: bold term + description, clearly separated. The term sits
+   in its own quiet column so the eye can scan terms down the left edge; the
+   description carries enough contrast to read as the primary content. */
 export function Defs({ rows }: { rows: { term: string; desc: ReactNode }[] }) {
   return (
-    <dl className="divide-y divide-neutral-100 border-y border-neutral-100">
+    <dl className="divide-y divide-neutral-200/70">
       {rows.map((r, i) => (
-        <div key={`${r.term}-${i}`} className="grid gap-1 py-3.5 sm:grid-cols-[180px_1fr] sm:gap-6">
-          <dt className="text-[14px] font-semibold text-neutral-900">{r.term}</dt>
-          <dd className="text-[13.5px] leading-[1.5] text-neutral-600">{r.desc}</dd>
+        <div
+          key={`${r.term}-${i}`}
+          className="grid gap-1 py-4 first:pt-1 sm:grid-cols-[160px_1fr] sm:gap-8 sm:py-[18px]"
+        >
+          <dt className="font-display text-[14.5px] font-semibold tracking-[-0.005em] text-neutral-900">{r.term}</dt>
+          <dd className="max-w-[58ch] text-[14px] leading-[1.6] text-neutral-700">{r.desc}</dd>
         </div>
       ))}
     </dl>

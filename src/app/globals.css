@@ -105,32 +105,37 @@ body {
    the night sections, which paint a solid base over it. */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgb(20 15 43 / 0.022) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(20 15 43 / 0.022) 1px, transparent 1px);
+    linear-gradient(to right, rgb(20 15 43 / 0.012) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(20 15 43 / 0.012) 1px, transparent 1px);
   background-size: var(--grid-cell) var(--grid-cell);
 }
 
 /* Light-section corner glows — warm top-right, cool lavender bottom corners.
    Semi-transparent so the Doc grid reads through them (PDF light pages).
    Base = one of three placements; :nth-of-type variants below rotate position,
-   size, and hue per section so adjacent slides never repeat (organic feel). */
+   size, and hue per section so adjacent slides never repeat (organic feel).
+   The final radial in each stack is a soft white readability veil — listed LAST
+   so it mutes the (already faint) Doc grid behind text while corner glows stay. */
 .bg-glow {
   background-image:
     radial-gradient(42% 34% at 100% 0%, rgb(255 202 45 / 0.15) 0%, rgb(255 202 45 / 0) 72%),
     radial-gradient(46% 36% at 4% 100%, rgb(150 136 192 / 0.20) 0%, rgb(150 136 192 / 0) 70%),
-    radial-gradient(40% 32% at 100% 100%, rgb(150 136 192 / 0.14) 0%, rgb(150 136 192 / 0) 72%);
+    radial-gradient(40% 32% at 100% 100%, rgb(150 136 192 / 0.14) 0%, rgb(150 136 192 / 0) 72%),
+    radial-gradient(115% 80% at 48% 44%, rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0.28) 45%, rgb(255 255 255 / 0) 82%);
 }
 section.bg-glow:nth-of-type(3n + 1) {
   background-image:
     radial-gradient(50% 40% at 90% -4%, rgb(255 202 45 / 0.17) 0%, rgb(255 202 45 / 0) 70%),
     radial-gradient(52% 42% at -2% 98%, rgb(150 136 192 / 0.21) 0%, rgb(150 136 192 / 0) 72%),
-    radial-gradient(36% 30% at 106% 86%, rgb(88 41 199 / 0.11) 0%, rgb(88 41 199 / 0) 74%);
+    radial-gradient(36% 30% at 106% 86%, rgb(88 41 199 / 0.11) 0%, rgb(88 41 199 / 0) 74%),
+    radial-gradient(115% 80% at 48% 44%, rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0.28) 45%, rgb(255 255 255 / 0) 82%);
 }
 section.bg-glow:nth-of-type(3n + 2) {
   background-image:
     radial-gradient(38% 30% at 104% 4%, rgb(255 202 45 / 0.13) 0%, rgb(255 202 45 / 0) 74%),
     radial-gradient(44% 34% at 10% 104%, rgb(150 136 192 / 0.22) 0%, rgb(150 136 192 / 0) 68%),
-    radial-gradient(48% 38% at 94% 100%, rgb(150 136 192 / 0.15) 0%, rgb(150 136 192 / 0) 70%);
+    radial-gradient(48% 38% at 94% 100%, rgb(150 136 192 / 0.15) 0%, rgb(150 136 192 / 0) 70%),
+    radial-gradient(115% 80% at 48% 44%, rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0.28) 45%, rgb(255 255 255 / 0) 82%);
 }
 
 .bg-night {

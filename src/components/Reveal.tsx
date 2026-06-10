@@ -38,18 +38,28 @@ export function Reveal({
         {locked && <Lock className="h-3.5 w-3.5 text-neutral-400" strokeWidth={1.9} />}
         {open ? labelOpen ?? "Show less" : label}
         <ChevronDown
-          className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            open ? "rotate-180" : ""
+          }`}
           strokeWidth={2}
         />
       </button>
 
+      {/* Height eases on its own curve; the content fades + rises slightly a
+          beat behind it, so the panel settles in rather than snapping open. */}
       <div
-        className={`grid transition-all duration-300 ease-out ${
-          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
         <div className="overflow-hidden">
-          <div className="pt-4">{children}</div>
+          <div
+            className={`pt-4 transition-all duration-[600ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
+              open ? "translate-y-0 opacity-100 delay-100" : "-translate-y-1 opacity-0"
+            }`}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>
