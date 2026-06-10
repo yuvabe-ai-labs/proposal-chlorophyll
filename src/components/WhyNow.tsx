@@ -2,10 +2,10 @@ import { Section, SectionHeader, Hl } from "./ui";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
 
-const stats = [
+const stats: { figure: string; unit: string; note: string; href?: string }[] = [
   { figure: "27", unit: "years", note: "of strategic & creative work" },
   { figure: "400", unit: "brands", note: "shaped across categories" },
-  { figure: "4", unit: "proprietary methods", note: "anthrop™ · wholon™ · ideantity™ · litmosi™" },
+  { figure: "4", unit: "proprietary methods", note: "anthrop™ · wholon™ · ideantity™ · litmosi™", href: "#s3" },
 ];
 
 export function WhyNow() {
@@ -18,17 +18,40 @@ export function WhyNow() {
       </SectionHeader>
 
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-        {stats.map(({ figure, unit, note }) => (
-          <div key={unit} className={`reveal flex flex-col px-[18px] py-5 ${CARD}`}>
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-display text-[34px] font-semibold leading-none tracking-[-0.02em] text-neutral-900">
-                {figure}
-              </span>
-              <span className="text-[12.5px] font-semibold uppercase tracking-[0.08em] text-purple-500">{unit}</span>
+        {stats.map(({ figure, unit, note, href }) => {
+          const body = (
+            <>
+              <div className="flex items-baseline gap-1.5">
+                <span className="font-display text-[34px] font-semibold leading-none tracking-[-0.02em] text-neutral-900">
+                  {figure}
+                </span>
+                <span className="text-[12.5px] font-semibold uppercase tracking-[0.08em] text-purple-500">{unit}</span>
+              </div>
+              <div className="mt-2 text-[12.5px] leading-[1.4] text-neutral-600">{note}</div>
+              {href && (
+                <span className="mt-3 inline-flex items-center gap-1 text-[10.5px] font-bold uppercase tracking-[0.1em] text-purple-500">
+                  See your IP
+                  <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                    →
+                  </span>
+                </span>
+              )}
+            </>
+          );
+          return href ? (
+            <a
+              key={unit}
+              href={href}
+              className={`reveal group flex flex-col px-[18px] py-5 transition-colors hover:border-purple-tint-40 ${CARD}`}
+            >
+              {body}
+            </a>
+          ) : (
+            <div key={unit} className={`reveal flex flex-col px-[18px] py-5 ${CARD}`}>
+              {body}
             </div>
-            <div className="mt-2 text-[12.5px] leading-[1.4] text-neutral-600">{note}</div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <p className="reveal mt-6 text-[14px] leading-[1.5] text-neutral-700 md:text-[15px]">

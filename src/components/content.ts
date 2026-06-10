@@ -171,11 +171,32 @@ export const phases: Phase[] = [
   },
 ];
 
-export const ipFrameworks: { name: string; clarifies: string }[] = [
-  { name: "anthrop™", clarifies: "Where it enters the strategy process, what inputs it depends on, and how it supports brand understanding" },
-  { name: "wholon™", clarifies: "How it shapes synthesis, strategic interpretation, and the move from parts to a whole brand view" },
-  { name: "ideantity™", clarifies: "How it contributes to identity, differentiation, naming, positioning, or brand meaning" },
-  { name: "litmosi™", clarifies: "How it supports language, expression, marketing, messaging, or creative direction" },
+// Descriptions verified against Chlorophyll's own public framework pages.
+export const ipFrameworks: { name: string; label: string; clarifies: string }[] = [
+  {
+    name: "anthrop™",
+    label: "Brand definition",
+    clarifies:
+      "Defines a brand around human opportunities — establishing an unchanging brand core, a distinctive territory, and how the brand operates across stakeholder touchpoints.",
+  },
+  {
+    name: "wholon™",
+    label: "Communication & behaviour",
+    clarifies:
+      "Keeps a brand true to its strategy across both what the brand says (communication) and what the brand does (behaviour), pairing an unchanging core with changing expression.",
+  },
+  {
+    name: "ideantity™",
+    label: "Brand identity",
+    clarifies:
+      "Captures a brand's essence as a two-second idea — combining brand name, visual idea, and brand line — that lands emotionally before rational thinking.",
+  },
+  {
+    name: "litmosi™",
+    label: "Culture alignment",
+    clarifies:
+      "A corporate brand-alignment tool that surfaces gaps between an organisation's stated values and actual behaviour — and between leadership and teams — then guides realignment.",
+  },
 ];
 
 export const sovereignty: { principle: string; meaning: string }[] = [

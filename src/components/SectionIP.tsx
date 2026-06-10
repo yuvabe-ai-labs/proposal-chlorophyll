@@ -6,14 +6,6 @@ import { ipFrameworks, sovereignty } from "./content";
 
 const CARD = "rounded-xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]";
 
-// Short, faithful role labels for the top-level cards; full detail lives in the deep-dive.
-const roles: Record<string, string> = {
-  "anthrop™": "Brand understanding",
-  "wholon™": "Synthesis to a whole",
-  "ideantity™": "Identity & meaning",
-  "litmosi™": "Language & expression",
-};
-
 export function SectionIP() {
   return (
     <Section id="s3">
@@ -23,10 +15,10 @@ export function SectionIP() {
       </SectionHeader>
 
       <div className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
-        {ipFrameworks.map(({ name }) => (
+        {ipFrameworks.map(({ name, label }) => (
           <div key={name} className={`reveal flex flex-col px-4 py-4 ${CARD}`}>
             <span className="font-display text-[17px] font-semibold tracking-[-0.01em] text-neutral-900">{name}</span>
-            <span className="mt-1.5 text-[12px] leading-[1.35] text-neutral-600">{roles[name]}</span>
+            <span className="mt-1.5 text-[12px] leading-[1.35] text-neutral-600">{label}</span>
           </div>
         ))}
       </div>
