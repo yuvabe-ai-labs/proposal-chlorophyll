@@ -51,6 +51,13 @@
   --font-display: var(--font-clash), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-gilroy), ui-sans-serif, system-ui, sans-serif;
 
+  /* ─── Body copy — single source of truth for slide/card body text.
+     Change these to re-flow every slide's body copy at once. `text-body`
+     carries the size *and* a medium weight (Gilroy 500) for readability;
+     each element still keeps its own `leading-[…]`. ───────────────────── */
+  --text-body: 14px;
+  --text-body--font-weight: 500;
+
   /* ─── Motion ───────────────────────────────────────────────────────── */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }

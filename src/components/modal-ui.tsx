@@ -46,7 +46,7 @@ export function Group({
 
 /* Body prose paragraph at the modal's base size. */
 export function Prose({ children }: { children: ReactNode }) {
-  return <p className="text-[14px] leading-[1.6] text-neutral-700 md:text-[15px]">{children}</p>;
+  return <p className="text-body leading-[1.6] text-neutral-700 md:text-[15px]">{children}</p>;
 }
 
 /* Bulleted list. `check` = purple checks (benefits), `dot` = neutral dots (items). */
@@ -54,7 +54,7 @@ export function List({ items, variant = "dot" }: { items: readonly string[]; var
   return (
     <ul className="space-y-2.5">
       {items.map((it) => (
-        <li key={it} className="flex items-start gap-2.5 text-[14px] leading-[1.45] text-neutral-800">
+        <li key={it} className="flex items-start gap-2.5 text-body leading-[1.45] text-neutral-800">
           {variant === "check" ? (
             <CircleCheck className="mt-[3px] h-4 w-4 flex-none text-purple-500" strokeWidth={2} />
           ) : (
@@ -79,7 +79,7 @@ export function Defs({ rows }: { rows: { term: string; desc: ReactNode }[] }) {
           className="grid gap-1 py-4 first:pt-1 sm:grid-cols-[160px_1fr] sm:gap-8 sm:py-[18px]"
         >
           <dt className="font-display text-[14.5px] font-semibold tracking-[-0.005em] text-neutral-900">{r.term}</dt>
-          <dd className="max-w-[58ch] text-[14px] leading-[1.6] text-neutral-700">{r.desc}</dd>
+          <dd className="max-w-[58ch] text-body leading-[1.6] text-neutral-700">{r.desc}</dd>
         </div>
       ))}
     </dl>

@@ -38,7 +38,7 @@ export function SectionIP() {
         <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-pill bg-purple-500">
           <Shield className="h-[17px] w-[17px] text-white" strokeWidth={1.8} />
         </span>
-        <p className="text-[12.5px] leading-[1.42] text-neutral-700">
+        <p className="text-body leading-[1.42] text-neutral-700">
           Chlorophyll owns all source material, derived structures, and outputs. Data is{" "}
           <b className="font-semibold text-neutral-900">never used to train external models</b>, access is controlled, and
           strategists stay responsible for client-facing work.
@@ -68,7 +68,7 @@ export function SectionIP() {
                     </span>
                     <div>
                       <div className="text-[14px] font-semibold text-neutral-900">{s.title}</div>
-                      <p className="mt-1 text-[13.5px] leading-[1.55] text-neutral-600">{s.body}</p>
+                      <p className="mt-1 text-body leading-[1.55] text-neutral-600">{s.body}</p>
                     </div>
                   </li>
                 ))}

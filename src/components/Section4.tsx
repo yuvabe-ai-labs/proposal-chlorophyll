@@ -22,7 +22,7 @@ export function Section4() {
             className="h-auto w-full rounded-xl"
           />
         </div>
-        <figcaption className="mx-auto mt-5 max-w-2xl text-center text-[12.5px] leading-[1.55] text-white/65 md:text-[13.5px]">
+        <figcaption className="mx-auto mt-5 max-w-2xl text-center text-body leading-[1.55] text-white/65">
           Chlorophyll&apos;s inputs flow through the AI knowledge platform into strategic memory and cognition — always
           routed through a human strategist before reaching client outcomes.
         </figcaption>

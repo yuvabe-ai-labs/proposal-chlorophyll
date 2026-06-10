@@ -18,9 +18,10 @@ const SECTIONS = [
   { id: "s5", n: "5", label: "All five phases" },
   { id: "s6", n: "6", label: "How it works" },
   { id: "s7", n: "7", label: "Our pieces" },
-  { id: "s8", n: "8", label: "Quilt" },
-  { id: "s9", n: "9", label: "KittyKat" },
-  { id: "s10", n: "10", label: "Working together" },
+  { id: "s8", n: "8", label: "Why Yuvabe" },
+  { id: "s9", n: "9", label: "Working together" },
+  { id: "s10", n: "A1", label: "Appendix · Quilt" },
+  { id: "s11", n: "A2", label: "Appendix · KittyKat" },
 ] as const;
 
 export function NavRail() {

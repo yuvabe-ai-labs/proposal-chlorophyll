@@ -237,10 +237,11 @@ export const sovereignty: { principle: string; meaning: string }[] = [
 
 export const parallels = {
   intro:
-    "The challenge here isn't fundamentally a software challenge — it's a knowledge challenge: turning years of accumulated strategic expertise, frameworks, methodologies, research, and client engagements into an organizational intelligence system that can support future strategy work. That's closely aligned with the kinds of intelligence platforms Yuvabe has already designed and built.",
+    "A knowledge challenge, not a software one — and we've built intelligence platforms for adjacent domains before: Quilt for market knowledge, KittyKat for brand.",
   quilt: {
     label: "Research intelligence",
     name: "Quilt",
+    shift: ["Market intelligence", "Strategic intelligence"],
     summary: "Turning fragmented, multi-source information into structured, retrievable intelligence.",
     built:
       "Yuvabe's Quilt platform was built to help organizations transform large volumes of fragmented market information into structured intelligence.",
@@ -251,6 +252,7 @@ export const parallels = {
   kittykat: {
     label: "Brand / asset knowledge",
     name: "KittyKat",
+    shift: ["Brand intelligence", "Strategy intelligence"],
     summary: "Capturing and operationalizing brand & asset knowledge with context-aware recall and reuse.",
     built: "Yuvabe's KittyKat platform was designed to capture and operationalize brand knowledge.",
     included: ["Brand memory systems", "Asset intelligence", "Knowledge retrieval", "Context-aware recommendations", "Organizational knowledge reuse"],
@@ -260,6 +262,74 @@ export const parallels = {
   philosophy:
     "We don't view AI as a replacement for strategic expertise. We view it as a way to preserve, organize, and amplify institutional knowledge — making Chlorophyll's collective intelligence more accessible, scalable, and reusable across future engagements.",
 } as const;
+
+/* The three-domain comparison: the same intelligence architecture Yuvabe has
+   already built twice (Quilt, KittyKat), applied a third time to Chlorophyll's
+   strategy work. Chlorophyll is the `target` column — the one still to build. */
+export const comparison = {
+  intro:
+    "It's a knowledge challenge, not a software one. Quilt and KittyKat already turn market and brand knowledge into living intelligence — the Strategy Intelligence System applies the same architecture, layer for layer, to Chlorophyll's strategic knowledge.",
+  columns: [
+    { name: "Quilt", domain: "Market intelligence", state: "Built" },
+    { name: "KittyKat", domain: "Brand intelligence", state: "Built" },
+    { name: "Chlorophyll", domain: "Strategy intelligence", state: "Proposed", target: true },
+  ],
+  rows: [
+    {
+      dim: "Knowledge sources",
+      values: [
+        "Research reports, market signals, competitor & cultural data",
+        "Brand assets, guidelines, campaign history",
+        "Frameworks, methodologies, historical engagements, strategist knowledge",
+      ],
+    },
+    {
+      dim: "Organization",
+      values: ["Structured market intelligence", "Structured brand intelligence", "Structured strategic intelligence"],
+    },
+    {
+      dim: "Memory layer",
+      values: ["Market memory", "Brand memory", "Strategic memory"],
+    },
+    {
+      dim: "Intelligence layer",
+      values: [
+        "Pattern discovery, insight generation",
+        "Context-aware recommendations",
+        "Pattern recognition, territory exploration, strategic analysis",
+      ],
+    },
+    {
+      dim: "Retrieval layer",
+      values: [
+        "Semantic search & knowledge retrieval",
+        "Knowledge retrieval & asset discovery",
+        "Strategy retrieval across cases, frameworks & methodologies",
+      ],
+    },
+    {
+      dim: "Decision support",
+      values: ["Research-backed insights", "Brand decision support", "Strategy decision support"],
+    },
+    {
+      dim: "Organizational impact",
+      values: [
+        "Faster market understanding",
+        "Reusable brand knowledge",
+        "Institutionalized strategic knowledge & scalable strategist effectiveness",
+      ],
+    },
+  ],
+} as const;
+
+/* Proven building blocks behind Quilt & KittyKat (the "experience" list). */
+export const capabilities = [
+  "Retrieval-augmented intelligence systems",
+  "Organizational memory platforms",
+  "Semantic search & discovery",
+  "AI-assisted decision support",
+  "Human-in-the-loop workflows",
+] as const;
 
 export const commercials = {
   monthly: "₹10,00,000",

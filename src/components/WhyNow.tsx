@@ -27,7 +27,7 @@ export function WhyNow() {
                 </span>
                 <span className="text-[12.5px] font-semibold uppercase tracking-[0.08em] text-purple-500">{unit}</span>
               </div>
-              <div className="mt-2 text-[12.5px] leading-[1.4] text-neutral-600">{note}</div>
+              <div className="mt-2 text-body leading-[1.4] text-neutral-600">{note}</div>
               {href && (
                 <span className="mt-3 inline-flex items-center gap-1 text-[10.5px] font-bold uppercase tracking-[0.1em] text-purple-500">
                   See your IP
@@ -54,7 +54,7 @@ export function WhyNow() {
         })}
       </div>
 
-      <p className="reveal mt-6 text-[14px] leading-[1.5] text-neutral-700 md:text-[15px]">
+      <p className="reveal mt-6 text-body leading-[1.5] text-neutral-700 md:text-[15px]">
         The aim isn&apos;t to replace how Chlorophyll thinks — it&apos;s to make that thinking{" "}
         <Hl>easier to access, apply, teach, and scale</Hl> across strategy, and later marketing and creative work.
       </p>

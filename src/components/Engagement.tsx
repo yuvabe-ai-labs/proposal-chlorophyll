@@ -16,8 +16,8 @@ const programme: [string, string][] = [
 
 export function Engagement() {
   return (
-    <Section id="s10">
-      <SectionHeader num="10" eyebrow="The engagement" title="How we'd work together.">
+    <Section id="s9">
+      <SectionHeader num="09" eyebrow="The engagement" title="How we'd work together.">
         A senior-led engagement across <Hl>all five phases</Hl> — roughly 12–16 weeks — delivered on a simple monthly
         model.
       </SectionHeader>
@@ -31,18 +31,18 @@ export function Engagement() {
             5 phases · 12–16 weeks
           </span>
         </div>
-        <div className="mt-3.5 flex flex-wrap gap-[6px]">
+        <div className="mt-3.5 flex flex-wrap gap-[8px]">
           {programme.map(([n, label]) => (
             <span
               key={n}
-              className="flex items-center gap-[6px] rounded-pill border border-purple-tint-16 bg-purple-tint-06 px-2.5 py-1.5 text-[11.5px] font-medium text-neutral-800"
+              className="flex items-center gap-[7px] rounded-pill border border-purple-tint-16 bg-purple-tint-06 px-3.5 py-2 text-[13.5px] font-medium text-neutral-800"
             >
-              <span className="text-[9px] font-bold tracking-[0.06em] text-purple-500">{n}</span>
+              <span className="text-[10.5px] font-bold tracking-[0.06em] text-purple-500">{n}</span>
               {label}
             </span>
           ))}
         </div>
-        <p className="mt-3.5 text-[12.5px] leading-[1.45] text-neutral-600">
+        <p className="mt-3.5 text-body font-medium leading-[1.5] text-neutral-700">
           The first launch lands around Phase 3; the complete Strategy Intelligence System is delivered by Phase 5.
           Senior-led, billed monthly.
         </p>
@@ -52,7 +52,7 @@ export function Engagement() {
         <Chip className="h-[34px] w-[34px]">
           <Grid className="h-4 w-4 text-purple-500" strokeWidth={1.9} />
         </Chip>
-        <p className="text-[12.5px] leading-[1.42] text-neutral-700">
+        <p className="text-body leading-[1.42] text-neutral-700">
           The model is modular — once Strategy is validated, the same phased approach can be applied to{" "}
           <b className="font-semibold text-neutral-900">Marketing and Creative</b>, one workflow at a time rather than all
           at once.

@@ -25,9 +25,9 @@ function PhaseCard({ p }: { p: Phase }) {
         </span>
       </div>
       <h3 className="mt-[7px] font-display text-[16px] font-semibold leading-[1.12] tracking-[-0.01em]">{p.title}</h3>
-      <p className="mt-2 text-[12.5px] leading-[1.36] text-neutral-700">{p.focus}</p>
+      <p className="mt-2 text-body leading-[1.36] text-neutral-700">{p.focus}</p>
       <div
-        className={`mt-2.5 rounded-md px-3 py-[11px] text-[12.5px] font-medium leading-[1.34] text-neutral-900 ${
+        className={`mt-2.5 rounded-md px-3 py-[11px] text-body font-medium leading-[1.34] text-neutral-900 ${
           p.launch ? "border border-purple-tint-28 bg-purple-tint-11" : "border border-purple-tint-16 bg-purple-tint-06"
         }`}
       >
@@ -38,29 +38,19 @@ function PhaseCard({ p }: { p: Phase }) {
         {p.outcome}
       </div>
       <div className="mt-3">
-        <Reveal label="Go deeper">
-          <div className="space-y-3 border-t border-neutral-100 pt-3">
+        <Reveal label="Possible outputs">
+          <div className="space-y-4 border-t border-neutral-100 pt-4">
             <div>
               <div className="text-[9.5px] font-bold uppercase tracking-[0.1em] text-neutral-400">Outputs</div>
-              <ul className="mt-1.5 space-y-1">
-                {p.detail.outputs.map((o) => (
-                  <li key={o} className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-neutral-700">
-                    <span className="mt-[6px] h-[4px] w-[4px] flex-none rounded-full bg-neutral-300" />
-                    {o}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-2 text-[13px] font-medium leading-[1.5] text-neutral-700">
+                {p.detail.outputs.slice(0, 2).join("  ·  ")}
+              </p>
             </div>
             <div>
               <div className="text-[9.5px] font-bold uppercase tracking-[0.1em] text-purple-500">How it helps</div>
-              <ul className="mt-1.5 space-y-1">
-                {p.detail.business.map((b) => (
-                  <li key={b} className="flex items-start gap-1.5 text-[11.5px] leading-[1.35] text-neutral-700">
-                    <CircleCheck className="mt-[1px] h-3 w-3 flex-none text-purple-500" strokeWidth={2.2} />
-                    {b}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-2 text-[13px] font-medium leading-[1.5] text-neutral-700">
+                {p.detail.business.slice(0, 2).join("  ·  ")}
+              </p>
             </div>
           </div>
         </Reveal>

@@ -105,7 +105,7 @@ export function Section1() {
           </Chip>
           <div>
             <div className="font-display text-[17px] font-semibold tracking-[-0.01em]">Improve</div>
-            <div className="mt-[3px] text-[13px] leading-[1.34] text-neutral-700">
+            <div className="mt-[3px] text-body leading-[1.34] text-neutral-700">
               Make existing workflows faster, clearer, and more efficient.
             </div>
           </div>
@@ -116,7 +116,7 @@ export function Section1() {
           </Chip>
           <div>
             <div className="font-display text-[17px] font-semibold tracking-[-0.01em]">Reinvent</div>
-            <div className="mt-[3px] text-[13px] leading-[1.34] text-neutral-700">
+            <div className="mt-[3px] text-body leading-[1.34] text-neutral-700">
               Create new ways of working using Chlorophyll&apos;s knowledge, cases, and AI.
             </div>
           </div>
@@ -127,7 +127,7 @@ export function Section1() {
         <span className="grid h-[34px] w-[34px] flex-none place-items-center rounded-pill bg-purple-500">
           <Flag className="h-4 w-4 text-white" strokeWidth={1.75} />
         </span>
-        <p className="text-[12.5px] leading-[1.42] text-neutral-700">
+        <p className="text-body leading-[1.42] text-neutral-700">
           For the first engagement, <b className="font-semibold text-neutral-900">Strategy is the selected starting bucket.</b> Marketing and Creative can follow the same phased model later.
         </p>
       </div>
