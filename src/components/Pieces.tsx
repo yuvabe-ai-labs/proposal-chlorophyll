@@ -39,22 +39,30 @@ const track = [
 export function PiecesIntro() {
   const { quilt, kittykat } = parallels;
   return (
-    <Section id="s7">
-      <SectionHeader num="07" eyebrow="How we work" title="We've built two of these before.">
+    <Section id="s9">
+      <SectionHeader num="09" eyebrow="How we work" title="We've built two of these before.">
         {parallels.intro}
       </SectionHeader>
 
       <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
         {[
-          { name: quilt.name, label: quilt.label, summary: quilt.summary, logo: QUILT_LOGO, logoH: "h-[26px]" },
-          { name: kittykat.name, label: kittykat.label, summary: kittykat.summary, logo: KK_LOGO, logoH: "h-[22px]" },
-        ].map(({ name, label, summary, logo, logoH }) => (
-          <div key={name} className={`reveal flex flex-col px-[18px] py-[18px] ${CARD}`}>
+          { name: quilt.name, label: quilt.label, summary: quilt.summary, logo: QUILT_LOGO, logoH: "h-[26px]", href: "#s12" },
+          { name: kittykat.name, label: kittykat.label, summary: kittykat.summary, logo: KK_LOGO, logoH: "h-[22px]", href: "#s13" },
+        ].map(({ name, label, summary, logo, logoH, href }) => (
+          <a
+            key={name}
+            href={href}
+            className={`reveal group flex flex-col px-[18px] py-[18px] transition-colors hover:border-purple-tint-40 ${CARD}`}
+          >
             <div className="text-[10.5px] font-semibold uppercase tracking-[0.1em] text-neutral-500">{label}</div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={logo} alt={name} className={`mt-2.5 w-auto self-start ${logoH}`} />
             <p className="mt-3 text-body leading-[1.42] text-neutral-700">{summary}</p>
-          </div>
+            <span className="mt-auto inline-flex items-center gap-1 pt-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-purple-500">
+              See in detail
+              <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+            </span>
+          </a>
         ))}
       </div>
 
@@ -80,8 +88,8 @@ export function PiecesIntro() {
 /* ── s8: Why Yuvabe — the three-domain comparison matrix ─────────────── */
 export function PiecesCompare() {
   return (
-    <Section id="s8">
-      <SectionHeader num="08" eyebrow="Why Yuvabe" title="The same system, three domains.">
+    <Section id="s10">
+      <SectionHeader num="10" eyebrow="Why Yuvabe" title="The same system, three domains.">
         {comparison.intro}
       </SectionHeader>
 
@@ -105,7 +113,7 @@ export function PiecesCompare() {
 export function PieceQuilt() {
   const { quilt } = parallels;
   return (
-    <Section id="s10">
+    <Section id="s12">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={QUILT_LOGO} alt="Quilt" className="reveal mb-4 h-7 w-auto self-start" />
       <SectionHeader num="A1" eyebrow="Appendix" title="Quilt — research intelligence.">
@@ -131,7 +139,7 @@ export function PieceQuilt() {
 export function PieceKittyKat() {
   const { kittykat } = parallels;
   return (
-    <Section id="s11">
+    <Section id="s13">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={KK_LOGO} alt="KittyKat" className="reveal mb-4 h-6 w-auto self-start" />
       <SectionHeader num="A2" eyebrow="Appendix" title="KittyKat — brand & asset knowledge.">

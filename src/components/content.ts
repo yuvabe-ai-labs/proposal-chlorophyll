@@ -237,7 +237,7 @@ export const sovereignty: { principle: string; meaning: string }[] = [
 
 export const parallels = {
   intro:
-    "A knowledge challenge, not a software one — and we've built intelligence platforms for adjacent domains before: Quilt for market knowledge, KittyKat for brand.",
+    "This is a knowledge challenge, not a software one — the hard part is turning scattered expertise into something a team can reuse. We've built that kind of platform before.",
   quilt: {
     label: "Research intelligence",
     name: "Quilt",
@@ -268,7 +268,7 @@ export const parallels = {
    strategy work. Chlorophyll is the `target` column — the one still to build. */
 export const comparison = {
   intro:
-    "It's a knowledge challenge, not a software one. Quilt and KittyKat already turn market and brand knowledge into living intelligence — the Strategy Intelligence System applies the same architecture, layer for layer, to Chlorophyll's strategic knowledge.",
+    "Two of the three columns below are already live — Quilt and KittyKat. The third is what we'd build for Chlorophyll: the same layers, applied to your frameworks, cases, and methods.",
   columns: [
     { name: "Quilt", domain: "Market intelligence", state: "Built" },
     { name: "KittyKat", domain: "Brand intelligence", state: "Built" },
@@ -330,6 +330,81 @@ export const capabilities = [
   "AI-assisted decision support",
   "Human-in-the-loop workflows",
 ] as const;
+
+/* Phase 1 in depth. Discovery is the de-risking step: we learn how Chlorophyll
+   actually works before any build, so the system reflects your methods rather
+   than a generic one. Source: §"Phase 1: Discovery and audit" of the note. */
+export const discovery = {
+  intro:
+    "Before we build anything, we learn how Chlorophyll actually works. A generic AI tool is the real risk — Discovery is how we avoid it.",
+  // The eight discovery activities, collapsed into four ways we learn.
+  moves: [
+    {
+      title: "People",
+      body: "Leadership conversations and strategist workflow sessions — how strategy really moves from brief to brand core.",
+    },
+    {
+      title: "Method",
+      body: "Workshop-process review and IP mapping: where anthrop™, wholon™, ideantity™ & litmosi™ enter the work.",
+    },
+    {
+      title: "Evidence",
+      body: "Artifact review, case-library audit, and a marketing & creative scan of past outputs.",
+    },
+    {
+      title: "Constraints",
+      body: "A data & confidentiality review — what's usable, what needs permissioning, what stays protected.",
+    },
+  ],
+  // Full activity table (revealed on demand).
+  process: [
+    { activity: "Leadership conversations", what: "Philosophy, ambition, IP priorities & expectations", who: "Founder & senior strategists" },
+    { activity: "Strategist & workshop sessions", what: "How work moves from client input — through workshop flow and decision points — to brand core, territory & options", who: "3–5 team sessions, templates & notes" },
+    { activity: "Proprietary IP mapping", what: "Where anthrop™, wholon™, ideantity™ & litmosi™ enter the process", who: "IP owners, internal docs" },
+    { activity: "Artifact & case-library review", what: "Structure, language, strategic patterns, reuse potential & sensitivity", who: "Brand / territory / strategy decks & past cases" },
+    { activity: "Data & confidentiality review", what: "What's usable, what needs permissioning, what stays protected", who: "Client data & constraints" },
+  ],
+  // What the audit really inspects (revealed on demand).
+  audit: [
+    { area: "Workflow", why: "Where support helps and where judgment must stay human-led" },
+    { area: "Artifacts", why: "What knowledge already exists and how reusable it is" },
+    { area: "IP usage", why: "So future systems are built around your own thinking" },
+    { area: "Decision points", why: "Where strategists interpret, challenge & synthesize — the real craft" },
+    { area: "Case memory", why: "Where faster recall and better reuse are possible" },
+    { area: "Data readiness", why: "What can be safely used in later phases" },
+    { area: "Opportunity areas", why: "Connecting discovery to business value" },
+  ],
+  outcome:
+    "Discovery produces a clear map of how strategy works at Chlorophyll — and a recommended, scoped direction for the Phase 2 prototype. It sets up the build; it doesn't replace it.",
+  outputs: [
+    {
+      title: "Strategy workflow map",
+      desc: "How strategy moves today — from client brief to brand core, territory, and options.",
+    },
+    {
+      title: "IP usage map",
+      desc: "Where anthrop™, wholon™, ideantity™ & litmosi™ actually enter the work, so the system reflects your methods.",
+    },
+    {
+      title: "AI opportunity map",
+      desc: "The specific points where AI can strengthen the workflow — and where judgment must stay human-led.",
+    },
+    {
+      title: "Data & IP readiness",
+      desc: "What past cases and material exist, what's reusable, and what must stay permissioned and protected.",
+    },
+    {
+      title: "Recommended Phase 2 scope",
+      desc: "A concrete, bounded prototype direction to validate first — the decision Discovery exists to inform.",
+    },
+  ],
+  businessOutcomes: [
+    "Clearer investment direction before building",
+    "Reduced risk of a generic AI tool",
+    "Visibility into where your knowledge sits today",
+    "A shared view of what to automate, assist, or protect",
+  ],
+} as const;
 
 export const commercials = {
   monthly: "₹10,00,000",

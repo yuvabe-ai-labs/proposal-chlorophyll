@@ -16,12 +16,14 @@ const SECTIONS = [
   { id: "s3", n: "3", label: "Your IP" },
   { id: "s4", n: "4", label: "To first launch" },
   { id: "s5", n: "5", label: "All five phases" },
-  { id: "s6", n: "6", label: "How it works" },
-  { id: "s7", n: "7", label: "Our pieces" },
-  { id: "s8", n: "8", label: "Why Yuvabe" },
-  { id: "s9", n: "9", label: "Working together" },
-  { id: "s10", n: "A1", label: "Appendix · Quilt" },
-  { id: "s11", n: "A2", label: "Appendix · KittyKat" },
+  { id: "s6", n: "6", label: "Discovery" },
+  { id: "s7", n: "7", label: "What you get" },
+  { id: "s8", n: "8", label: "How it works" },
+  { id: "s9", n: "9", label: "Our pieces" },
+  { id: "s10", n: "10", label: "Why Yuvabe" },
+  { id: "s11", n: "11", label: "Working together" },
+  { id: "s12", n: "A1", label: "Appendix · Quilt" },
+  { id: "s13", n: "A2", label: "Appendix · KittyKat" },
 ] as const;
 
 export function NavRail() {
@@ -83,17 +85,13 @@ export function NavRail() {
               key={s.id}
               href={`#${s.id}`}
               aria-current={on ? "true" : undefined}
-              className={`group flex items-center justify-end gap-2.5 rounded-pill py-1.5 pl-3 pr-1 text-[12.5px] font-medium transition-colors ${
-                on ? "text-neutral-900" : "text-neutral-400 hover:text-neutral-600"
+              className={`flex origin-right items-center justify-end gap-2.5 rounded-pill py-1.5 pl-3 pr-1 text-[12.5px] transition-all duration-300 ease-out ${
+                on
+                  ? "scale-[1.06] font-semibold text-neutral-900"
+                  : "opacity-90 font-medium text-neutral-400 hover:text-neutral-600"
               }`}
             >
-              <span
-                className={`whitespace-nowrap transition-opacity ${
-                  on ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                }`}
-              >
-                {s.label}
-              </span>
+              <span className="whitespace-nowrap">{s.label}</span>
               <span
                 className={`h-1.5 w-1.5 flex-none rounded-full transition-all ${
                   on ? "scale-125 bg-purple-500" : "bg-neutral-300"
