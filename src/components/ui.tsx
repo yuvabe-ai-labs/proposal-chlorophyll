@@ -17,7 +17,7 @@ export function TopBar() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/assets/logo.png" alt="Yuvabe" className="block h-[22px] w-auto" />
         <span className="border-l border-neutral-200 pl-2.5 text-[11px] font-medium tracking-[0.02em] text-neutral-500">
-          for Chlorophyll
+          for chlorophyll
         </span>
       </div>
       {/* <span className="whitespace-nowrap rounded-pill border border-purple-tint-22 bg-purple-tint-09 px-[9px] py-[5px] text-[9.5px] font-semibold uppercase tracking-[0.12em] text-purple-500">
