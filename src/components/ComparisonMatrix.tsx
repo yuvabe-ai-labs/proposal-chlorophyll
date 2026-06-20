@@ -2,14 +2,14 @@ import { Fragment } from "react";
 
 /**
  * The three-domain comparison matrix (s8). Shows the same intelligence
- * architecture across Quilt / KittyKat / Chlorophyll, with the Chlorophyll
+ * architecture across Quilt / KittyKat / chlorophyll, with the chlorophyll
  * column (`target`) highlighted as the one still to build.
  *
- *   Desktop / tablet: a true 4-column table; the Chlorophyll column reads as a
+ *   Desktop / tablet: a true 4-column table; the chlorophyll column reads as a
  *                     vertical purple band running the height of the matrix.
  *   Mobile:           the table would overflow the phone column, so each
  *                     dimension becomes a card with the three platform values
- *                     stacked, Chlorophyll emphasised.
+ *                     stacked, chlorophyll emphasised.
  */
 
 type Col = { name: string; domain: string; state: string; target?: boolean };

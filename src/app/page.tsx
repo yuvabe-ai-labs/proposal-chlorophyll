@@ -14,7 +14,7 @@ export default function Page() {
     <main className="bg-neutral-100">
       <Doc>
         <TopBar />
-        <WhyNow />       {/* s1 — Where Chlorophyll is today */}
+        <WhyNow />       {/* s1 — Where chlorophyll is today */}
         <Framing />      {/* s2 — Three areas, two lenses */}
         <SectionIP />    {/* s3 — Your IP, studied & protected */}
         <RoadmapPath />  {/* s4 — The path to first launch (Phases 1–3) */}

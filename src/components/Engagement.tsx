@@ -18,8 +18,8 @@ export function Engagement() {
   return (
     <Section id="s11">
       <SectionHeader num="11" eyebrow="The engagement" title="How we'd work together.">
-        A senior-led engagement across <Hl>all five phases</Hl> — roughly 12–16 weeks — delivered on a simple monthly
-        model.
+        A senior-led engagement across <Hl>all five phases</Hl> — roughly 12–16 weeks — delivered as a single
+        fixed-price strategy bucket.
       </SectionHeader>
 
       <div className={`reveal mt-5 p-[18px] ${CARD} border-purple-tint-30`}>
@@ -44,7 +44,7 @@ export function Engagement() {
         </div>
         <p className="mt-3.5 text-body font-medium leading-[1.5] text-neutral-700">
           The first launch lands around Phase 3; the complete Strategy Intelligence System is delivered by Phase 5.
-          Senior-led, billed monthly.
+          Senior-led, one fixed price.
         </p>
       </div>
 
@@ -68,26 +68,15 @@ export function Engagement() {
         >
           <div className="space-y-8">
             <Lede>
-              A phased, senior-led engagement — priced per month, with an early-commitment discount.
+              A phased, senior-led engagement — one fixed price for the full scope.
             </Lede>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-neutral-500">
-                  Monthly engagement
-                </div>
-                <div className="mt-2 font-display text-[30px] font-semibold leading-none tracking-[-0.02em] text-neutral-900 md:text-[34px]">
-                  {commercials.monthly}
-                </div>
+            <div className="rounded-2xl border border-purple-tint-22 bg-purple-tint-06 px-5 py-5">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-purple-500">
+                Strategy bucket
               </div>
-              <div className="rounded-2xl border border-purple-tint-22 bg-purple-tint-06 px-5 py-5">
-                <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-purple-500">
-                  With early commitment
-                </div>
-                <div className="mt-2 font-display text-[30px] font-semibold leading-none tracking-[-0.02em] text-neutral-900 md:text-[34px]">
-                  {commercials.discountedMonthly}
-                </div>
-                <div className="mt-2 text-[12px] text-neutral-500">{commercials.discountNote}</div>
+              <div className="mt-2 font-display text-[30px] font-semibold leading-none tracking-[-0.02em] text-neutral-900 md:text-[34px]">
+                {commercials.bucket}
               </div>
             </div>
 

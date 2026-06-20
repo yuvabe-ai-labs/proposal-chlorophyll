@@ -140,7 +140,7 @@ export function Footer() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/assets/logo.png" alt="Yuvabe Studios" className="inline-block h-6 opacity-90" />
       <p className="mt-3 text-[11px] leading-[1.5] text-neutral-500">
-        Yuvabe Studios × Chlorophyll
+        Yuvabe Studios × chlorophyll
         <br />
         AI transformation direction — draft for review
       </p>

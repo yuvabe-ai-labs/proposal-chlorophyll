@@ -102,7 +102,7 @@ export function RoadmapPath() {
   return (
     <Section id="s4">
       <SectionHeader num="04" eyebrow="The Strategy track" title="The path to the first launch.">
-        Three phases take us from discovery to a working internal Strategy Brain — Chlorophyll&apos;s{" "}
+        Three phases take us from discovery to a working internal Strategy Brain — chlorophyll&apos;s{" "}
         <Hl>first targeted launch</Hl>. Tap any phase to see how it works.
       </SectionHeader>
       <Timeline items={phases.slice(0, 3)} gridClass="lg:grid-cols-3" />

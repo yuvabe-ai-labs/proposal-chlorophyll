@@ -1,7 +1,7 @@
 import { Section, SectionHeader, Hl } from "./ui";
 
 /**
- * "How it works" (s5). Shows the Chlorophyll Organizational Intelligence System
+ * "How it works" (s5). Shows the chlorophyll Organizational Intelligence System
  * diagram as a framed exhibit on the dark slide, with a caption.
  *
  * Image lives at: public/assets/arch-dia.png
@@ -18,12 +18,12 @@ export function Section4() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/arch-dia.png"
-            alt="Chlorophyll Organizational Intelligence System: inputs — Chlorophyll IP, knowledge assets, and external intelligence — feed the AI Knowledge Platform (knowledge, reasoning, and orchestration layers), which builds strategic memory and strategic cognition, routed through a human strategist to client outcomes."
+            alt="chlorophyll Organizational Intelligence System: inputs — chlorophyll IP, knowledge assets, and external intelligence — feed the AI Knowledge Platform (knowledge, reasoning, and orchestration layers), which builds strategic memory and strategic cognition, routed through a human strategist to client outcomes."
             className="h-auto w-full rounded-xl"
           />
         </div>
         <figcaption className="mx-auto mt-5 max-w-2xl text-center text-body leading-[1.55] text-white/65">
-          Chlorophyll&apos;s inputs flow through the AI knowledge platform into strategic memory and cognition — always
+          chlorophyll&apos;s inputs flow through the AI knowledge platform into strategic memory and cognition — always
           routed through a human strategist before reaching client outcomes.
         </figcaption>
       </figure>

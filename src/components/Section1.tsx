@@ -31,7 +31,7 @@ export function Section1() {
   return (
     <Section id="s2">
       <SectionHeader num="02" eyebrow="Framing" title="Three areas, two lenses.">
-        Chlorophyll&apos;s workflows can be explored across three independent areas — each evaluated through the{" "}
+        chlorophyll&apos;s workflows can be explored across three independent areas — each evaluated through the{" "}
         <Hl>same two lenses</Hl>.
       </SectionHeader>
 
@@ -117,7 +117,7 @@ export function Section1() {
           <div>
             <div className="font-display text-[17px] font-semibold tracking-[-0.01em]">Reinvent</div>
             <div className="mt-[3px] text-body leading-[1.34] text-neutral-700">
-              Create new ways of working using Chlorophyll&apos;s knowledge, cases, and AI.
+              Create new ways of working using chlorophyll&apos;s knowledge, cases, and AI.
             </div>
           </div>
         </div>

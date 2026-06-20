@@ -1,7 +1,7 @@
-# Chlorophyll Proposal Site — Progressive-Disclosure Redesign
+# chlorophyll Proposal Site — Progressive-Disclosure Redesign
 
 **Date:** 2026-06-09
-**Source content:** `Proposal Note_ Strategy Intelligence Roadmap for Chlorophyll.md` (12 sections)
+**Source content:** `Proposal Note_ Strategy Intelligence Roadmap for chlorophyll.md` (12 sections)
 
 ## Context
 
@@ -21,14 +21,14 @@ responsively on mobile.
 
 | Decision | Choice |
 |----------|--------|
-| Primary audience / use | **Presenter-led** walkthrough to Chlorophyll leadership |
+| Primary audience / use | **Presenter-led** walkthrough to chlorophyll leadership |
 | Pricing on the site | **Gated deep-dive** — revealed on demand, not visible on first scroll |
 | Deep-dive mechanism | **Overlay** — centered modal (desktop) ↔ bottom-sheet (mobile) |
 | Layout priority | **Desktop-first** (presentation surface); collapses responsively to mobile |
 
 ## Tone & voice (governing constraint)
 
-We already have a relationship with Chlorophyll. **This is not a pitch and must
+We already have a relationship with chlorophyll. **This is not a pitch and must
 not feel like one.** The site explains *how we work* and *where it would help
 them* — it never sells overtly or pushes. Every section is reviewed against this.
 
@@ -44,7 +44,7 @@ How to apply:
   rocket "First launch" badges); calm labels over salesy ones.
 - **Commercials stay factual and low-key** — framed as "how we'd structure
   working together," still gated behind the reveal, never the headline.
-- **Section titles avoid pitch framing:** prefer "Where Chlorophyll is today"
+- **Section titles avoid pitch framing:** prefer "Where chlorophyll is today"
   over "Why now"; "How we'd work / relevant experience" over "Why Yuvabe";
   "How we'd start" over "First engagement / the ask."
 
@@ -95,7 +95,7 @@ Seven sections is more than the current label pills handle well.
 
 | # | Section (id) | Top level (always visible) | Deep-dive (overlay) | Source |
 |---|--------------|----------------------------|----------------------|--------|
-| 1 | Where Chlorophyll is today (`s1`) | 27 yrs · 400 brands; a shared opportunity to make that knowledge easier to access & reuse (no urgency/risk wording) | — | Note §2 |
+| 1 | Where chlorophyll is today (`s1`) | 27 yrs · 400 brands; a shared opportunity to make that knowledge easier to access & reuse (no urgency/risk wording) | — | Note §2 |
 | 2 | Framing (`s2`) | 3 areas × 2 lenses, Strategy first | — | current S1 / Note §1,4 |
 | 3 | Your IP — studied & protected (`s3`) | the four frameworks (anthrop™ · wholon™ · ideantity™ · litmosi™), studied not assumed; owned & protected | "What discovery clarifies" table + the 6 sovereignty principles | Note §3 + §6 (merged) |
 | 4 | Roadmap (`s4`) | 5-phase horizontal timeline, 12–16 wks | Per phase: activities, audit methodology, outputs, business outcomes | current S2 / Note §5, Phase 1–5 |
@@ -112,11 +112,11 @@ Seven sections is more than the current label pills handle well.
     into structured, retrievable insight.
   - **Brand / asset knowledge — KittyKat:** capturing brand & asset knowledge with
     context-aware recall and reuse.
-  - The Chlorophyll strategy layer brings these two together; AI amplifies
+  - The chlorophyll strategy layer brings these two together; AI amplifies
     institutional knowledge, it does not replace strategist judgment.
 - **Deep-dive (verbatim from Note §7):**
   - **Quilt** combines: multi-source research, knowledge organization, pattern
-    discovery, semantic retrieval, insight generation → applied to Chlorophyll's
+    discovery, semantic retrieval, insight generation → applied to chlorophyll's
     frameworks, methodologies, historical engagements, strategic thinking.
   - **KittyKat** included: brand memory systems, asset intelligence, knowledge
     retrieval, context-aware recommendations, organizational knowledge reuse →

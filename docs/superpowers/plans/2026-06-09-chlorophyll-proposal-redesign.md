@@ -1,4 +1,4 @@
-# Chlorophyll Proposal Site — Progressive-Disclosure Redesign — Implementation Plan
+# chlorophyll Proposal Site — Progressive-Disclosure Redesign — Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -10,7 +10,7 @@
 
 **Verification approach (read this):** The repo has **no test harness** and the work is presentational, so we do **not** add unit tests (YAGNI). Each task is verified by `npm run build` (TypeScript + lint via `eslint-config-next`) plus a **visual check** against `npm run dev`. The three behavioral pieces — DeepDive (open/Esc/backdrop/scroll-lock), NavRail (active tracking), commercials gating — are verified by driving the running app (browser/Playwright MCP or manual). Commit after each task.
 
-**Source of truth for copy:** `Proposal Note_ Strategy Intelligence Roadmap for Chlorophyll.md` (repo root) and the design spec `docs/superpowers/specs/2026-06-09-chlorophyll-proposal-progressive-disclosure-design.md`.
+**Source of truth for copy:** `Proposal Note_ Strategy Intelligence Roadmap for chlorophyll.md` (repo root) and the design spec `docs/superpowers/specs/2026-06-09-chlorophyll-proposal-progressive-disclosure-design.md`.
 
 **Tone constraint (applies to every section):** Not a pitch. No urgency/scarcity, no hype/bragging, collaborative voice, calm labels, commercials factual & low-key. See the spec's "Tone & voice" section.
 
@@ -105,9 +105,9 @@ export const ipFrameworks: { name: string; clarifies: string }[] = [
 ];
 
 export const sovereignty: { principle: string; meaning: string }[] = [
-  { principle: "Ownership", meaning: "Chlorophyll owns all source material, derived structures, and outputs" },
+  { principle: "Ownership", meaning: "chlorophyll owns all source material, derived structures, and outputs" },
   { principle: "Controlled access", meaning: "Different teams can have different permission levels where needed" },
-  { principle: "No external training", meaning: "Chlorophyll data should not be used to train external models" },
+  { principle: "No external training", meaning: "chlorophyll data should not be used to train external models" },
   { principle: "Auditability", meaning: "Usage, retrieval, and changes should be traceable" },
   { principle: "Human approval", meaning: "Strategists remain responsible for client-facing outputs" },
   { principle: "Client sensitivity", meaning: "Confidential client material is clearly marked, permissioned, and protected" },
@@ -119,7 +119,7 @@ export const parallels = {
     name: "Quilt",
     summary: "Turning fragmented, multi-source information into structured, retrievable insight.",
     combines: ["Multi-source research", "Knowledge organization", "Pattern discovery", "Semantic retrieval", "Insight generation"],
-    appliedTo: "Chlorophyll's frameworks, methodologies, historical engagements, and strategic thinking.",
+    appliedTo: "chlorophyll's frameworks, methodologies, historical engagements, and strategic thinking.",
   },
   kittykat: {
     label: "Brand / asset knowledge",

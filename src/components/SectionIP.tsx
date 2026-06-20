@@ -10,7 +10,7 @@ export function SectionIP() {
   return (
     <Section id="s3">
       <SectionHeader num="03" eyebrow="Your IP" title="We study how your IP works.">
-        Chlorophyll&apos;s work is shaped by proprietary thinking — anthrop™, wholon™, ideantity™, and litmosi™. Discovery
+        chlorophyll&apos;s work is shaped by proprietary thinking — anthrop™, wholon™, ideantity™, and litmosi™. Discovery
         studies how these are <Hl>actually used</Hl>, and everything stays <Hl>owned and protected</Hl> throughout.
       </SectionHeader>
 
@@ -28,7 +28,7 @@ export function SectionIP() {
           <Shield className="h-[17px] w-[17px] text-white" strokeWidth={1.8} />
         </span>
         <p className="text-body leading-[1.42] text-neutral-700">
-          Chlorophyll owns all source material, derived structures, and outputs. Data is{" "}
+          chlorophyll owns all source material, derived structures, and outputs. Data is{" "}
           <b className="font-semibold text-neutral-900">never used to train external models</b>, access is controlled, and
           strategists stay responsible for client-facing work.
         </p>

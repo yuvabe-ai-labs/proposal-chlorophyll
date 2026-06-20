@@ -12,7 +12,7 @@ export function WhyNow() {
   return (
     <Section id="s1" first>
       <SectionHeader num="01" eyebrow="Context" title="Making 27 years of strategy easier to reach.">
-        Chlorophyll&apos;s strategic and creative knowledge lives in people, workshops, decks, templates, and proprietary
+        chlorophyll&apos;s strategic and creative knowledge lives in people, workshops, decks, templates, and proprietary
         methods. There&apos;s a real opportunity to make that knowledge <Hl>easier to access, apply, and reuse</Hl> — with
         strategist judgment kept at the center.
       </SectionHeader>
@@ -55,7 +55,7 @@ export function WhyNow() {
       </div>
 
       <p className="reveal mt-6 text-body leading-[1.5] text-neutral-700 md:text-[15px]">
-        The aim isn&apos;t to replace how Chlorophyll thinks — it&apos;s to make that thinking{" "}
+        The aim isn&apos;t to replace how chlorophyll thinks — it&apos;s to make that thinking{" "}
         <Hl>easier to access, apply, teach, and scale</Hl> across strategy, and later marketing and creative work.
       </p>
     </Section>
