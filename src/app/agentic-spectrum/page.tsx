@@ -94,6 +94,27 @@ const SCOPE: Record<Scope, { label: string; cls: string }> = {
   horizon: { label: "Subject to Discovery", cls: "border-white/15 bg-white/[0.04] text-white/45" },
 };
 
+/* Companion notes shown under the reference-architecture diagram. `lead` is a
+   scannable bold anchor; `body` is the verbatim note text. */
+const ARCH_NOTES: { lead: string; body: string }[] = [
+  {
+    lead: "Grounded in experience",
+    body: "The proposed reference architecture is based on industry best practices and our prior experience building AI-powered knowledge and intelligence platforms.",
+  },
+  {
+    lead: "Illustrative, not fixed",
+    body: "It is intended to illustrate the overall solution approach, and specific technology choices may evolve during Discovery.",
+  },
+  {
+    lead: "Finalized in Discovery",
+    body: "Cloud providers, AI models, databases, and managed services will be finalized based on security, scalability, governance, and cost requirements.",
+  },
+  {
+    lead: "Independent of the stack",
+    body: "The core architecture principles — organizational memory, strategic reasoning, multi-agent orchestration, and human-in-the-loop decision support — remain independent of the underlying technology stack.",
+  },
+];
+
 export default function AgenticSpectrumPage() {
   return (
     <main className="bg-neutral-100">
@@ -220,6 +241,24 @@ export default function AgenticSpectrumPage() {
               <span className="whitespace-nowrap text-neutral-400 sm:hidden">scroll to explore →</span>
             </figcaption>
           </figure>
+
+          <div className="reveal mt-5 rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4 lg:max-w-3xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-neutral-500">
+              On this architecture
+            </div>
+            <div className="mt-3.5 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+              {ARCH_NOTES.map((n) => (
+                <div key={n.lead} className="flex items-start gap-2.5">
+                  <span className="mt-[11px] h-[5px] w-[5px] flex-none rounded-full bg-purple-tint-40" />
+                  <p className="text-[16px] leading-[1.6] text-neutral-700">
+                    <span className="font-semibold text-neutral-900">{n.lead}</span>
+                    <span className="text-neutral-300"> — </span>
+                    {n.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </Section>
 
         <Footer />
