@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const URL = process.env.PDF_URL || "http://localhost:3000/agentic-spectrum";
-const OUT = process.argv[2] || "C:/Users/cyril varghese/code/chlorophyll-proposal/agentic-spectrum.pdf";
+const OUT = process.argv[2] || "C:/Users/cyril varghese/code/chlorophyll-proposal/Chlorophyll × Yuvabe — Agentic Spectrum.pdf";
 
 (async () => {
   const browser = await puppeteer.launch({

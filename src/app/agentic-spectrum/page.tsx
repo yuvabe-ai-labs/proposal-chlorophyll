@@ -44,10 +44,10 @@ const RUNGS: Rung[] = [
     indent: "lg:ml-10",
   },
   {
-    n: "03", name: "Reason", line: "run a multi-step strategy chain",
+    n: "03", name: "Reason", line: "run a multi-step chain on your IP & proprietary algorithm",
     eg: "Watch a brief become structured territory options, every step open to edit.",
     skill: "chaining + framework application",
-    process: "brief → brand core → territory → options",
+    process: "brief → brand core → brand territory → options — today, locked in decks & strategists' minds",
     knowledge: "frameworks, algorithms, past patterns",
     scope: "partial",
     indent: "lg:ml-20",
