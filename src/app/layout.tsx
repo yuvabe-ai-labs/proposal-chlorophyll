@@ -3,9 +3,9 @@ import { clashDisplay, gilroy } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "chlorophyll × Yuvabe — Direction Draft (Mobile)",
+  title: "chlorophyll × Yuvabe — Direction (Mobile)",
   description:
-    "AI transformation direction — a working draft for review. Yuvabe Studios × chlorophyll.",
+    "AI transformation direction. Yuvabe Studios × chlorophyll.",
 };
 
 export const viewport: Viewport = {

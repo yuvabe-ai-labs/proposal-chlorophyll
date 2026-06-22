@@ -22,7 +22,7 @@ Every rung is built from the same three things — and it helps to be precise ab
 - **Process** — *which chlorophyll way of working gets codified here.* Not the system's plumbing —
   the actual human practice we capture and encode: how strategists recall, draft, synthesize,
   challenge, run a workshop, deliver.
-- **Knowledge** — *what data exists, or might exist, that this rung can draw on.* The material: past
+- **Knowledge** — *what data exists, or might be needed, that this rung can draw on.* The material: past
   decks, frameworks, decision rationale, market context. Some of it plainly exists; much of it is
   tacit or has to be created — which is exactly what Discovery is for.
 
@@ -76,7 +76,7 @@ a concrete, scoped build.
   summarization.
 - **Process (chlorophyll practice codified):** how strategists recall and reuse past work — which
   precedents they reach for, and why.
-- **Knowledge (data that exists / might exist):** the case library — past brand-core, territory,
+- **Knowledge (data that exists / might be needed):** the case library — past brand-core, territory,
   strategy and naming decks, and project archives. *Exists,* but scattered and lightly tagged; *might
   need* consistent metadata to be usable.
 

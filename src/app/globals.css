@@ -112,8 +112,8 @@ body {
    the night sections, which paint a solid base over it. */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgb(20 15 43 / 0.019) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(20 15 43 / 0.019) 1px, transparent 1px);
+    linear-gradient(to right, rgb(20 15 43 / 0.0095) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(20 15 43 / 0.0095) 1px, transparent 1px);
   background-size: var(--grid-cell) var(--grid-cell);
 }
 
@@ -149,8 +149,8 @@ section.bg-glow:nth-of-type(3n + 2) {
   background-color: var(--color-brand-deep);
   /* grid first (on top, faint), then the original glows + base wash */
   background-image:
-    linear-gradient(to right, rgb(150 136 192 / 0.0475) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(150 136 192 / 0.0475) 1px, transparent 1px),
+    linear-gradient(to right, rgb(150 136 192 / 0.0273) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(150 136 192 / 0.0273) 1px, transparent 1px),
     radial-gradient(60% 30% at 80% 4%, rgb(150 136 192 / 0.22) 0%, rgb(150 136 192 / 0) 100%),
     radial-gradient(50% 26% at 12% 16%, rgb(88 41 199 / 0.24) 0%, rgb(88 41 199 / 0) 100%),
     linear-gradient(180deg, #1a1237 0%, #140f2b 60%, #0f0c22 100%);

@@ -13,16 +13,13 @@ export function Doc({ children }: { children: ReactNode }) {
 export function TopBar() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b border-neutral-200 bg-[rgba(252,252,253,0.86)] px-5 py-3.5 backdrop-blur-[14px] backdrop-saturate-[1.8]">
-      <div className="flex items-center gap-2.5">
+      <div className="flex items-center gap-3">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/assets/logo.png" alt="Yuvabe" className="block h-[22px] w-auto" />
-        <span className="border-l border-neutral-200 pl-2.5 text-[11px] font-medium tracking-[0.02em] text-neutral-500">
-          for chlorophyll
-        </span>
+        <span className="h-7 w-px flex-none bg-neutral-200" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/chlorohyll-logo.png" alt="chlorophyll" className="block h-[32px] w-auto -translate-y-[1px]" />
       </div>
-      {/* <span className="whitespace-nowrap rounded-pill border border-purple-tint-22 bg-purple-tint-09 px-[9px] py-[5px] text-[9.5px] font-semibold uppercase tracking-[0.12em] text-purple-500">
-        Draft · review
-      </span> */}
     </header>
   );
 }
@@ -136,13 +133,18 @@ export function Chip({
 /* ── Footer ──────────────────────────────────────────────────────────── */
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-100 px-5 pt-[26px] pb-[104px] text-center">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/assets/logo.png" alt="Yuvabe Studios" className="inline-block h-6 opacity-90" />
+    <footer className="border-t border-neutral-100 bg-[rgba(252,252,253,0.9)] px-5 pt-[26px] pb-[104px] text-center">
+      <div className="flex items-center justify-center gap-3.5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/logo.png" alt="Yuvabe Studios" className="inline-block h-6 opacity-90" />
+        <span className="h-7 w-px flex-none bg-neutral-200" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/assets/chlorohyll-logo.png" alt="chlorophyll" className="inline-block h-[40px] opacity-90 -translate-y-[2px]" />
+      </div>
       <p className="mt-3 text-[11px] leading-[1.5] text-neutral-500">
         Yuvabe Studios × chlorophyll
         <br />
-        AI transformation direction — draft for review
+        AI transformation direction
       </p>
     </footer>
   );

@@ -84,14 +84,14 @@ const RUNGS: Rung[] = [
 const BLOCKS: { k: string; v: string }[] = [
   { k: "Skill", v: "the AI skill we build" },
   { k: "Process", v: "the chlorophyll method it codifies" },
-  { k: "Knowledge", v: "what data exists or might exist" },
+  { k: "Knowledge", v: "what data exists or might be needed" },
 ];
 
 /* Scope badge — label + night-slide palette per status. */
 const SCOPE: Record<Scope, { label: string; cls: string }> = {
   in: { label: "In scope", cls: "border-lavender-200/30 bg-lavender-200/12 text-lavender-200" },
   partial: { label: "In scope · early", cls: "border-yellow-500/35 bg-yellow-500/12 text-yellow-500" },
-  horizon: { label: "Subject to Discovery", cls: "border-white/15 bg-white/[0.04] text-white/45" },
+  horizon: { label: "Unlocked once proven", cls: "border-dashed border-lavender-200/40 bg-transparent text-lavender-200/80" },
 };
 
 /* Companion notes shown under the reference-architecture diagram. `lead` is a
@@ -208,9 +208,9 @@ export default function AgenticSpectrumPage() {
             <p className="text-[13px] leading-[1.55] text-white/70">
               <span className="font-semibold text-lavender-200">This engagement</span> commits to
               Recall, Assist and early Reason. Critique, Orchestrate and Operate are{" "}
-              <span className="text-white/85">subject to Discovery</span> — real and reachable, scoped
-              &amp; priced once Discovery confirms their value. The lower rungs are the commitment; the
-              higher rungs are the trajectory.
+              <span className="text-white/85">advanced capabilities</span> — built once the foundation
+              proves its value. The lower rungs are the commitment; the higher rungs are the
+              trajectory.
             </p>
           </div>
         </Section>
@@ -231,7 +231,7 @@ export default function AgenticSpectrumPage() {
             <div className="overflow-x-auto rounded-2xl border border-neutral-200 bg-white p-2 shadow-[0_4px_14px_rgba(11,15,25,0.05)] md:p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/strategy-brain-arch.jpeg"
+                src="/assets/Chlorophyll_Multi_Agent_Architecture.drawio.png"
                 alt="Chlorophyll Multi-Agent Strategy Brain — physical/cloud architecture: users and clients flow through edge & delivery into the chlorophyll platform (Next.js app and backend services), a multi-agent Strategy Brain layer (research, insight, strategy, recommendation and learning agents over an orchestration bus and LLM model layer), a data & knowledge layer, an ingestion & processing pipeline, cloud infrastructure, and security/governance — cloud-agnostic across AWS and GCP."
                 className="block h-auto w-full min-w-[820px] rounded-xl"
               />
