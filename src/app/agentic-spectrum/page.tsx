@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Doc, TopBar, Section, SectionHeader, Hl, Footer } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -124,12 +123,14 @@ export default function AgenticSpectrumPage() {
 
         {/* ── Slide 1 · the vision: the full ladder ──────────────────────── */}
         <Section id="spectrum" night first>
-          <Link
-            href="/"
-            className="reveal mb-5 inline-flex w-fit items-center gap-1.5 rounded-pill border border-white/15 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/70 transition-colors hover:bg-white/[0.08]"
+          <a
+            href="https://yuvabe-chlorophyll.vercel.app/agentic-spectrum"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="reveal mb-5 inline-flex w-fit items-center gap-1.5 rounded-pill border border-lavender-200/40 bg-lavender-200/10 px-3 py-1.5 text-[11px] font-medium text-lavender-200 transition-colors hover:bg-lavender-200/20"
           >
-            ← Back to the proposal
-          </Link>
+            View it on the web ↗
+          </a>
 
           <SectionHeader
             num="01"
