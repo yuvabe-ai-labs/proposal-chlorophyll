@@ -32,9 +32,9 @@ Every rung is built from the same three things — and it helps to be precise ab
 - **Knowledge is the gating dependency.** The higher rungs need data that doesn't neatly exist yet —
   *how* seniors decide, *why* options were killed, the strategist archetypes. Discovery is what
   reveals which data exists, which is tacit, and which must be created — which is why the top rungs
-  are **Subject to Discovery**.
+  are **Shaped by Discovery**.
 - **Vision vs. scope.** The full ladder (Recall → Operate) is the *destination*. This engagement
-  commits only to the lower rungs; the higher ones are marked **Subject to Discovery** throughout.
+  commits only to the lower rungs; the higher ones are marked **Shaped by Discovery** throughout.
 
 ---
 
@@ -45,12 +45,12 @@ Every rung is built from the same three things — and it helps to be precise ab
 the end, an **integrated, human-gated workflow**. In short: a genuinely useful internal Strategy
 Brain that recalls, drafts, and assists reasoning — with the strategist in control throughout.
 
-**Subject to Discovery — scoped and priced once Discovery confirms their value:** full autonomous
+**Shaped by Discovery — scoped and priced once Discovery confirms their value:** full autonomous
 **Reason**, **Critique** (the sparring partner), **Orchestrate** (the multi-agent workshop), and
 **Operate** (the autonomous pipeline). These need data and method that Discovery has to surface
 first — real and reachable, but not committed inside this engagement.
 
-**Scope key:** ✅ in scope · ◐ in scope, early form · ○ subject to Discovery
+**Scope key:** ✅ in scope · ◐ in scope, early form · ○ shaped by Discovery
 
 ---
 
@@ -93,7 +93,7 @@ a concrete, scoped build.
 
 ## Phase 3 — Internal Strategy Brain · *3–4 weeks*
 **Delivers:** a fuller internal knowledge layer and *assisted* reasoning — structured option support
-and pattern surfacing, with the strategist driving. Full autonomous reasoning is Subject to Discovery.
+and pattern surfacing, with the strategist driving. Full autonomous reasoning is Shaped by Discovery.
 
 ### Level 3 — Reason · ◐ in scope, early form
 *"Brief → category map → territory options → pressure-test against the frameworks → structured
@@ -101,7 +101,7 @@ option set."*
 
 > **Scope note:** in this engagement, Reason arrives in *assisted* form — the system structures,
 > surfaces, and supports; the strategist drives the chain. The fully autonomous version is a later
-> step, Subject to Discovery.
+> step, Shaped by Discovery.
 
 - **Skill:** multi-step chaining; framework application; divergent option generation; convergent
   synthesis.
@@ -116,10 +116,10 @@ option set."*
 
 ## Phase 4 — External Research Layer · *3–4 weeks*
 **Delivers (in scope):** the external research layer — market, category, competitor and cultural
-data folded into the Knowledge. **Subject to Discovery:** Critique — the research layer is what later
+data folded into the Knowledge. **Shaped by Discovery:** Critique — the research layer is what later
 gives a critique agent something credible to test against.
 
-### Level 4 — Critique · ○ subject to Discovery
+### Level 4 — Critique · ○ shaped by Discovery
 *"Stress-test the direction — where does this positioning break? What's the contrarian read?"*
 
 > **Scope note:** this is what the Phase-4 research data *enables next*, not a Phase-4 deliverable.
@@ -138,9 +138,9 @@ gives a critique agent something credible to test against.
 ## Phase 5 — Integration · *2 weeks*
 **Delivers (in scope):** the internal Brain and the external layer composed into one **integrated,
 human-gated workflow** with a review/approval flow — the first, governed step toward autonomous
-operation. **Subject to Discovery:** Orchestrate and Operate.
+operation. **Shaped by Discovery:** Orchestrate and Operate.
 
-### Level 5 — Orchestrate · ○ subject to Discovery
+### Level 5 — Orchestrate · ○ shaped by Discovery
 *"Run a synthetic workshop — role-agents (category analyst, semiotician, consumer-truth finder,
 contrarian, naming agent) generate and debate options."*
 
@@ -154,7 +154,7 @@ contrarian, naming agent) generate and debate options."*
   cross-domain reference each role draws on. *Some exists* (templates); *much might-exist* (archetypes
   to be defined in Discovery).
 
-### Level 6 — Operate · ○ subject to Discovery
+### Level 6 — Operate · ○ shaped by Discovery
 *"Brief-to-territory pipeline runs end-to-end autonomously; strategist approves at defined gates."*
 
 > **Scope note:** the integrated workflow from Phase 5 is the *human-gated* first step; fully
@@ -186,7 +186,7 @@ Each block has a clear centre-of-gravity shift as the system climbs.
 1. **Knowledge is the gating dependency — and it's what Discovery uncovers.** The higher rungs need
    data that doesn't tidily exist yet (how seniors decide, why options were killed, role archetypes).
    Discovery determines what exists, what's tacit, and what must be created — which is precisely why
-   Critique, Orchestrate and Operate are *Subject to Discovery*.
+   Critique, Orchestrate and Operate are *Shaped by Discovery*.
 2. **You're codifying the firm, not buying features.** Each rung captures more of chlorophyll's *way
    of working* (Process) and more of its *material* (Knowledge), powered by a stacking set of AI
    capabilities (Skill). These are durable, compounding assets — your method becomes software you

@@ -91,7 +91,7 @@ const BLOCKS: { k: string; v: string }[] = [
 const SCOPE: Record<Scope, { label: string; cls: string }> = {
   in: { label: "In scope", cls: "border-lavender-200/30 bg-lavender-200/12 text-lavender-200" },
   partial: { label: "In scope · early", cls: "border-yellow-500/35 bg-yellow-500/12 text-yellow-500" },
-  horizon: { label: "Unlocked once proven", cls: "border-dashed border-lavender-200/40 bg-transparent text-lavender-200/80" },
+  horizon: { label: "Shaped by Discovery", cls: "border-dashed border-lavender-200/40 bg-transparent text-lavender-200/80" },
 };
 
 /* Companion notes shown under the reference-architecture diagram. `lead` is a
@@ -208,9 +208,9 @@ export default function AgenticSpectrumPage() {
             <p className="text-[13px] leading-[1.55] text-white/70">
               <span className="font-semibold text-lavender-200">This engagement</span> commits to
               Recall, Assist and early Reason. Critique, Orchestrate and Operate are{" "}
-              <span className="text-white/85">advanced capabilities</span> — built once the foundation
-              proves its value. The lower rungs are the commitment; the higher rungs are the
-              trajectory.
+              <span className="text-white/85">advanced capabilities</span> — shaped by Discovery, then
+              built as the foundation proves out. The lower rungs are the commitment; the higher rungs
+              are the trajectory.
             </p>
           </div>
         </Section>
