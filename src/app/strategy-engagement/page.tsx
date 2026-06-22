@@ -1,15 +1,52 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { Doc, TopBar, Section, SectionHeader, Hl, Footer } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "The Agentic Spectrum — chlorophyll × Yuvabe",
-  description: "From recall to operate — the vision, and what this engagement delivers.",
+  title: "Chlorophyll × Yuvabe — Strategy Engagement",
+  description: "What this engagement delivers, the capability ladder it sits on, and the system it grows toward.",
 };
 
-/* The six rungs of the spectrum. Indent rises Recall → Operate so the list
-   reads as a climb on wide screens; flat on mobile. `scope` marks what this
-   engagement commits to vs. the future horizons. */
+/* ── Slide 1 data — concrete deliverables + the strategist's journey ─────── */
+const DELIVERABLES: { cap: string; build: string; use: string }[] = [
+  {
+    cap: "Recall",
+    build: "A searchable library of selected past cases, tagged by sector, challenge, method and output.",
+    use: "Pull the most relevant past work for any new brief.",
+  },
+  {
+    cap: "Assist",
+    build: "A first-draft generator grounded in your templates, house voice and strongest examples.",
+    use: "Get a first-cut territory or workshop stimulus in your voice, ready to edit.",
+  },
+  {
+    cap: "Early Reason",
+    build: "A structured chain — brief → category map → 2–3 territory drafts — with the reasoning and source references shown.",
+    use: "See how a direction was reached and edit the chain — not a black box.",
+  },
+  {
+    cap: "Human review",
+    build: "A feedback loop to accept, reject, edit and annotate every output.",
+    use: "Stay in control, and make retrieval and drafting sharper with every use.",
+  },
+  {
+    cap: "Handover",
+    build: "Knowledge schema, prompt logic, an operating guide and a working demo.",
+    use: "Own it, run it and extend it after launch.",
+  },
+];
+
+const JOURNEY: string[] = [
+  "New brief",
+  "Retrieve relevant cases",
+  "Draft first-cut territories",
+  "Reasoning & sources shown",
+  "Strategist reviews & edits",
+  "Feedback improves the system",
+];
+
+/* ── Slide 2 data — the agentic spectrum ────────────────────────────────── */
 type Scope = "in" | "partial" | "horizon" | "longterm";
 
 type Rung = {
@@ -27,7 +64,7 @@ type Rung = {
 const RUNGS: Rung[] = [
   {
     n: "01", name: "Recall", line: "find the relevant past work",
-    eg: "Drop in a brief and watch the closest past cases and patterns surface.",
+    eg: "Surface the 3 closest past cases for this brief.",
     skill: "retrieval & similarity search",
     process: "recalling & reusing past cases",
     knowledge: "past case decks + their metadata",
@@ -36,7 +73,7 @@ const RUNGS: Rung[] = [
   },
   {
     n: "02", name: "Assist", line: "draft a first cut in your voice",
-    eg: "Get a first-cut territory drafted in your voice — ready to edit, not start from scratch.",
+    eg: "Draft a first-cut brand territory from this brief.",
     skill: "drafting in your voice",
     process: "the first-draft / briefing routine",
     knowledge: "templates, house voice, exemplars",
@@ -45,7 +82,7 @@ const RUNGS: Rung[] = [
   },
   {
     n: "03", name: "Reason", line: "run a multi-step strategy chain",
-    eg: "Watch a brief become structured territory options, every step open to edit.",
+    eg: "Brief → category map → three structured territory options.",
     skill: "chaining + framework application",
     process: "brief → brand core → territory → options",
     knowledge: "frameworks, algorithms, past patterns",
@@ -54,7 +91,7 @@ const RUNGS: Rung[] = [
   },
   {
     n: "04", name: "Critique", line: "challenge & stress-test",
-    eg: "Pressure-test a direction before the room — see where it breaks, and the contrarian read.",
+    eg: "Where does this positioning break against the market?",
     skill: "red-teaming + consistency checks",
     process: "the challenge & decision points",
     knowledge: "quality signals, past rejections, market data",
@@ -63,7 +100,7 @@ const RUNGS: Rung[] = [
   },
   {
     n: "05", name: "Orchestrate", line: "coordinate specialist agents",
-    eg: "Sit in on a synthetic workshop — specialist voices debating options for you to direct.",
+    eg: "A synthetic workshop: analyst, semiotician & contrarian debate.",
     skill: "multi-agent orchestration",
     process: "the strategy workshop flow",
     knowledge: "role archetypes, workshop scripts",
@@ -72,7 +109,7 @@ const RUNGS: Rung[] = [
   },
   {
     n: "06", name: "Operate", line: "run end-to-end, human-gated",
-    eg: "Send a brief in, get review-ready territories out — you approve at each gate.",
+    eg: "Brief in → draft territories out, you approve at each gate.",
     skill: "end-to-end execution + gating",
     process: "delivery & sign-off, end to end",
     knowledge: "live briefs, outcomes, governance rules",
@@ -87,7 +124,6 @@ const BLOCKS: { k: string; v: string }[] = [
   { k: "Knowledge", v: "what data exists or might be needed" },
 ];
 
-/* Scope badge — label + night-slide palette per status. */
 const SCOPE: Record<Scope, { label: string; cls: string }> = {
   in: { label: "Likely first capability", cls: "border-lavender-200/30 bg-lavender-200/12 text-lavender-200" },
   partial: { label: "Discovery-dependent pilot", cls: "border-yellow-500/35 bg-yellow-500/12 text-yellow-500" },
@@ -95,8 +131,7 @@ const SCOPE: Record<Scope, { label: string; cls: string }> = {
   longterm: { label: "Long-term direction", cls: "border-dashed border-white/20 bg-transparent text-white/45" },
 };
 
-/* Companion notes shown under the reference-architecture diagram. `lead` is a
-   scannable bold anchor; `body` is the verbatim note text. */
+/* ── Slide 3 data — reference-architecture notes ────────────────────────── */
 const ARCH_NOTES: { lead: string; body: string }[] = [
   {
     lead: "Grounded in experience",
@@ -116,32 +151,106 @@ const ARCH_NOTES: { lead: string; body: string }[] = [
   },
 ];
 
-export default function AgenticSpectrumPage() {
+export default function StrategyEngagementPage() {
   return (
     <main className="bg-neutral-100">
       <Doc>
         <TopBar />
 
-        {/* ── Slide 1 · the vision: the full ladder ──────────────────────── */}
-        <Section id="spectrum" night first>
+        {/* ── Slide 1 · what this phase delivers ─────────────────────────── */}
+        <Section id="deliverables" first>
           <Link
             href="/"
-            className="reveal mb-5 inline-flex w-fit items-center gap-1.5 rounded-pill border border-white/15 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/70 transition-colors hover:bg-white/[0.08]"
+            className="reveal mb-5 inline-flex w-fit items-center gap-1.5 rounded-pill border border-neutral-200 bg-white px-3 py-1.5 text-[11px] font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
           >
             ← Back to the proposal
           </Link>
 
+          <SectionHeader num="01" eyebrow="This engagement" title="What we&apos;d likely build first.">
+            A working <Hl>AI-assisted strategy workspace</Hl> — built on your cases, in your voice, with
+            your strategists in control. Here&apos;s the shape it would take, confirmed in Discovery.
+          </SectionHeader>
+
+          {/* deliverables table */}
+          <div className="reveal mt-6 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_4px_14px_rgba(11,15,25,0.05)]">
+            <div className="hidden border-b border-neutral-200 bg-neutral-50 px-5 py-3 text-[10.5px] font-semibold uppercase tracking-[0.1em] text-neutral-500 lg:grid lg:grid-cols-[150px_1fr_1fr] lg:gap-5">
+              <span>Capability</span>
+              <span>What we build</span>
+              <span>What you can do</span>
+            </div>
+            <div className="divide-y divide-neutral-200">
+              {DELIVERABLES.map((d) => (
+                <div
+                  key={d.cap}
+                  className="grid grid-cols-1 gap-x-5 gap-y-2 px-5 py-4 lg:grid-cols-[150px_1fr_1fr]"
+                >
+                  <span className="font-display text-[14.5px] font-semibold text-purple-500">{d.cap}</span>
+                  <div>
+                    <span className="mb-0.5 block text-[9px] font-semibold uppercase tracking-[0.1em] text-neutral-400 lg:hidden">
+                      We build
+                    </span>
+                    <span className="text-[13px] leading-[1.5] text-neutral-700">{d.build}</span>
+                  </div>
+                  <div>
+                    <span className="mb-0.5 block text-[9px] font-semibold uppercase tracking-[0.1em] text-neutral-400 lg:hidden">
+                      You can
+                    </span>
+                    <span className="text-[13px] leading-[1.5] text-neutral-600">{d.use}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* the strategist's journey */}
+          <div className="reveal mt-7">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
+                How a strategist uses it
+              </span>
+              <span className="whitespace-nowrap text-[11px] text-neutral-400 sm:hidden">scroll →</span>
+            </div>
+            <div className="mt-3 flex items-center gap-2 overflow-x-auto pb-1">
+              {JOURNEY.map((s, i) => (
+                <Fragment key={s}>
+                  <span className="whitespace-nowrap rounded-pill border border-purple-tint-22 bg-purple-tint-06 px-3.5 py-2 text-[12.5px] font-medium text-neutral-800">
+                    {s}
+                  </span>
+                  {i < JOURNEY.length - 1 && (
+                    <span className="flex-none text-[15px] leading-none text-purple-400">→</span>
+                  )}
+                </Fragment>
+              ))}
+            </div>
+            <p className="mt-2.5 text-[12.5px] leading-[1.5] text-neutral-500">
+              Throughout, the strategist drives — the system supports, never decides.
+            </p>
+          </div>
+
+          {/* success criteria */}
+          <div className="reveal mt-6 rounded-xl border border-neutral-200 bg-neutral-50 px-5 py-3.5 lg:max-w-3xl">
+            <span className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-neutral-500">
+              Done means
+            </span>
+            <p className="mt-1.5 text-[13px] leading-[1.5] text-neutral-700">
+              It retrieves genuinely relevant cases · drafts in chlorophyll&apos;s voice · shows its
+              reasoning and sources · and measurably cuts time-to-first-draft.
+            </p>
+          </div>
+        </Section>
+
+        {/* ── Slide 2 · the agentic spectrum (the vision) ────────────────── */}
+        <Section id="spectrum" night>
           <SectionHeader
-            num="01"
+            num="02"
             eyebrow="The agentic spectrum"
             title="From recall to operate."
             night
           >
-            AI doesn&apos;t arrive as one capability — it <Hl night>climbs a ladder</Hl>. Here&apos;s the
-            full arc, and the three things every rung is built from.
+            What you&apos;ll have sits on a longer ladder. AI doesn&apos;t arrive as one capability — it{" "}
+            <Hl night>climbs a ladder</Hl>, and this engagement starts at the bottom of it.
           </SectionHeader>
 
-          {/* the ladder */}
           <div className="reveal mt-7 flex flex-col gap-2.5">
             {RUNGS.map((r) => (
               <div
@@ -165,11 +274,9 @@ export default function AgenticSpectrumPage() {
                       {SCOPE[r.scope].label}
                     </span>
                   </div>
-                  <p className="mb-1 mt-3 border-l-2 border-lavender-200/50 pl-3 text-[13px] font-medium leading-[1.5] text-white/85">
-                    {r.eg}
-                  </p>
+                  <p className="mt-1 text-[12px] italic leading-snug text-white/45">e.g. {r.eg}</p>
 
-                  <div className="mt-3.5 grid grid-cols-1 gap-x-4 gap-y-1.5 border-t border-white/8 pt-2.5 sm:grid-cols-3">
+                  <div className="mt-2.5 grid grid-cols-1 gap-x-4 gap-y-1.5 border-t border-white/8 pt-2.5 sm:grid-cols-3">
                     {[
                       { k: "Skill", v: r.skill },
                       { k: "Process", v: r.process },
@@ -188,7 +295,6 @@ export default function AgenticSpectrumPage() {
             ))}
           </div>
 
-          {/* the three building blocks */}
           <div className="reveal mt-6 flex flex-wrap gap-2">
             {BLOCKS.map((b) => (
               <span
@@ -201,12 +307,6 @@ export default function AgenticSpectrumPage() {
             ))}
           </div>
 
-          <p className="reveal mt-5 text-[12.5px] leading-[1.5] text-white/55">
-            Cumulative — each rung inherits the ones below it. And the{" "}
-            <span className="text-white/80">Knowledge Base is the gating dependency</span>: you can&apos;t
-            build the higher rungs until it encodes chlorophyll&apos;s method, not just its documents.
-          </p>
-
           <div className="reveal mt-5 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3.5 lg:max-w-2xl">
             <p className="text-[13px] leading-[1.55] text-white/70">
               <span className="font-semibold text-lavender-200">This engagement</span> would likely
@@ -217,16 +317,12 @@ export default function AgenticSpectrumPage() {
           </div>
         </Section>
 
-        {/* ── Slide 2 · the reference architecture ───────────────────────── */}
+        {/* ── Slide 3 · the reference architecture (future-state) ────────── */}
         <Section id="architecture">
-          <SectionHeader
-            num="02"
-            eyebrow="Under the hood"
-            title="The multi-agent strategy brain."
-          >
-            A <Hl>cloud-agnostic</Hl> reference architecture for the full build — across AWS and GCP.
-            This is the destination the spectrum points to; indicative, with the exact shape set in
-            Discovery.
+          <SectionHeader num="03" eyebrow="Where it leads" title="The full strategy-intelligence system.">
+            A <Hl>reference architecture</Hl> for the complete build — deployable on your preferred
+            cloud, decided in Discovery. It shows where the spectrum leads; it is not this phase&apos;s
+            build plan.
           </SectionHeader>
 
           <figure className="reveal mt-6 w-full">
@@ -234,7 +330,7 @@ export default function AgenticSpectrumPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/assets/Chlorophyll_Multi_Agent_Architecture.drawio.png"
-                alt="Chlorophyll Multi-Agent Strategy Brain — physical/cloud architecture: users and clients flow through edge & delivery into the chlorophyll platform (Next.js app and backend services), a multi-agent Strategy Brain layer (research, insight, strategy, recommendation and learning agents over an orchestration bus and LLM model layer), a data & knowledge layer, an ingestion & processing pipeline, cloud infrastructure, and security/governance — cloud-agnostic across AWS and GCP."
+                alt="Chlorophyll Multi-Agent Strategy Brain — physical/cloud reference architecture: users and clients flow through edge & delivery into the chlorophyll platform (Next.js app and backend services), a multi-agent Strategy Brain layer (research, insight, strategy, recommendation and learning agents over an orchestration bus and LLM model layer), a data & knowledge layer, an ingestion & processing pipeline, cloud infrastructure, and security/governance — deployable on the client's preferred cloud."
                 className="block h-auto w-full min-w-[820px] rounded-xl"
               />
             </div>
