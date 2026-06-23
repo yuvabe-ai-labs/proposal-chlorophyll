@@ -153,7 +153,7 @@ export default function AgenticSpectrumPage() {
                   {r.n}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col gap-1.5 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
                     <div className="flex flex-wrap items-baseline gap-x-2">
                       <span className="font-display text-[15px] font-semibold leading-none text-neutral-25">
                         {r.name}
@@ -161,7 +161,7 @@ export default function AgenticSpectrumPage() {
                       <span className="text-[13px] leading-snug text-white/65">— {r.line}</span>
                     </div>
                     <span
-                      className={`mt-0.5 shrink-0 rounded-pill border px-2.5 py-1 text-[9.5px] font-semibold uppercase tracking-[0.08em] ${SCOPE[r.scope].cls}`}
+                      className={`shrink-0 self-start rounded-pill border px-2.5 py-1 text-[9.5px] font-semibold uppercase tracking-[0.08em] sm:mt-0.5 ${SCOPE[r.scope].cls}`}
                     >
                       {SCOPE[r.scope].label}
                     </span>
