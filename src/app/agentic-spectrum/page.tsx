@@ -210,10 +210,10 @@ export default function AgenticSpectrumPage() {
 
           <div className="reveal mt-5 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3.5 lg:max-w-2xl">
             <p className="text-[13px] leading-[1.55] text-white/70">
-              <span className="font-semibold text-lavender-200">This engagement</span> would likely
-              begin with Recall, Assist and a Discovery-dependent Reason pilot. Critique and Orchestrate
-              are <span className="text-white/85">future capabilities</span>, and Operate the long-term
-              direction — each shaped by Discovery as the foundation proves out.
+              <span className="font-semibold text-lavender-200">This engagement commits to the first
+              three</span> — Recall, Assist and an early Reason pilot. Everything above — Critique,
+              Orchestrate and Operate — is <span className="text-white/85">subject to Discovery</span>,
+              built only as the foundation proves out.
             </p>
           </div>
         </Section>
