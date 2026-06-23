@@ -208,12 +208,17 @@ export default function AgenticSpectrumPage() {
             build the higher rungs until it encodes chlorophyll&apos;s method, not just its documents.
           </p>
 
-          <div className="reveal mt-5 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3.5 lg:max-w-2xl">
-            <p className="text-[13px] leading-[1.55] text-white/70">
-              <span className="font-semibold text-lavender-200">This engagement commits to the first
-              three</span> — Recall, Assist and an early Reason pilot. Everything above — Critique,
-              Orchestrate and Operate — is <span className="text-white/85">subject to Discovery</span>,
-              built only as the foundation proves out.
+          <div className="reveal mt-6 rounded-2xl border border-lavender-200/35 bg-lavender-200/[0.08] px-5 py-4 shadow-[0_4px_20px_rgba(150,136,192,0.12)] lg:max-w-2xl">
+            <div className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-yellow-500">
+              Committed now — shaped by Discovery
+            </div>
+            <p className="mt-2 text-[14px] leading-[1.6] text-white/85">
+              This engagement <span className="font-semibold text-white">commits to the first three</span>{" "}
+              — Recall, Assist and an early Reason pilot — the foundational pieces. Everything above —
+              Critique, Orchestrate and Operate — builds on that foundation,{" "}
+              <span className="font-semibold text-lavender-200">already proven in production</span>, and
+              is <span className="font-semibold text-white">subject to Discovery</span> — added only as
+              it proves out.
             </p>
           </div>
         </Section>
