@@ -98,7 +98,21 @@ export default function CreativeWorkflowPage() {
             </div>
           </div>
 
-          <p className="reveal mt-4 text-body font-medium leading-[1.5] text-neutral-700">
+          <figure className="reveal mx-auto mt-7 w-full max-w-5xl">
+            <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white p-2 shadow-[0_10px_30px_rgba(11,15,25,0.06)] md:p-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/human-feedback-loop.png"
+                alt="The guided creative loop: brief and context → AI proposes routes → human chooses direction → AI prepares options → human approves the package → AI generates variants → human reviews and signs off. Below, five touch points where the human stays in the loop — choosing a creative territory, selecting or editing options, picking and combining results, accepting or editing recommendations, approving the prompt package, and owning the final approve/reject sign-off."
+                className="h-auto w-full rounded-xl"
+              />
+            </div>
+            <figcaption className="mx-auto mt-4 max-w-2xl text-center text-[13px] leading-[1.55] text-neutral-500">
+              The same loop, end to end — at every numbered step, a human decides before anything advances.
+            </figcaption>
+          </figure>
+
+          <p className="reveal mt-7 text-body font-medium leading-[1.5] text-neutral-700">
             Nothing advances or ships that a human didn&apos;t choose — faster production, without
             surrendering authorship or brand control.
           </p>
@@ -134,7 +148,21 @@ export default function CreativeWorkflowPage() {
             ))}
           </div>
 
-          <div className="reveal mt-6 rounded-2xl border border-white/12 bg-white/[0.04] px-5 py-4 lg:max-w-2xl">
+          <figure className="reveal mx-auto mt-8 w-full max-w-5xl">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white p-2 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/eval-loop.png"
+                alt="The evals layer, five steps: 1) capture corrections — the AI's before vs. the human's shipped after; 2) error analysis — open coding of real traces, noting what went wrong; 3) encode as evals — turn the top failures into pass/fail scorers and a validated LLM-as-judge; 4) re-measure on a frozen set — prompt v1 baseline 18/20 pass vs. prompt v2 14/20, proving a change is real not lucky; 5) improve and repeat. Every correction becomes signal, so the more it's used the better it gets."
+                className="h-auto w-full rounded-xl"
+              />
+            </div>
+            <figcaption className="mx-auto mt-5 max-w-2xl text-center text-[13px] leading-[1.55] text-white/55">
+              Every correction becomes signal — and signal, measured on a frozen set, turns into a better prompt. Quality compounds with each project.
+            </figcaption>
+          </figure>
+
+          <div className="reveal mt-7 rounded-2xl border border-white/12 bg-white/[0.04] px-5 py-4 lg:max-w-2xl">
             <p className="text-[13.5px] leading-[1.6] text-white/80">
               The generation is the easy part. This <span className="font-semibold text-lavender-200">learning
               layer</span> — the thing that compounds — is the hard part, and the real craft. It&apos;s what
